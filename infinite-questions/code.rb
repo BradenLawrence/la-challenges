@@ -1,4 +1,4 @@
-# PART 1
+require 'pry'
 puts "Golly, I sure love helping!"
 input = nil
 while input != "no" do
@@ -6,5 +6,6 @@ while input != "no" do
   unless input == "no"
     input = gets.chomp
   end
+  binding.pry
 end
 puts "k, bye!"
