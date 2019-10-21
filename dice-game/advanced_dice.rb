@@ -3,18 +3,14 @@ puts "Dice-o-matic\n------------\n"
 continue_program = nil
 while continue_program != "S" do
   # Determine faces
-  user_sides = 0
-  while user_sides < 1 do
+  sides = 0
+  while sides < 1 do
     puts "How many sides does your die have?"
     print "> "
-    user_sides = gets.chomp.to_i
-    if user_sides < 1
+    sides = gets.chomp.to_i
+    if sides < 1
       puts "Sorry, you must enter a number greater than zero."
     end
-  end
-  die = []
-  user_sides.times do |face|
-    die.push(face+1)
   end
 
   # Determine roll
@@ -30,11 +26,11 @@ while continue_program != "S" do
 
   # Start rolling
   continue_rolling = nil
-  puts "Rolling a #{user_sides} sided die #{roll} times..."
+  puts "Rolling a #{sides} sided die #{roll} times..."
   while continue_rolling != "S" do
     results = []
     roll.times do
-      results.push(  die[ rand(die.length) ]  )
+      results.push( rand(sides+1) )
     end
     total = results.reduce(:+)
     puts <<~output
