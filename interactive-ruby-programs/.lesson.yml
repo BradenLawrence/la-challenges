@@ -1,0 +1,7 @@
+---
+title: "Interactive Ruby Programs"
+type: "article"  # challenge, exercise, article, video
+description: ""
+tags: "looping, user-input, pseudocode"
+ignore:
+- "validating-user-input.md"
