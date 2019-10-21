@@ -37,15 +37,19 @@ while continue_program != "S" do
       results.push(  die[ rand(die.length) ]  )
     end
     total = results.reduce(:+)
-    puts %W[Roll results: #{results.join(', ')}\n
-      Total: #{total}\n\n
-            Press 'Enter' to roll again, or 'S' to stop.].join(' ')
+    puts <<~output
+      Roll results: #{results.join(', ')}
+      Total: #{total}
+      Press 'Enter' to roll again, or 'S' to stop.
+    output
     print "> "
     continue_rolling = gets.chomp.upcase
   end
 
-  puts %W[Would you like to roll with a different die?\n
-          Press 'Enter' to create a new die or 'S' to quit.].join(' ')
+  puts <<~reset
+    Would you like to roll with a different die?
+    Press 'Enter' to create a new die or 'S' to stop.
+  reset
   print "> "
   continue_program = gets.chomp.upcase
 end
