@@ -14,11 +14,20 @@ user_sides.times do |face|
   die.push(face+1)
 end
 
-user_rolls = nil
-roll = nil
+# Determine roll
+roll = 0
+while roll < 1 do
+  puts "How many times would you like to roll?"
+  print "> "
+  roll = gets.chomp.to_i
+  if roll < 1
+    puts "Sorry, you must enter a number greater than zero."
+  end
+end
 
+# Start rolling
 input = nil
-puts "Rolling a six sided die twice..."
+puts "Rolling a #{user_sides} sided die #{roll} times..."
 while input != "S" do
   results = []
   roll.times do
