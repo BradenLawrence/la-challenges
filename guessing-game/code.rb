@@ -24,7 +24,7 @@ while selection.nil? do
   end
 end
 
-answer = 1+rand(difficulty)
+answer = rand(1..difficulty)
 guess = nil
 attempts = 0
 
