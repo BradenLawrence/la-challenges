@@ -9,16 +9,15 @@ while bottles>0 do
       excitement = "."
     end
     puts <<~LYRICS.squeeze(" ")
-    #{bottles} bottles of beer on the wall, #{bottles} bottles of \
-    beer#{excitement}
-    Take one down and pass it around, #{bottles-1} bottles of beer on the wall.
-
+      #{bottles} bottles of beer on the wall, #{bottles} bottles of \
+      beer#{excitement}
+      Take one down and pass it around, #{bottles-1} bottles of beer on the \
+      wall.\n
     LYRICS
   else
     puts <<~LYRICS
-    #{bottles} bottle of beer on the wall, #{bottles} bottle of beer.
-    Take one down and pass it around. No more bottles of beer on the wall.
-
+      #{bottles} bottle of beer on the wall, #{bottles} bottle of beer.
+      Take one down and pass it around. No more bottles of beer on the wall.\n
     LYRICS
   end
   bottles -= 1
