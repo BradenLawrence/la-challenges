@@ -21,3 +21,16 @@ while selection.nil? do
     selection = nil
   end
 end
+
+answer = 1+rand(difficulty-1)
+guess = nil
+while guess != answer do
+  puts "I'm thinking of a number between 1 and #{difficulty}. What is it?"
+  print "> "
+  guess = gets.chomp.to_i
+  if guess == answer
+    puts "Congratulations! You got it right!"
+  else
+    puts "Sorry, try again."
+  end
+end
