@@ -6,7 +6,7 @@ quantity = 0
 while quantity<1 do
   print "> "
   input = gets.chomp.downcase
-  if input == "tons"
+  if input.index("tons") != nil
     quantity = rand(19)+1
   else
     quantity = input.to_i
