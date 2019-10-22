@@ -1,3 +1,5 @@
+require 'pry'
+
 puts <<~INTRO
   Terminal Telepathy
   ------------------
@@ -25,13 +27,16 @@ end
 answer = 1+rand(difficulty-1)
 guess = nil
 attempts = 0
+
+binding.pry
+
 while guess != answer do
   attempts += 1
   puts "I'm thinking of a number between 1 and #{difficulty}. What is it?"
   print "> "
   guess = gets.chomp.to_i
   if guess == answer
-    puts "Congratulations! You got it right in only #{attempts} tries!\n"
+    puts "Congratulations! You got it right!\nNumber of guesses: #{attempts}"
   else
     puts "Sorry, try again."
   end
