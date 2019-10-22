@@ -24,12 +24,14 @@ end
 
 answer = 1+rand(difficulty-1)
 guess = nil
+attempts = 0
 while guess != answer do
+  attempts += 1
   puts "I'm thinking of a number between 1 and #{difficulty}. What is it?"
   print "> "
   guess = gets.chomp.to_i
   if guess == answer
-    puts "Congratulations! You got it right!"
+    puts "Congratulations! You got it right in only #{attempts} tries!\n"
   else
     puts "Sorry, try again."
   end
