@@ -5,9 +5,14 @@ puts "Sure thing! How many #{selection} would you like?"
 quantity = 0
 while quantity<1 do
   print "> "
-  quantity = gets.chomp.to_i
+  input = gets.chomp.downcase
+  if input == "tons"
+    quantity = rand(19)+1
+  else
+    quantity = input.to_i
+  end
   if quantity<1
-    puts "Sorry, you must enter a number greater than zero."
+    puts "Sorry, I can't give an item #{quantity} times. Please try again."
   end
 end
 quantity.times do
