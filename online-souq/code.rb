@@ -57,11 +57,11 @@ while selection != "done" do
       cart << catalog[selection.to_i-1]
       puts "Added #{catalog[selection.to_i-1]}\n\nWould you like anything else?"
     else
-      puts <<~UNAVAILABLE
+      puts <<~SORRY
         Sorry, we don't have that.
         Type 'catalog' to see a list of available items.\n
         Would you like anything else?
-      UNAVAILABLE
+      SORRY
       unavailable << selection
     end
   end
