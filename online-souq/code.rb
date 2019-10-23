@@ -30,7 +30,9 @@ while selection != "done" do
     catalog.each_with_index { |item, i| puts "#{i}) #{item}" }
     puts "\nWhat would you like to purchase?"
   when "done"
-    # Display cart and outro
+    puts "Thanks for shopping with us, #{name}! Here are your items:"
+    puts "\n#{name}'s Shopping Cart\n----------------------"
+    cart.each_with_index { |item, i| puts "#{i}) #{item}" }
   else
     if catalog.any? { |item| item == selection }
       cart << selection
