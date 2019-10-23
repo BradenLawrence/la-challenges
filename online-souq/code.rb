@@ -26,7 +26,13 @@ while selection != "done" do
   selection = gets.chomp
   case selection
   when "catalog"
-    #
+    puts <<~LIST
+      Catalog
+      ----------------------
+      #{catalog.join(",\n")}
+
+      What would you like to purchase?
+    LIST
   when "done"
     # Display cart and outro
   else
