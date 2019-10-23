@@ -48,7 +48,7 @@ while selection != "done" do
       unavailable.each_with_index { |item, i| puts "#{i+1}) #{item}" }
     end
   else
-    if catalog.any? { |item| item == selection }
+    if catalog.include?(selection)
       cart << selection
       puts "Added #{selection}\n\nWould you like anything else?"
     elsif catalog[selection.to_i-1] && selection.to_i > 0
