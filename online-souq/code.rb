@@ -23,7 +23,7 @@ selection = nil
 cart = []
 while selection != "done" do
   print "> "
-  selection = gets.chomp
+  selection = gets.chomp.downcase
   case selection
   when "catalog"
     puts "\nCatalog\n----------------------"
