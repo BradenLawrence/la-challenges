@@ -34,7 +34,13 @@ while selection != "done" do
   else
     if catalog.any? { |item| item == selection }
       cart << selection
-      puts "Added #{selection}\nWould you like anything else?"
+      puts "Added #{selection}\n\nWould you like anything else?"
+    else
+      puts <<~UNAVAILABLE
+        Sorry, we don't have that.
+        Type 'catalog' to see a list of available items.
+        \nWould you like anything else?
+      UNAVAILABLE
     end
   end
 
