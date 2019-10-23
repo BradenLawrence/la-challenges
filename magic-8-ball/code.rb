@@ -65,13 +65,21 @@ puts "* #{sorted.first}\n* #{sorted.last}\n\n"
 
 # Add 1 response of your choosing to the current list
 puts %W(Do not despair! You are not doomed to this fate!\n
-      Watch as I bend the fabric of time and space to my will, \n
-      and create a new possible future!\n\n).join(" ")
+        Watch as I bend the fabric of time and space to my will, \n
+        and create a new possible future!).join(" ")
 magic = "You will win the lottery!"
 puts "~ '#{magic}' ~\n\n"
 responses << magic
 
 # Concat an array of 3 additional responses to the current list
-
+puts %W(I'm just getting started! Here are three more possible futures that I
+        will grant you!).join(" ")
+sorcery = [
+    "You will find a puppy!",
+    "You will find true love!",
+    "You will find sasquatch!"
+  ]
+puts "~ '#{sorcery}' ~"
+responses += sorcery
 
 # Confirm the correct number of responses have been stored by printing the number to the console (`24`)
