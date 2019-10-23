@@ -54,10 +54,14 @@ puts "Responses including 'no' or 'not': #{negative.length}\n\n"
 
 # Output the alphabetized list of responses
 puts "Behold the other fates that might have befallen you:"
-puts responses.sort
+sorted = responses.sort
+sorted.each { |fate| puts "* #{fate}" }
+puts
 
 # Output the first and last responses from the alphabetized list
-
+puts %W(Take special note of these two, \nfor they are the first and last of
+         your possible fates).join(" ")
+puts "* #{sorted.first}\n* #{sorted.last}\n\n"
 
 # Add 1 response of your choosing to the current list
 
