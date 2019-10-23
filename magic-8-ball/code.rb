@@ -30,9 +30,9 @@ puts %W(Greetings! I am Octavius Ball, reknowned fortune teller! \nI knew you
 puts "Ask me what tidings the future brings..."
 print "> "
 question = gets.chomp.downcase
-puts question
-# Output a random response to the user's question
 
+# Output a random response to the user's question
+puts "Ahh... Very interesting! Your future is sealed:\n#{responses.sample}"
 
 # Output the number of responses that include the word "yes"
 
