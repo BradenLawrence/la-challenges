@@ -34,6 +34,7 @@ while selection != "done" do
   else
     if catalog.any? { |item| item == selection }
       cart << selection
+      puts "Added #{selection}\nWould you like anything else?"
     end
   end
 
