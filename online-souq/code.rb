@@ -53,7 +53,7 @@ while selection != "done" do
     if catalog.any? { |item| item == selection }
       cart << selection
       puts "Added #{selection}\n\nWould you like anything else?"
-    elsif catalog[selection.to_i-1] && selection.to_i != 0
+    elsif catalog[selection.to_i-1] && selection.to_i > 0
       cart << catalog[selection.to_i-1]
       puts "Added #{catalog[selection.to_i-1]}\n\nWould you like anything else?"
     else
