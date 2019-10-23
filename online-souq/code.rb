@@ -26,17 +26,15 @@ while selection != "done" do
   selection = gets.chomp
   case selection
   when "catalog"
-    puts <<~LIST
-      Catalog
-      ----------------------
-      #{catalog.join(",\n")}
-
-      What would you like to purchase?
-    LIST
+    puts "\nCatalog\n----------------------"
+    catalog.each_with_index do |item, i|
+        puts "#{i}) #{item}"
+    end
+    puts "\nWhat would you like to purchase?"
   when "done"
     # Display cart and outro
   else
-    # Check if in catalog and add to cart
+
   end
 
 end
