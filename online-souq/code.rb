@@ -27,19 +27,22 @@ while selection != "done" do
   case selection
   when "catalog"
     puts "\nCatalog\n----------------------"
-    catalog.each_with_index { |item, i| puts "#{i}) #{item}" }
-    puts "\nWhat would you like to purchase?"
+    catalog.each_with_index { |item, i| puts "#{i+1}) #{item}" }
+    puts <<~ITEMS
+      Items can be added to your cart by name or by number.
+      What would you like to purchase?
+    ITEMS
   when "done"
     puts "Thanks for shopping with us, #{name}! Here are your items:"
     puts "\n#{name}'s Shopping Cart\n----------------------"
-    cart.each_with_index { |item, i| puts "#{i}) #{item}" }
+    cart.each_with_index { |item, i| puts "#{i+1}) #{item}" }
   else
     if catalog.any? { |item| item == selection }
       cart << selection
       puts "Added #{selection}\n\nWould you like anything else?"
-    elsif catalog[selection.to_i]
-      cart << catalog[selection.to_i]
-      puts "Added #{catalog[selection.to_i]}\n\nWould you like anything else?"
+    elsif catalog[selection.to_i-1]
+      cart << catalog[selection.to_i-1]
+      puts "Added #{catalog[selection.to_i-1]}\n\nWould you like anything else?"
     else
       puts <<~UNAVAILABLE
         Sorry, we don't have that.
