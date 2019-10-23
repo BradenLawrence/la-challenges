@@ -21,6 +21,7 @@ puts <<~PROMPT
 PROMPT
 selection = nil
 cart = []
+unavailable = []
 while selection != "done" do
   print "> "
   selection = gets.chomp.downcase
@@ -36,11 +37,22 @@ while selection != "done" do
     puts "Thanks for shopping with us, #{name}! Here are your items:"
     puts "\n#{name}'s Shopping Cart\n----------------------"
     cart.each_with_index { |item, i| puts "#{i+1}) #{item}" }
+    unless unavailable.empty?
+      puts <<~MISSING_ITEMS
+
+        We are sorry that a few of the items you searched for were unavailable.
+        We will try to add them to our stocks in the near future!
+
+        #{name}'s Item Requests
+        ----------------------
+      MISSING_ITEMS
+      unavailable.each_with_index { |item, i| puts "#{i+1}) #{item}" }
+    end
   else
     if catalog.any? { |item| item == selection }
       cart << selection
       puts "Added #{selection}\n\nWould you like anything else?"
-    elsif catalog[selection.to_i-1]
+    elsif catalog[selection.to_i-1] && selection.to_i != 0
       cart << catalog[selection.to_i-1]
       puts "Added #{catalog[selection.to_i-1]}\n\nWould you like anything else?"
     else
@@ -49,6 +61,7 @@ while selection != "done" do
         Type 'catalog' to see a list of available items.\n
         Would you like anything else?
       UNAVAILABLE
+      unavailable << selection
     end
   end
 
