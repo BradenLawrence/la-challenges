@@ -40,8 +40,8 @@ while selection != "done" do
     else
       puts <<~UNAVAILABLE
         Sorry, we don't have that.
-        Type 'catalog' to see a list of available items.
-        \nWould you like anything else?
+        Type 'catalog' to see a list of available items.\n
+        Would you like anything else?
       UNAVAILABLE
     end
   end
