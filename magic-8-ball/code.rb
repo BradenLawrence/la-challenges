@@ -71,7 +71,7 @@ sorcery = [
     "You will find sasquatch!"
   ]
 puts "~ '#{sorcery}' ~\n\n"
-responses += sorcery
+responses.concat(sorcery)
 
 puts %W(Just to prove that I have done as I said. Behold the increased scope of
         your potential future!\nTotal responses: #{responses.length}).join(" ")
