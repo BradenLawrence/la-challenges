@@ -37,6 +37,9 @@ while selection != "done" do
     if catalog.any? { |item| item == selection }
       cart << selection
       puts "Added #{selection}\n\nWould you like anything else?"
+    elsif catalog[selection.to_i]
+      cart << catalog[selection.to_i]
+      puts "Added #{catalog[selection.to_i]}\n\nWould you like anything else?"
     else
       puts <<~UNAVAILABLE
         Sorry, we don't have that.
