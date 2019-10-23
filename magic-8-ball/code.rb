@@ -30,6 +30,8 @@ puts %W(Greetings! I am Octavius Ball, reknowned fortune teller! \nI knew you
 puts "What do you wish to know?"
 print "> "
 question = gets.chomp.downcase
+puts "Casting your question into the threads of fate...\n\n"
+puts " ~ '#{question}' ~\n\n"
 
 # Output a random response to the user's question
 puts "Your fate is sealed!"
@@ -38,20 +40,21 @@ print "Hmm"
   sleep(0.25)
   print "."
 end
-puts "\n#{responses.sample}"
+puts "\n#{responses.sample}\n\n"
 
 # Output the number of responses that include the word "yes"
 positive = responses.select { |response| response.downcase.include? "yes" }
-puts "Responses including 'yes': #{positive.length}"
+puts "Responses including 'yes': #{positive.length}\n\n"
 
 # Output the number of responses that include the words "no" or "not"
 negative = responses.select do |response|
   response.downcase.include?("no") || response.downcase.include?("not")
 end
-puts "Responses including 'no' or 'not': #{negative.length}"
+puts "Responses including 'no' or 'not': #{negative.length}\n\n"
 
 # Output the alphabetized list of responses
-
+puts "Behold the other fates that might have befallen you:"
+puts responses.sort
 
 # Output the first and last responses from the alphabetized list
 
