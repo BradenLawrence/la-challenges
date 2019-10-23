@@ -79,7 +79,9 @@ sorcery = [
     "You will find true love!",
     "You will find sasquatch!"
   ]
-puts "~ '#{sorcery}' ~"
+puts "~ '#{sorcery}' ~\n\n"
 responses += sorcery
 
 # Confirm the correct number of responses have been stored by printing the number to the console (`24`)
+puts %W(Just to prove that I have done as I said. Behold the increased scope of
+        your potential future!\nTotal responses: #{responses.length}).join(" ")
