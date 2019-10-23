@@ -60,11 +60,16 @@ puts
 
 # Output the first and last responses from the alphabetized list
 puts %W(Take special note of these two, \nfor they are the first and last of
-         your possible fates).join(" ")
+        your possible fates).join(" ")
 puts "* #{sorted.first}\n* #{sorted.last}\n\n"
 
 # Add 1 response of your choosing to the current list
-
+puts %W(Do not despair! You are not doomed to this fate!\n
+      Watch as I bend the fabric of time and space to my will, \n
+      and create a new possible future!\n\n).join(" ")
+magic = "You will win the lottery!"
+puts "~ '#{magic}' ~\n\n"
+responses << magic
 
 # Concat an array of 3 additional responses to the current list
 
