@@ -13,20 +13,20 @@ catalog =
    "frankincense",  "moon dust",  "saffron",  "glass spice jar",  "red fabric",
    "orange fabric",  "handicrafts",  "small Persian rug",
    "used medium space suit",  "heffalump shag rug",  "woozle hide purse"]
-puts <<~PROMPT.squeeze(' ')
+puts <<~PROMPT
   Nice to meet you #{name}!
   To see a list of available items, type 'catalog'.
   When you are done shopping, type 'done'.
   What would you like to purchase?
 PROMPT
 selection = nil
-cart = new Array
+cart = []
 while selection != "done" do
   print "> "
   selection = gets.chomp
   case selection
-  when "list"
-    # List catalog
+  when "catalog"
+    #
   when "done"
     # Display cart and outro
   else
