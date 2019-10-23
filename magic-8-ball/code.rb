@@ -23,15 +23,15 @@ responses = [
 
 # Confirm the correct number of responses have been stored by printing the number to the console (`20`)
 puts %W(Greetings! I am Octavius Ball, reknowned fortune teller! \nI knew you
-  would be stopping by, so I have prepared a dazzling array of
-  #{responses.length} possible futures for you.).join(" ")
+        would be stopping by, so I have prepared a dazzling array of
+        #{responses.length} possible futures for you.).join(" ")
 
 # Ask the user what their question is, and store it as a variable called `question`
 puts "What do you wish to know?"
 print "> "
 question = gets.chomp.downcase
-puts "Casting your question into the threads of fate...\n\n"
-puts " ~ '#{question}' ~\n\n"
+puts %W(Casting your question into the threads of fate...\n\n
+        ~ '#{question}' ~\n\n).join(" ")
 
 # Output a random response to the user's question
 puts "Your fate is sealed!"
