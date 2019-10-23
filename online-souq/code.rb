@@ -32,7 +32,9 @@ while selection != "done" do
   when "done"
     # Display cart and outro
   else
-
+    if catalog.any? { |item| item == selection }
+      cart << selection
+    end
   end
 
 end
