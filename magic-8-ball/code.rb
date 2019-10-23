@@ -35,13 +35,14 @@ question = gets.chomp.downcase
 puts "Your fate is sealed!"
 print "Hmm"
 5.times do
-  sleep(0.5)
+  sleep(0.25)
   print "."
 end
 puts "\n#{responses.sample}"
 
 # Output the number of responses that include the word "yes"
-
+positive = responses.select { |response| response.downcase.include? "yes" }
+puts "Responses including 'yes': #{positive.length}"
 
 # Output the number of responses that include the words "no" or "not"
 
