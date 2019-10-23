@@ -27,9 +27,7 @@ while selection != "done" do
   case selection
   when "catalog"
     puts "\nCatalog\n----------------------"
-    catalog.each_with_index do |item, i|
-        puts "#{i}) #{item}"
-    end
+    catalog.each_with_index { |item, i| puts "#{i}) #{item}" }
     puts "\nWhat would you like to purchase?"
   when "done"
     # Display cart and outro
