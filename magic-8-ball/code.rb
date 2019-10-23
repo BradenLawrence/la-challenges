@@ -22,11 +22,15 @@ responses = [
 ]
 
 # Confirm the correct number of responses have been stored by printing the number to the console (`20`)
-
+puts %W(Greetings! I am Octavius Ball, reknowned fortune teller! \nI knew you
+  would be stopping by, so I have prepared a dazzling array of
+  #{responses.length} possible futures for you.).join(" ")
 
 # Ask the user what their question is, and store it as a variable called `question`
-
-
+puts "Ask me what tidings the future brings..."
+print "> "
+question = gets.chomp.downcase
+puts question
 # Output a random response to the user's question
 
 
