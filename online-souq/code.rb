@@ -30,6 +30,7 @@ while selection != "done" do
     puts "\nCatalog\n----------------------"
     catalog.each_with_index { |item, i| puts "#{i+1}) #{item}" }
     puts <<~ITEMS
+
       Items can be added to your cart by name or by number.
       What would you like to purchase?
     ITEMS
