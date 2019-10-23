@@ -45,7 +45,10 @@ positive = responses.select { |response| response.downcase.include? "yes" }
 puts "Responses including 'yes': #{positive.length}"
 
 # Output the number of responses that include the words "no" or "not"
-
+negative = responses.select do |response|
+  response.downcase.include?("no") || response.downcase.include?("not")
+end
+puts "Responses including 'no' or 'not': #{negative.length}"
 
 # Output the alphabetized list of responses
 
