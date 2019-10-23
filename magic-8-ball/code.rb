@@ -27,12 +27,18 @@ puts %W(Greetings! I am Octavius Ball, reknowned fortune teller! \nI knew you
   #{responses.length} possible futures for you.).join(" ")
 
 # Ask the user what their question is, and store it as a variable called `question`
-puts "Ask me what tidings the future brings..."
+puts "What do you wish to know?"
 print "> "
 question = gets.chomp.downcase
 
 # Output a random response to the user's question
-puts "Ahh... Very interesting! Your future is sealed:\n#{responses.sample}"
+puts "Your fate is sealed!"
+print "Hmm"
+5.times do
+  sleep(0.5)
+  print "."
+end
+puts "\n#{responses.sample}"
 
 # Output the number of responses that include the word "yes"
 
