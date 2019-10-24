@@ -25,3 +25,15 @@ puts "3rd item:\n#{crypt_of_civilization[2]}\n\n"
 puts "2nd to last item:\n#{crypt_of_civilization[-2]}\n\n"
 
 puts "Index of Toast-O-Lator:\n#{crypt_of_civilization.index("Toast-O-Lator")}\n\n"
+
+# Does the array contain "Container of soda"?
+puts %W('Container of soda' present?\n
+        #{crypt_of_civilization.include?("Container of soda")}\n\n).join(" ")
+
+# Does the array contain "Toast-O-Lator"?
+puts %W('Toast-O-Lator' present?\n
+        #{crypt_of_civilization.include?("Toast-O-Lator")}\n\n).join(" ")
+
+# Does the array contain "Plastic bird"?
+puts %W('Plastic bird' present?\n
+        #{crypt_of_civilization.include?("Plastic bird")}\n\n).join(" ")
