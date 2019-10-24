@@ -3,11 +3,7 @@ excitement = nil
 
 while bottles>0 do
   if bottles>1
-    if bottles % 10 == 0
-      excitement = "!"
-    else
-      excitement = "."
-    end
+    excitement = bottles % 10 == 0 ? "!" : "."
     puts <<~LYRICS.squeeze(" ")
       #{bottles} bottles of beer on the wall, #{bottles} bottles of \
       beer#{excitement}
