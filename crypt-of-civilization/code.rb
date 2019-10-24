@@ -41,3 +41,16 @@ puts %W(Sort by length:\n
 puts "Sort alphabetically:\n#{crypt_of_civilization.sort}\n\n"
 
 puts "Sort alphabetically:\n#{crypt_of_civilization.sort.reverse}\n\n"
+
+puts "Print using 'while':"
+i=0
+while i<crypt_of_civilization.length do
+  puts "#{i}) #{crypt_of_civilization[i]}"
+  i += 1
+end
+puts "\n"
+
+puts "Print using 'each':"
+crypt_of_civilization.each do |item|
+  puts "* #{item}"
+end
