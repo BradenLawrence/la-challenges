@@ -10,6 +10,7 @@ while singing do
          #{bottles.is_a?(String) ? bottles.downcase : bottles} bottle#{plural}
          of beer#{excitement}).join(" ")
     puts verse1
+
     verse2 = nil
     if bottles.is_a?(Numeric)
       verse2 = "Take one down and pass it around, "
@@ -19,6 +20,7 @@ while singing do
       singing = false
     end
     print verse2
+
     bottles = bottles > 1 ? bottles - 1 : "No more"
     plural = bottles == 1 ? "" : "s"
     excitement = bottles % 10 == 0 ? "!" : "."
