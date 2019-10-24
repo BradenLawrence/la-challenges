@@ -62,5 +62,7 @@ puts animations.select { |show| show.downcase.include?("dog") }
 puts "\n"
 
 # 3. We are very picky when it comes to our funny tv shows. Write a line of code that will return every show in our `comedies` array that does *NOT* have the word `"Cat"` in it.
-#
+puts "Feline-free:"
+puts comedies.reject { |show| show.downcase.include?("cat") }
+
 # 4. As humans, we prefer order, so we want to get a head start in alphabetizing our pet show collection. Let's take a look at our `all_shows` array and `map` out the first character of every show. In other words, write a line of code that will return an array of every show's first letter in our `all_shows` array.
