@@ -12,23 +12,16 @@ extra = ["Container of soda", "Lionel model train set", "Ingraham pocket watch"]
 
 crypt_of_civilization.concat(extra)
 
-# How many items are in the array?
 puts "Items in the crypt:\n#{crypt_of_civilization.length}\n\n"
 
-# What is the first item in the array?
 puts "First item:\n#{crypt_of_civilization.first}\n\n"
 
-# What is the last item in the array?
 puts "Last item:\n#{crypt_of_civilization.last}\n\n"
 
-# What is the second item in the array?
 puts "2nd item:\n#{crypt_of_civilization[1]}\n\n"
 
-# What is the third item in the array?
 puts "3rd item:\n#{crypt_of_civilization[2]}\n\n"
 
-# What is the second from last item in the array?
 puts "2nd to last item:\n#{crypt_of_civilization[-2]}\n\n"
 
-# What is the index of "Toast-O-Lator"?
 puts "Index of Toast-O-Lator:\n#{crypt_of_civilization.index("Toast-O-Lator")}\n\n"
