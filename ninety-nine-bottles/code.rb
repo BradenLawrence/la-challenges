@@ -1,5 +1,4 @@
 bottles = 99
-excitement = nil
 
 while bottles>0 do
   if bottles>1
