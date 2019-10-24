@@ -1,21 +1,29 @@
-bottles = 99
+initial_quantity = 99
+bottles = initial_quantity
 plural = "s"
+excitement = "."
+singing = true
 
-while bottles>0 do
-    excitement = bottles % 10 == 0 ? "!" : "."
-    puts <<~VERSE1.squeeze(" ")
-      #{bottles} bottle#{plural} of beer on the wall, #{bottles} \
-      bottle#{plural} of beer#{excitement}
-    VERSE1
-    bottles -= 1
+while singing do
+    verse1 =
+      %W(#{bottles} bottle#{plural} of beer on the wall,
+         #{bottles.is_a?(String) ? bottles.downcase : bottles} bottle#{plural}
+         of beer#{excitement}).join(" ")
+    puts verse1
+    verse2 = nil
+    if bottles.is_a?(Numeric)
+      verse2 = "Take one down and pass it around, "
+    else
+      verse2 = "Go to the store and buy some more, "
+      bottles = initial_quantity + 1
+      singing = false
+    end
+    print verse2
+    bottles = bottles > 1 ? bottles - 1 : "No more"
     plural = bottles == 1 ? "" : "s"
-    puts <<~VERSE2.squeeze(" ")
-      Take one down and pass it around, #{bottles} bottle#{plural} of beer on \
-      the wall.\n
-    VERSE2
+    excitement = bottles % 10 == 0 ? "!" : "."
+    verse3 =
+      %W(#{bottles.is_a?(String) ? bottles.downcase : bottles} bottle#{plural}
+         of beer on the wall.\n\n).join(" ")
+    print verse3
 end
-
-puts <<~ENDING
-  No more bottles of beer on the wall, no more bottles of beer.
-  Go to the store and buy some more, 99 bottles of beer on the wall.
-ENDING
