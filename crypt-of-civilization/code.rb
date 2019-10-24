@@ -54,3 +54,24 @@ puts "Print using 'each':"
 crypt_of_civilization.each do |item|
   puts "* #{item}"
 end
+puts "\n"
+
+# the first item
+puts "Removing first item:"
+puts crypt_of_civilization.shift
+puts "\n"
+
+# the last item
+puts "Removing last item:"
+puts crypt_of_civilization.pop
+puts "\n"
+
+# "set of scales"
+puts "Removing 'Set of scales':"
+puts crypt_of_civilization.delete("Set of scales")
+puts "\n"
+
+# "sample of aluminum foil"
+puts "Removing 'Sample of aluminum foil':"
+puts crypt_of_civilization.delete("Sample of aluminum foil")
+puts "\n"
