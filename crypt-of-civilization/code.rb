@@ -34,3 +34,13 @@ puts %W('Toast-O-Lator' present?\n
 
 puts %W('Plastic bird' present?\n
         #{crypt_of_civilization.include?("Plastic bird")}\n\n).join(" ")
+
+# By word length
+puts %W(Sort by length:\n
+        #{crypt_of_civilization.sort_by { |item| item.length } }\n\n).join(" ")
+
+# In alphabetical order
+puts "Sort alphabetically:\n#{crypt_of_civilization.sort}\n\n"
+
+# In reverse alphabetical order
+puts "Sort alphabetically:\n#{crypt_of_civilization.sort.reverse}\n\n"
