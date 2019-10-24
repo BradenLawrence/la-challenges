@@ -54,9 +54,13 @@ all_shows = [
 # 1. We heard raving reviews about all the llama dramas on Petflix! Let's write a line of code to return every show in the `dramas` array that has the word `"Llama"` in it.
 puts "Drama Llamas:"
 puts dramas.select { |show| show.downcase.include?("llama") }
+puts "\n"
 
 # 2. Our significant other is a significant dog person. Let's write a line of code to return every show in our `animations` array that has the word `"Dog"` in it.
-#
+puts "Canine Cartoons:"
+puts animations.select { |show| show.downcase.include?("dog") }
+puts "\n"
+
 # 3. We are very picky when it comes to our funny tv shows. Write a line of code that will return every show in our `comedies` array that does *NOT* have the word `"Cat"` in it.
 #
 # 4. As humans, we prefer order, so we want to get a head start in alphabetizing our pet show collection. Let's take a look at our `all_shows` array and `map` out the first character of every show. In other words, write a line of code that will return an array of every show's first letter in our `all_shows` array.
