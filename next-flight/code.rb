@@ -26,9 +26,9 @@ puts %Q(
 )
 
 user_depart = nil
-while !user_depart || user_depart < 0
+while user_depart.nil? || user_depart < 0
   print "> "
-  user_depart = Float(gets) rescue false
+  user_depart = Float(gets) rescue nil
   if !user_depart || user_depart < 0
     puts "Sorry, that time is invalid. Please try again."
   else
