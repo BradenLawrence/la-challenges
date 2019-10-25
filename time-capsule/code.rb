@@ -26,9 +26,24 @@ while adding_items
   when "FINISHED"
     # Give the user an option to type the command "FINISHED" which instructs the program to stop asking the user to add more items.
     adding_items = false
+  when ""
   else
     # If they entered an item, store that item in the time capsule.
-    time_capsule << input
+    puts "How many would you like to add?"
+    entering_qty = true
+    item = Array.new
+    while entering_qty
+      print "#{input} quantity: "
+      quantity = gets.chomp.to_i
+      if quantity <= 0
+        puts "Sorry, that's an invalid amount. Please try again."
+      else
+        item << input
+        item << quantity
+        entering_qty = false
+      end
+    end
+    time_capsule << item
   end
 end
 
@@ -37,6 +52,6 @@ users_box = %Q(
   #{name}'s Chrono-box Contents
   ------------------------------------------\n)
 time_capsule.each_with_index do |item, i|
-  users_box << "  #{i+1}) #{item}\n"
+  users_box << "  #{i+1}) #{item[0]}  x#{item[1]}\n"
 end
 puts users_box
