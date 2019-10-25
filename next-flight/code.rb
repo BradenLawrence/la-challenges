@@ -17,4 +17,7 @@ while !user_depart || user_depart < 0
 end
 
 next_flight = flights.detect { |i| i > user_depart }
-puts "You should catch Flight #{flights.index(next_flight)+1} at #{next_flight}"
+puts %W(
+  You should catch Flight \##{flights.index(next_flight)+1}
+  leaving at #{next_flight}
+).join(" ")
