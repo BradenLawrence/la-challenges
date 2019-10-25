@@ -1,5 +1,5 @@
 flights = [2,5,7.5,8.5,9,10,11.5,13.5,14.5,17,18,19,24]
-journey = <<~LYRICS
+journey = %Q(
   ***DON'T STOP...BELIEVIN'!***
 
   Just a small town girl
@@ -18,7 +18,7 @@ journey = <<~LYRICS
   Their shadows searching in the night
   Streetlights people, living just to find emotion
   Hiding, somewhere in the night.
-LYRICS
+)
 
 puts %Q(
   Howdy! Welcome to Crazy Neds Discount Space Travel!
@@ -41,3 +41,6 @@ puts %W(
   You should catch Flight \##{flights.index(next_flight)+1}
   leaving at #{next_flight}
 ).join(" ")
+if flights.index(next_flight) == 12
+  puts journey
+end
