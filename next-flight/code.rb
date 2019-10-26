@@ -37,7 +37,7 @@ while depart_prompt
   end
 end
 
-next_flight = flights.detect { |i| i > user_depart }
+next_flight = flights.detect { |i| i >= user_depart }
 puts %W(
   You should catch Flight \##{flights.index(next_flight)+1}
   leaving at #{next_flight}
