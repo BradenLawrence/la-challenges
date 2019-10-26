@@ -26,13 +26,14 @@ puts %Q(
 )
 
 user_depart = nil
-while user_depart.nil? || user_depart < 0
+depart_prompt = true
+while depart_prompt
   print "> "
   user_depart = Float(gets) rescue nil
-  if !user_depart || user_depart < 0
+  if user_depart.nil? || !user_depart.between?(0,24)
     puts "Sorry, that time is invalid. Please try again."
   else
-    user_depart = user_depart.round(2)
+    depart_prompt = false
   end
 end
 
