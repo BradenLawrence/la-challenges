@@ -1,4 +1,6 @@
 flights = [2,5,7.5,8.5,9,10,11.5,13.5,14.5,17,18,19,24]
+earliest = flights.min
+latest = flights.max
 journey = %Q(
   ***DON'T STOP...BELIEVIN'!***
 
@@ -30,7 +32,7 @@ depart_prompt = true
 while depart_prompt
   print "> "
   user_depart = Float(gets) rescue nil
-  if user_depart.nil? || !user_depart.between?(0,24)
+  if user_depart.nil? || !user_depart.between?(earliest, latest)
     puts "Sorry, that time is invalid. Please try again."
   else
     depart_prompt = false
