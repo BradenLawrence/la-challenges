@@ -20,10 +20,14 @@ let team2 = {
 
 // * calculate the average score for each team and for both teams together
 // * round the averages to the nearest integer for display
-let team1_scores = Object.values(team1.scores)
-let team1_avg =  team1_scores.reduce((total, current) => {
-  return total += current
-}, 0) / team1_scores.length)
+const average = (obj) => {
+  let scores = Object.values(obj)
+  return scores.reduce((total, current) => {
+    return total += current
+  }, 0) / scores.length
+}
 
+console.log(average(team1.scores))
+console.log(average(team2.scores))
 
 // * calculate the number of explorers passing the quiz (grade >= 70%)
