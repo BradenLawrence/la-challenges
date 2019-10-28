@@ -1,0 +1,7 @@
+---
+title: "Odd Numbers JS"
+type: "exercise"
+description: "Print all the odd numbers between 1 and 100."
+tags: "javascript, loops"
+ignore:
+- "odd-numbers-js.md"
