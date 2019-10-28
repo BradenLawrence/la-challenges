@@ -62,6 +62,23 @@ console.log(`* ${sorted[0]}`)
 console.log(`* ${sorted[sorted.length-1]}`)
 
 // Delete two of the negative responses
+console.log(`Do not despair! You are not doomed to this fate!
+Watch as I bend the fabric of time and space to my will, and remove two of \
+your negative fates:`)
+let fatesToRemove = 2
+let randomNegatives = []
+while(randomNegatives.length < fatesToRemove) {
+  let random = negative[Math.floor(Math.random() * negative.length - 1)]
+  if(randomNegatives.indexOf(random) === -1) {
+    randomNegatives.push(random)
+  }
+}
+console.log(`Fates to remove:`)
+console.log(randomNegatives)
+randomNegatives.forEach(negative => {
+  sorted.splice(sorted.indexOf(negative), 1)
+})
+console.log(sorted)
 
 // Reassign 'Ask again later' to the beginning of the array
 
