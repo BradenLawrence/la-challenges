@@ -48,13 +48,18 @@ let negative = responses.filter(response => {
 console.log(`Responses including 'no' or 'not': ${negative.length}`)
 
 // Output the alphabetized list of responses
-let sorted = responses.sort().reduce((list, response) => {
+let sorted = responses.sort()
+let alpha_list = sorted.reduce((list, response) => {
   return list += `* ${response}\n`
 }, ``)
 console.log(`Behold the other fates that might have befallen you:
-${sorted}`)
+${alpha_list}`)
 
 // Output the first and last responses from the alphabetized list
+console.log(`Take special note of these two, for they are the first and last of\
+ your possible fates`)
+console.log(`* ${sorted[0]}`)
+console.log(`* ${sorted[sorted.length-1]}`)
 
 // Delete two of the negative responses
 
