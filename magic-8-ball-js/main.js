@@ -109,3 +109,5 @@ that I will grant you!\n${sorcery}`)
 console.log(responses.concat(sorcery))
 
 // Confirm the correct number of responses have been removed and added by printing the number of responses to the console (`22`)
+console.log(`Behold the new scope of possible futures you hold: 
+${responses.length}`)
