@@ -94,7 +94,8 @@ let sorcery = [
 ]
 console.log(`I'm just getting started! Here are three more possible futures \
 that I will grant you!\n${sorcery}`)
-console.log(responses.concat(sorcery))
+responses = responses.concat(sorcery)
+console.log(responses)
 
 console.log(`Behold the new scope of possible futures you hold:
 ${responses.length}`)
