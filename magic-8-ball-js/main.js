@@ -81,7 +81,17 @@ randomNegatives.forEach(negative => {
 console.log(sorted)
 
 // Reassign 'Ask again later' to the beginning of the array
-
+console.log(`Watch as I shuffle your fates as if they were a deck of cards!`)
+console.log(`Position of 'Ask again later': \
+${sorted.indexOf('Ask again later')}\n\t~ MAGIC ~`)
+sorted.unshift(
+  sorted.splice(
+    sorted.indexOf('Ask again later'), 1
+  )[0]
+)
+console.log(`Position of 'Ask again later': \
+${sorted.indexOf('Ask again later')}`)
+console.log(sorted)
 // Add 1 response of your choosing to the current list
 
 // Concat an **array** of 3 additional responses to the current list
