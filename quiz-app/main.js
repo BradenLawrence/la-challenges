@@ -22,9 +22,9 @@ let team2 = {
 // * round the averages to the nearest integer for display
 const average = (obj) => {
   let scores = Object.values(obj)
-  return scores.reduce((total, current) => {
+  return Math.floor(scores.reduce((total, current) => {
     return total += current
-  }, 0) / scores.length
+  }, 0) / scores.length)
 }
 
 console.log(average(team1.scores))
