@@ -48,7 +48,7 @@ let negative = responses.filter(response => {
 console.log(`Responses including 'no' or 'not': ${negative.length}`)
 
 // Output the alphabetized list of responses
-let sorted = responses.sort()
+let sorted = responses.concat().sort()
 let alpha_list = sorted.reduce((list, response) => {
   return list += `* ${response}\n`
 }, ``)
