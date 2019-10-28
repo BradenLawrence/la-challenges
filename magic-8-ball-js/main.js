@@ -93,7 +93,19 @@ console.log(`Position of 'Ask again later': \
 ${responses.indexOf('Ask again later')}`)
 console.log(responses)
 // Add 1 response of your choosing to the current list
+console.log(`Watch as I include a new possible future for you! \
+'You will win the lottery!'`)
+responses.push('You will win the lottery!')
+console.log(responses)
 
 // Concat an **array** of 3 additional responses to the current list
+let sorcery = [
+  "You will find a puppy!",
+  "You will find true love!",
+  "You will find sasquatch!"
+]
+console.log(`I'm just getting started! Here are three more possible futures \
+that I will grant you!\n${sorcery}`)
+console.log(responses.concat(sorcery))
 
 // Confirm the correct number of responses have been removed and added by printing the number of responses to the console (`22`)
