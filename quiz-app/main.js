@@ -19,8 +19,6 @@ let teams = [
   }
 ]
 
-// * calculate the average score for each team and for both teams together
-// * round the averages to the nearest integer for display
 const average = (obj) => {
   let scores = Object.values(obj)
   return Math.floor(scores.reduce((total, current) => {
@@ -28,7 +26,6 @@ const average = (obj) => {
   }, 0) / scores.length)
 }
 
-// * calculate the number of explorers passing the quiz (grade >= 70%)
 const passing = (obj) => {
   let scores = Object.values(obj)
   return Math.floor(scores.reduce((total, current) => {
