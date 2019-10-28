@@ -1,0 +1,7 @@
+---
+title: "Magic 8-Ball JS"
+type: "exercise"  # challenge, exercise, article, video
+description: "Re-create this fortune telling toy in JavaScript!"
+tags: "javascript, arrays"
+ignore:
+- "magic-8-ball-js.md"
