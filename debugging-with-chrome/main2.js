@@ -12,5 +12,6 @@ let affirmations = [
 let mainDiv = document.getElementById('main')
 affirmations.forEach(phrase => {
   mainDiv.innerHTML += `${phrase}  --  `
+  debugger;
   console.log(phrase)
 })
