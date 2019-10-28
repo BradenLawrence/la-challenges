@@ -48,8 +48,8 @@ let negative = responses.filter(response => {
 console.log(`Responses including 'no' or 'not': ${negative.length}`)
 
 // Output the alphabetized list of responses
-let sorted = responses.concat().sort()
-let alpha_list = sorted.reduce((list, response) => {
+responses.sort()
+let alpha_list = responses.reduce((list, response) => {
   return list += `* ${response}\n`
 }, ``)
 console.log(`Behold the other fates that might have befallen you:
@@ -58,8 +58,8 @@ ${alpha_list}`)
 // Output the first and last responses from the alphabetized list
 console.log(`Take special note of these two, for they are the first and last of\
  your possible fates`)
-console.log(`* ${sorted[0]}`)
-console.log(`* ${sorted[sorted.length-1]}`)
+console.log(`* ${responses[0]}`)
+console.log(`* ${responses[responses.length-1]}`)
 
 // Delete two of the negative responses
 console.log(`Do not despair! You are not doomed to this fate!
@@ -76,22 +76,22 @@ while(randomNegatives.length < fatesToRemove) {
 console.log(`Fates to remove:`)
 console.log(randomNegatives)
 randomNegatives.forEach(negative => {
-  sorted.splice(sorted.indexOf(negative), 1)
+  responses.splice(responses.indexOf(negative), 1)
 })
-console.log(sorted)
+console.log(responses)
 
 // Reassign 'Ask again later' to the beginning of the array
 console.log(`Watch as I shuffle your fates as if they were a deck of cards!`)
 console.log(`Position of 'Ask again later': \
-${sorted.indexOf('Ask again later')}\n\t~ MAGIC ~`)
-sorted.unshift(
-  sorted.splice(
-    sorted.indexOf('Ask again later'), 1
+${responses.indexOf('Ask again later')}\n\t~ MAGIC ~`)
+responses.unshift(
+  responses.splice(
+    responses.indexOf('Ask again later'), 1
   )[0]
 )
 console.log(`Position of 'Ask again later': \
-${sorted.indexOf('Ask again later')}`)
-console.log(sorted)
+${responses.indexOf('Ask again later')}`)
+console.log(responses)
 // Add 1 response of your choosing to the current list
 
 // Concat an **array** of 3 additional responses to the current list
