@@ -43,21 +43,45 @@ let quotes = [
   ]
 ]
 
-// Implement these functions to answer the questions below
-let numberOfQuotes = (name) => {
-
+const getCrew = (str) => {
+  return crewMembers.indexOf(str)
 }
 
-let whoSaidThis = (quote) => {
+const getQuotes = (str) => {
+  return quotes[getCrew(str)]
+}
 
+// Implement these functions to answer the questions below
+let numberOfQuotes = (name) => {
+  return quotes[getCrew(name)].length
+}
+
+let whoSaidThis = (str) => {
+  let crewIndex
+  quotes.forEach((group, i) => {
+    if(group.includes(str)) {
+      crewIndex = i
+    }
+  })
+  return crewMembers[crewIndex]
 }
 
 let longestQuote = (name) => {
-
+  let longest = ""
+  getQuotes(name).forEach(quote => {
+    if(quote.length > longest.length) {
+      longest = quote
+    }
+  })
+  return longest
 }
 
 let averageQuoteLength = (name) => {
-
+  let total = 0
+  getQuotes(name).forEach(quote => {
+    total += quote.length
+  })
+  return Math.round(total / getQuotes(name).length)
 }
 
 // 1. How many quotes does Mal have? Write a function called `numberOfQuotes` that takes one argument, the name of a character. This function should return the number of quotes that character has. If your function is set up properly you should be able to call `numberOfQuotes("Mal")` and `numberOfQuotes("Zoe")`, and get the Expected Output below:
