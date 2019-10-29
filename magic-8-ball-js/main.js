@@ -53,9 +53,8 @@ console.log("Take special note of these two, for they are the first and last of\
 console.log(`* ${responses[0]}`)
 console.log(`* ${responses[responses.length-1]}`)
 
-console.log("Do not despair! You are not doomed to this fate!
-Watch as I bend the fabric of time and space to my will and remove two of \
-your negative fates:")
+console.log("Do not despair! You are not doomed to this fate! Watch as I bend \
+the fabric of time and space to my will and remove two of your negative fates:")
 let fatesToRemove = 2
 let randomNegatives = []
 while(randomNegatives.length < fatesToRemove) {
