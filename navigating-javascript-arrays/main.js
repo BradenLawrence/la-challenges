@@ -3,15 +3,29 @@ let supplies = ["space helmet", "canister of oxygen", "water recycler", "big red
 // 1.)  Using a `forEach` loop, write a function called `supplyCheck` that takes in an array of supplies as an argument, and logs each item to your console. It should match the message of "SUPPLY ITEM is logged and accounted for."
 
 // Your code here....
+const supplyCheck = (arr) => {
+  arr.forEach(item => {
+    console.log(`${item} is logged and accounted for.`)
+  })
+}
 
-
-console.log(supplyCheck(supplies))
+supplyCheck(supplies)
 
 // 2.) Create a function named stowSupplies that takes in our array of supplies, and returns item name and its index number in a formatted string.
+const stowSupplies = (arr) => {
+  let supplyList = "Stowed Supplies\n--------------------\n"
+  arr.forEach((item, i) => {
+    supplyList += `Locker number ${i+1}: ${item}\n`
+  })
+  return supplyList
+}
 
 console.log(stowSupplies(supplies))
 
 // 3.) Create a function named addAlphabetically that takes in our array of supplies and a new supply item and returns an array of supplies with that new item, sorted alphabetically.
+const addAlphabetically = (arr, item) => {
+  return arr.concat(item).sort()
+}
 
 console.log(addAlphabetically(supplies, "laser pistol"))
 
