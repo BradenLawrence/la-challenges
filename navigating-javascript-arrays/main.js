@@ -33,8 +33,22 @@ console.log(addAlphabetically(supplies, "laser pistol"))
 
 let inventoryChecklist = ["big red button", "canister of oxygen", "freeze dried ice cream", "jetpack", "tang drink mix", "space helmet", "space brussels sprouts", "water recycler", "welding torch"]
 
+const stockCheck = (checklist, stock) => {
+  let missing = []
+  checklist.forEach(item => {
+    if(!stock.includes(item)) {
+      missing.push(item)
+    }
+  })
+  return missing
+}
+
 console.log(stockCheck(inventoryChecklist, supplies))
 
 // 5.) Create a function named addMissingSupplies that takes in an array of supplies, and an array of missing supplies, and returns a new array with all of the items combined! Use your stockCheck method to help you with this.
 
-console.log(addMissingSupplies(supplies, stockCheck(inventoryChecklist, supplies)))
+const addMissingSupplies = (checklist, stock) => {
+  return addAlphabetically(stock, (stockCheck(checklist, stock)))
+}
+
+console.log(addMissingSupplies(inventoryChecklist, supplies))
