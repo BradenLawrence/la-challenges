@@ -52,7 +52,7 @@ const getQuotes = (str) => {
 }
 
 let numberOfQuotes = (name) => {
-  return quotes[getCrew(name)].length
+  return getQuotes(name).length
 }
 
 let whoSaidThis = (str) => {
