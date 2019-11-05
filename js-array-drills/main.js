@@ -15,23 +15,25 @@ let evenIndex = (arr) => {
   })
 }
 
-console.log(evenIndex(teachers))
+console.log(`Teachers with an even index: ${evenIndex(teachers)}`)
 
 //List all of the teachers with the letter i in their name
 
-let iInName = () => {
-
+let iInName = (arr) => {
+  return arr.filter(item => {
+    return item.includes("i")
+  })
 }
 
-iInName()
+console.log(`Teachers with 'i' in name: ${iInName(teachers)}`)
 
 //Return the number of teachers
 
 let teacherCount = () => {
-
+  return teachers.length
 }
 
-console.log(teacherCount())
+console.log(`Number of teachers: ${teacherCount()}`)
 
 //Return the number of rooms of students
 
