@@ -21,7 +21,7 @@ console.log(`Teachers with an even index: ${evenIndex(teachers)}`)
 
 let iInName = (arr) => {
   return arr.filter(item => {
-    return item.includes("i")
+    return item.toLowerCase().includes("i")
   })
 }
 
@@ -45,19 +45,32 @@ console.log(`Number of rooms: ${roomCount()}`)
 
 //Return the number of students in all the rooms
 
-let studentCount = () => {
-
+let studentCount = (arr) => {
+  let total = 0
+  arr.forEach(item => {
+    total += item.length
+  })
+  return total
 }
 
-console.log(studentCount())
+console.log(`Total students: ${studentCount(rooms)}`)
 
 //Return the students who have an i in their names
-
-let whichStudents = () => {
-
+let studentFilter = "i"
+let whichStudents = (groups, str) => {
+  let filtered = []
+  groups.forEach(group => {
+    filtered = filtered.concat(
+      group.filter(member => {
+        return member.toLowerCase().includes(str)
+      })
+    )
+  })
+  return filtered
 }
 
-console.log(`The students who have an 'i' in their name are  ${whichStudents()}.`)
+console.log(`The students who have an 'i' in their name are \
+${whichStudents(rooms, studentFilter)}.`)
 
 //Return the teacher who has the given student in their room
 
