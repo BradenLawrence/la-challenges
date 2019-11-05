@@ -52,7 +52,6 @@ console.log(`Subtotal: \$${subtotal(shoppingCart)}`)
 let taxRate = 6.25
 console.log(`Tax rate: ${taxRate}%`)
 const total = (cart) => {
-  debugger;
   return (subtotal(cart) * (taxRate / 100 + 1)).toFixed(2)
 }
 console.log(`Total: \$${total(shoppingCart)}`)
