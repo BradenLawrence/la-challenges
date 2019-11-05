@@ -38,10 +38,10 @@ console.log(`Number of teachers: ${teacherCount()}`)
 //Return the number of rooms of students
 
 let roomCount = () => {
-
+  return rooms.length
 }
 
-console.log(roomCount())
+console.log(`Number of rooms: ${roomCount()}`)
 
 //Return the number of students in all the rooms
 
