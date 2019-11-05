@@ -9,11 +9,13 @@ let rooms = [
 
 //List all the teachers with an even index number (including 0)
 
-let evenIndex = () => {
-
+let evenIndex = (arr) => {
+  return arr.filter((item, index) => {
+    return index % 2 === 0
+  })
 }
 
-evenIndex()
+console.log(evenIndex(teachers))
 
 //List all of the teachers with the letter i in their name
 
