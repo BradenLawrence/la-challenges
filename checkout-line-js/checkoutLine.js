@@ -39,3 +39,20 @@ const getQty = (cart, name) => {
 }
 console.log(`${milk.itemName} qty: ${getQty(shoppingCart, milk.itemName)}`)
 console.log(`${coffee.itemName} qty: ${getQty(shoppingCart, coffee.itemName)}`)
+
+const subtotal = (cart) => {
+  let total = 0
+  cart.forEach(item => {
+    total += item.quantity * item.price
+  })
+  return total.toFixed(2)
+}
+console.log(`Subtotal: \$${subtotal(shoppingCart)}`)
+
+let taxRate = 6.25
+console.log(`Tax rate: ${taxRate}%`)
+const total = (cart) => {
+  debugger;
+  return (subtotal(cart) * (taxRate / 100 + 1)).toFixed(2)
+}
+console.log(`Total: \$${total(shoppingCart)}`)
