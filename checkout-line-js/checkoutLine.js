@@ -24,7 +24,6 @@ let coffee = {
 
 let shoppingCart = [eggs, milk, bread, coffee]
 
-// * How much is one pound (lb.) of coffee?
 const getPrice = (cart, name) => {
   return cart.find(item => {
     return item.itemName === name
@@ -33,7 +32,6 @@ const getPrice = (cart, name) => {
 console.log(`1 ${coffee.itemName}: \$${getPrice(shoppingCart, coffee.itemName)}`)
 console.log(`1 ${milk.itemName}: \$${getPrice(shoppingCart, milk.itemName)}`)
 
-// * How many gallons of milk are in the shopping cart?
 const getQty = (cart, name) => {
   return cart.find(item => {
     return item.itemName === name
