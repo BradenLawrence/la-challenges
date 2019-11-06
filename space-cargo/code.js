@@ -56,6 +56,22 @@ let cargoHold = {
         this.dilithiumOreWeight += ore.weight
       }
     })
+  },
+  fuelUpRobots() {
+    this.robotsForSale.forEach(robot => {
+      if(robot.fuel < 5) {
+        let fuelNeeded = 5 - robot.fuel
+        if(this.fuel >= fuelNeeded) {
+          this.fuel -= fuelNeeded
+          robot.fuel = 5
+        } else {
+          robot.fuel += this.fuel
+          this.fuel = 0
+          console.log(`Sorry, we have run out of fuel. ${robot.robotType} was \
+refueled as much as possible. \n${robot.robotType} fuel level: ${robot.fuel}`)
+        }
+      }
+    })
   }
 };
 
@@ -138,4 +154,5 @@ cargoHold.filterOutRecyclables(recyclablesPile)
 cargoHold.consolidateTools(oldToolBinsPile)
 cargoHold.filterRobots(robotsPile)
 cargoHold.consolidateOre(orePile)
+cargoHold.fuelUpRobots()
 console.log(cargoHold)
