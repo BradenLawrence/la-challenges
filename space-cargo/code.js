@@ -129,3 +129,13 @@ let orePile = [
     weight: 0.5
   }
 ]
+
+cargoHold.toggleCleanedStatus()
+cargoHold.addDayForIncidentReport()
+cargoHold.consolidateFuel(fuelCanisterPile)
+cargoHold.retrieveWorkingHyperdrive(hyperDrivePile)
+cargoHold.filterOutRecyclables(recyclablesPile)
+cargoHold.consolidateTools(oldToolBinsPile)
+cargoHold.filterRobots(robotsPile)
+cargoHold.consolidateOre(orePile)
+console.log(cargoHold)
