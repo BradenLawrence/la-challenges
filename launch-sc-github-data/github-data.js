@@ -2,13 +2,19 @@ let data = require('./data')
 
 // 1)
 const numOfRepos = (array) => {
-
+  return array.length
 }
 console.log('\n1) ' + numOfRepos(data))
 
 // 2)
 const largestRepo = (array) => {
-
+  let largest = {size: 0, name: ""}
+  array.forEach(repo => {
+    if(repo.size > largest.size) {
+      largest.name = repo.name
+    }
+  })
+  return largest.name
 }
 console.log('\n2) ' + largestRepo(data))
 
