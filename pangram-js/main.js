@@ -1,6 +1,14 @@
 // define the isPangram() function
 let isPangram = (sentence) => {
-  // your code, here
+  let alpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m",
+               "n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  let pangram = true
+  alpha.forEach(letter => {
+    if(!sentence.toLowerCase().includes(letter)) {
+      pangram = false
+    }
+  })
+  return pangram
 }
 
 // test the isPangram() function, and print results to the console.
