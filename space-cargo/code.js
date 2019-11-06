@@ -33,6 +33,13 @@ let cargoHold = {
       return recyclableItems.includes(item.toLowerCase())
     })
     this.recyclables = this.recyclables.concat(filtered)
+  },
+  consolidateTools(toolBinSource) {
+    toolBinSource.forEach(bin => {
+      bin.items.forEach(tool => {
+        this.toolBin.tools.push(tool)
+      })
+    })
   }
 };
 
