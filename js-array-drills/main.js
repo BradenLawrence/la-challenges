@@ -18,14 +18,14 @@ let evenIndex = (arr) => {
 console.log(`Teachers with an even index: ${evenIndex(teachers)}`)
 
 //List all of the teachers with the letter i in their name
-
-let iInName = (arr) => {
+let teacherFilter = "i"
+let iInName = (arr, str) => {
   return arr.filter(item => {
-    return item.toLowerCase().includes("i")
+    return item.toLowerCase().includes(str)
   })
 }
 
-console.log(`Teachers with 'i' in name: ${iInName(teachers)}`)
+console.log(`Teachers with 'i' in name: ${iInName(teachers, teacherFilter)}`)
 
 //Return the number of teachers
 
