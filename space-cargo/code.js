@@ -13,6 +13,9 @@ let cargoHold = {
   trash: [],
   toggleCleanedStatus() {
     this.cleaned = !this.cleaned
+  },
+  addDayForIncidentReport() {
+    this.daysSinceLastIncident++
   }
 };
 
