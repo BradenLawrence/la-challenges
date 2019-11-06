@@ -16,6 +16,11 @@ let cargoHold = {
   },
   addDayForIncidentReport() {
     this.daysSinceLastIncident++
+  },
+  consolidateFuel(fuelSource) {
+    this.fuel += fuelSource.reduce((total, canister) => {
+      return total + canister
+    })
   }
 };
 
