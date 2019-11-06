@@ -47,6 +47,15 @@ let cargoHold = {
         this.robotsForSale.push(robot)
       }
     })
+  },
+  consolidateOre(oreSource) {
+    oreSource.forEach(ore => {
+      if(ore.status === "glowing") {
+        this.trash.push(ore)
+      } else {
+        this.dilithiumOreWeight += ore.weight
+      }
+    })
   }
 };
 
