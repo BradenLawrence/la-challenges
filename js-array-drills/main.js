@@ -75,7 +75,13 @@ ${whichStudents(rooms, studentFilter)}.`)
 //Return the teacher who has the given student in their room
 
 let whichTeacher = (student) => {
-
+  let roomIndex = -1
+  rooms.forEach((room, i) => {
+    if(room.indexOf(student) !== -1) {
+      roomIndex = i
+    }
+  })
+  return teachers[roomIndex]
 }
 
 console.log(`The teacher who has Jorge is ${whichTeacher("Jorge")}.`)
