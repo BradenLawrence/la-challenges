@@ -26,6 +26,13 @@ let cargoHold = {
     this.hyperdrive = driveSource.find(drive => {
       return !drive.toLowerCase().includes("rusty")
     })
+  },
+  filterOutRecyclables(garbageSource) {
+    recyclableItems = ["paper", "plastic", "glass", "metal can"]
+    let filtered = garbageSource.filter(item => {
+      return recyclableItems.includes(item)
+    })
+    this.recyclables = this.recyclables.concat(filtered)
   }
 };
 
