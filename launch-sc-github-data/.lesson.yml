@@ -1,0 +1,7 @@
+---
+title: "GitHub Data"
+type: "challenge"  # challenge, exercise, article, video
+description: "Answer questions about data from the GitHub API."
+tags: "javascript, json"
+ignore:
+- "launch-sc-github-data.md"
