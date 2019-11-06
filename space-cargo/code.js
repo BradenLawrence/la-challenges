@@ -30,7 +30,7 @@ let cargoHold = {
   filterOutRecyclables(garbageSource) {
     recyclableItems = ["paper", "plastic", "glass", "metal can"]
     let filtered = garbageSource.filter(item => {
-      return recyclableItems.includes(item)
+      return recyclableItems.includes(item.toLowerCase())
     })
     this.recyclables = this.recyclables.concat(filtered)
   }
