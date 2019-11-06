@@ -21,12 +21,21 @@ let cargoHold = {
     this.fuel += fuelSource.reduce((total, canister) => {
       return total + canister
     })
+  },
+  retrieveWorkingHyperdrive(driveSource) {
+    this.hyperdrive = driveSource.find(drive => {
+      return !drive.toLowerCase().includes("rusty")
+    })
   }
 };
 
 let fuelCanisterPile = [2, 5, 9, 2, 3, 4, 6, 8, 8, 2, 1, 0]
 
 let hyperDrivePile = ["rusty hyperdrive", "millennium hyperdrive", "hyperdrive XL", "rusty hyperdrive", "rusty hyperdrive XL"]
+
+console.log(cargoHold.hyperdrive)
+cargoHold.retrieveWorkingHyperdrive(hyperDrivePile)
+console.log(cargoHold.hyperdrive)
 
 let recyclablesPile = ["paper", "space banana peel", "plastic", "plastic", "glass", "styrofoam coffee mug", "old dilithium battery", "metal can", "paper"]
 
