@@ -40,6 +40,13 @@ let cargoHold = {
         this.toolBin.tools.push(tool)
       })
     })
+  },
+  filterRobots(robotSource) {
+    robotSource.forEach(robot => {
+      if(robot.yearsOld <= 15) {
+        this.robotsForSale.push(robot)
+      }
+    })
   }
 };
 
