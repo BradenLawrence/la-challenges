@@ -10,7 +10,10 @@ let cargoHold = {
   },
   robotsForSale: [],
   dilithiumOreWeight: 0,
-  trash: []
+  trash: [],
+  toggleCleanedStatus() {
+    this.cleaned = !this.cleaned
+  }
 };
 
 let fuelCanisterPile = [2, 5, 9, 2, 3, 4, 6, 8, 8, 2, 1, 0]
