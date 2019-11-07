@@ -43,7 +43,16 @@ console.log('\n4) ' + noGazers(data))
 
 // 5)
 const maxGazers = (array) => {
-
+  let gazerTracker = {gazers: 0, name: ""}
+  array.forEach(repo => {
+    if(gazerTracker.gazers < repo.stargazers_count) {
+      gazerTracker = {
+        gazers: repo.stargazers_count,
+        name:   repo.name
+      }
+    }
+  })
+  return gazerTracker.name
 }
 console.log('\n5) ' + maxGazers(data))
 
