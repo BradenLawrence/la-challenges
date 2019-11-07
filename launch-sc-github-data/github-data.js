@@ -93,13 +93,18 @@ console.log('\n8) ' +  keyInfo(data))
 
 //9)
 let monkeyKeys = (array) => {
-
+  let monkey = array.find(repo => repo.name === "monkey_party")
+  let monkeyKeyStrings = []
+  for(let key in monkey.license) {
+    monkeyKeyStrings.push(`${key}: ${monkey.license[key]}`)
+  }
+  return monkeyKeyStrings
 }
 console.log('\n9) ' + monkeyKeys(data))
 
 //10)
 let urlValue = (array) => {
-
+  return monkeyKeys(array)[1]
 }
 console.log('\n10) ' + urlValue(data))
 
