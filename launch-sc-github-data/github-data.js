@@ -11,7 +11,7 @@ const largestRepo = (array) => {
   let largest = {size: 0, name: ""}
   array.forEach(repo => {
     if(repo.size > largest.size) {
-      largest.name = repo.name
+      largest = {size: repo.size, name: repo.name}
     }
   })
   return largest.name
@@ -20,13 +20,24 @@ console.log('\n2) ' + largestRepo(data))
 
 // 3)
 const mostRecentRepo = (array) => {
-
+  let mostRecent = {date: 0, name: ""}
+  array.forEach(repo => {
+    let newest = Date.parse(mostRecent.date)
+    let current = Date.parse(repo.created_at)
+    if(newest < current) {
+        mostRecent = {date: repo.created_at, name: repo.name}
+    }
+  })
+  return mostRecent.name
 }
 console.log('\n3) ' + mostRecentRepo(data))
 
 // 4)
 const noGazers = (array) => {
-
+  let noGazersList = array.filter(repo => {
+    return repo.stargazers_count === 0
+  })
+  return noGazersList.length
 }
 console.log('\n4) ' + noGazers(data))
 
