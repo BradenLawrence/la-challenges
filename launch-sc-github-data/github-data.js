@@ -65,7 +65,13 @@ console.log('\n6) ' + hasDescriptions(data))
 
 //7)
 const newDescriptionsArray = (array) => {
-
+  return array.map(repo => {
+    if(!repo.description) {
+      return "No description provided"
+    } else {
+      return repo.description
+    }
+  })
 }
 console.log('\n7) ' +  newDescriptionsArray(data))
 
