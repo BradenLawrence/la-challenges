@@ -59,7 +59,7 @@ console.log('\n5) ' + maxGazers(data))
 // 6)
 const hasDescriptions = (array) => {
   let reposWithDesc = array.filter(repo => repo.description !== null)
-  return reposWithDesc.map(repo => repo.name)
+  return reposWithDesc.map(repo => `\n${repo.name}`)
 }
 console.log('\n6) ' + hasDescriptions(data))
 
@@ -67,9 +67,9 @@ console.log('\n6) ' + hasDescriptions(data))
 const newDescriptionsArray = (array) => {
   return array.map(repo => {
     if(!repo.description) {
-      return "No description provided"
+      return "\nNo description provided"
     } else {
-      return repo.description
+      return `\n${repo.description}`
     }
   })
 }
