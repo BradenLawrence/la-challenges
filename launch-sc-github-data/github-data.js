@@ -77,7 +77,17 @@ console.log('\n7) ' +  newDescriptionsArray(data))
 
 //8)
 let keyInfo = (array) => {
-
+  return array.map(repo => {
+    let repoName = repo.name
+    let repoOwner = ""
+    if(typeof repo.owner === "string") {
+      repoOwner = repo.owner
+    } else {
+      repoOwner = repo.owner.login
+    }
+    let repoWatchers = repo.watchers_count
+    return `\n"${repoName}" by ${repoOwner} has ${repoWatchers} watchers`
+  })
 }
 console.log('\n8) ' +  keyInfo(data))
 
