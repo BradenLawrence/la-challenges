@@ -21,3 +21,21 @@ required_crew = [
   :navigator,
   :lead_maintenance
 ]
+
+puts "Today's Test Flight Crew Roster:"
+
+possible_crew_selections.each_with_index do |current_crew, index|
+  puts "#{index+1}\) #{current_crew.to_s.gsub("_", " ")}"
+end
+
+puts ""
+
+missing_crew = required_crew - possible_crew_selections
+
+if missing_crew.length > 0
+  puts %W(Warning, #{missing_crew.length} required crew
+          role#{missing_crew.length > 1 ? "s are":" is"} unfilled:").join(" ")
+  missing_crew.each_with_index do |crew, index|
+    puts "#{index+1}\) #{crew.to_s.gsub("_", " ")}"
+  end
+end
