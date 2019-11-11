@@ -6,3 +6,9 @@ crew_contacts = {
   olivia: 'maintainingMaintenance@example.com',
   joan: 'bestNavigatorEver@example.com'
 }
+
+puts [
+  crew_contacts[:samantha],
+  crew_contacts[:talia],
+  crew_contacts[:olivia]
+].join(", ")
