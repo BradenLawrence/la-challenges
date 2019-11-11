@@ -13,8 +13,14 @@ laser_arsenal = [
   {name: "nitrogen",        range:   0}
 ]
 
-laser_arsenal = laser_arsenal.sort_by {|obj| obj[:range]}
-puts laser_arsenal
 puts "Welcome to the Blast-o-matic!\nHow far away is your target?"
 print "> "
-target_distance = gets.chomp
+target_distance = Float(gets) rescue -1
+
+best_match = laser_arsenal.detect {|laser| laser[:range] <= target_distance}
+
+unless best_match.nil?
+  puts "Firing the #{best_match[:name]} laser!"
+else
+  puts "Sorry, that range is invalid"
+end
