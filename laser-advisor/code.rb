@@ -14,4 +14,6 @@ laser_arsenal = {
 }
 
 sorted_arsenal = laser_arsenal.sort_by {|key, value| value}.to_h
-puts sorted_arsenal
+puts "Welcome to the Blast-o-matic!\nHow far away is your target?"
+print "> "
+target_distance = gets.chomp
