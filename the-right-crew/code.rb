@@ -16,4 +16,8 @@ available_crew = [
 
 possible_crew_selections = available_crew.sample(REQUIRED_CREW_SIZE)
 
-# YOUR CODE GOES BELOW
+required_crew = [
+  :captain,
+  :navigator,
+  :lead_maintenance
+]
