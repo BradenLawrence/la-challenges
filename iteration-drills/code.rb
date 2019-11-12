@@ -69,47 +69,72 @@
 # ages.each {|name, age| puts "#{name} is #{age} years old." if age % 2 == 0}
 
 # Write Ruby code to find out the answers to the following questions:
+puts "Numbers Array Solutions\n------------------------------"
+
 array = [28214, 63061, 49928, 98565, 31769, 42316, 23674, 3540, 34953, 70282, 22077, 94710, 50353, 17107, 73683, 33287, 44575, 83602, 33350, 46583]
 
 # * What is the sum of all the numbers in `array`?
-# puts array.reduce(:+)
+print "1) Sum of all numbers in the array: "
+puts array.reduce(:+)
+puts ""
 
 # * How would you print out each value of the array?
-# array.each {|value| puts value}
+puts "2) Print each value of the array: "
+array.each {|value| puts value}
+puts ""
 
 # * What is the sum of all of the even numbers?
-# puts array.select {|number| number % 2 == 0}.reduce(:+)
+print "3) Sum of all even numbers in array: "
+puts array.select {|number| number % 2 == 0}.reduce(:+)
+puts ""
 
 # * What is the sum of all of the odd numbers?
-# puts array.select {|number| number % 2 != 0}.reduce(:+)
+print "4) Sum of all odd numbers in array: "
+puts array.select {|number| number % 2 != 0}.reduce(:+)
+puts ""
 
 # * What is the sum of all the numbers divisble by 5?
-# puts array.select {|number| number % 5 == 0}.reduce(:+)
+print "5) Sum of all numbers divisible by 5: "
+puts array.select {|number| number % 5 == 0}.reduce(:+)
+puts ""
 
 # * What is the sum of the squares of all the numbers in the array?
-# puts array.map {|number| number * number}.reduce(:+)
-
+print "6) Sum of each number squared: "
+puts array.map {|number| number * number}.reduce(:+)
+puts ""
 
 
 # Write Ruby code to find out the answers to the following questions:
+puts "Names Array Solutions\n------------------------------"
 
 array = ["joanie", "annamarie", "muriel", "drew", "reva", "belle", "amari", "aida", "kaylie", "monserrate", "jovan", "elian", "stuart", "maximo", "dennis", "zakary", "louvenia", "lew", "crawford", "caitlyn"]
 
 # * How would you print out each name backwards in `array`?
-# array.each {|name| puts name.reverse}
+puts "1) Each name backwards: "
+array.each {|name| puts name.reverse}
+puts ""
 
 # * What are the total number of characters in the names in `array`?
-# puts array.reduce(0) {|total, name| total + name.length}
+print "2) Total number of characters of all names: "
+puts array.reduce(0) {|total, name| total + name.length}
+puts ""
 
 # * How many names in `array` are less than 5 characters long?
-# puts array.select {|name| name.length < 5}.length
+print "3) Number of names less than 5 characters: "
+puts array.select {|name| name.length < 5}.length
+puts ""
 
 # * How many names in `array` end in a vowel?
-# vowels = ["a","e","i","o","u"]
-# puts array.select {|name| vowels.include? name[-1]}.length
+print "4) Number of names ending with a vowel: "
+vowels = ["a","e","i","o","u"]
+puts array.select {|name| vowels.include? name[-1]}.length
+puts ""
 
 # * How many names in `array` are more than 5 characters long?
-# puts array.select {|name| name.length > 5}.length
+print "5) Number of names greater than 5 characters: "
+puts array.select {|name| name.length > 5}.length
+puts ""
 
 # * How many names in `array` are exactly 5 characters in length?
-# puts array.select {|name| name.length == 5}.length
+print "6) Number of names exactly 5 characters: "
+puts array.select {|name| name.length == 5}.length
