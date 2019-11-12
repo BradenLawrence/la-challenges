@@ -25,3 +25,6 @@ scorecard = [
 
 total_strokes = scorecard.reduce(0) {|total, hole| total + hole[:strokes]}
 puts "Total Strokes: #{total_strokes}"
+
+total_par = scorecard.reduce(0) {|total, hole| total + hole[:par]}
+puts "Total Par: #{total_par}"
