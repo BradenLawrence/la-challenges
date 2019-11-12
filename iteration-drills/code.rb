@@ -1,18 +1,18 @@
 #  Write Ruby<->English answers here as comments in your code
 
-# 1)
+# 1) For every "number" in the "numbers" array, print that number's value times 3.
 # * numbers is an array
 # numbers.each do |number|
 #   puts 3 * number
 # end
 
-# 2)
+# 2) For every "name" in the "names" array, print how long that name is.
 # * names is an array
 # names.each do |name|
 #   puts name.length
 # end
 
-# 3)
+# 3) Add all of the numbers in the "numbers" array together and print the total.
 # * numbers is an array
 # sum = 0
 # numbers.each do |number|
@@ -20,13 +20,15 @@
 # end
 # puts sum
 
-# 4)
+# 4) For each key, called "name", that is stored in the hash,
+#    print that name and its stored value, called "age".
 # * hash is a hash
 # hash.each do |name, age|
 #   puts "#{name} is #{age} years old."
 # end
 
-# 5)
+# 5) Add together the values of each "transaction" stored in the "account" hash,
+#    and print the result.
 # * account is a hash
 # sum = 0
 # account.each do |transaction, value|
@@ -34,7 +36,8 @@
 # end
 # puts "The value the account is #{sum}"
 
-# 6)
+# 6) Print out each "address" value stored in the "address" hash, along with the
+#    "name" key associated with it.
 # * addresses is a hash
 # addresses.each do |name, address|
 #   puts "#{name} lives on #{address}"
@@ -43,17 +46,27 @@
 #  Write English<->Ruby answers here as comments in your code
 
 # 1. `For every element 'word' in the array 'sentences' print out the word.`
+# sentences.each {|word| puts word}
 
 # 2. `For every element 'phone_number' in the array 'numbers' print out the phone number if it is a MA area code.`
+# ma_areacodes = [339,351,413,508,617,774,781,857,978]
+# numbers.each do |phone_number|
+#   if ma_areacodes.include? phone_number.to_s.chars[0..2].join.to_i
+#     puts phone_number
+#   end
+# end
 
 # 3. `For every element number in the array 'numbers' print out every odd number.`
+# numbers.each {|number| puts number if number % 2 != 0 }
 
 # 4. `For every name-age pair in the hash 'ages', print out each pair.`
+# ages.each {|name, age| puts "#{name} is #{age} years old."}
 
 # 5. `For every name-age pair in the hash 'ages', print out a pair if the age is > 10.`
+# ages.each {|name, age| puts "#{name} is #{age} years old." if age > 10}
 
 # 6. `For every name-age pair in the hash 'ages', print out a pair if the age is even.`
-
+# ages.each {|name, age| puts "#{name} is #{age} years old." if age % 2 == 0}
 
 # Write Ruby code to find out the answers to the following questions:
 array = [28214, 63061, 49928, 98565, 31769, 42316, 23674, 3540, 34953, 70282, 22077, 94710, 50353, 17107, 73683, 33287, 44575, 83602, 33350, 46583]
