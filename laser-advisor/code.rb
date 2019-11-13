@@ -17,10 +17,13 @@ puts "Welcome to the Blast-o-matic!\nHow far away is your target?"
 print "> "
 target_distance = Float(gets) rescue -1
 
-within_range = laser_arsenal.detect {|laser| laser[:range] <= target_distance}
+closest = laser_arsenal.detect {|laser| laser[:range] <= target_distance}
 
-unless within_range.nil?
-  puts "Firing the #{within_range[:name]} laser!"
+unless closest.nil?
+  best_lasers = laser_arsenal.select {|laser| closest[:range] == laser[:range]}
+  best_names = []
+  best_lasers.each {|laser| best_names << laser[:name]}
+  puts "Use the #{best_names.join(" or the ")} laser"
 else
   puts "Sorry, that range is invalid"
 end
