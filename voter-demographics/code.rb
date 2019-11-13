@@ -103,12 +103,39 @@ stats[:total] = {
     male:         voters.select {|voter| voter[:gender] == "Male"       }.size,
     female:       voters.select {|voter| voter[:gender] == "Female"     }.size,
     unspecified:  voters.select {|voter| voter[:gender] == "Unspecified"}.size
+  },
+  education: {
+    college:    voters.select {|voter| voter[:education] == "College"    }.size,
+    highSchool: voters.select {|voter| voter[:education] == "High School"}.size,
+    noHS: voters.select do |voter|
+      voter[:education] == "Did Not Complete High School"
+    end.size
   }
 }
 stats[:average] = {
   age:       stats[:total][:age]       / stats[:total][:voters],
   income:    stats[:total][:income]    / stats[:total][:voters],
   household: stats[:total][:household] / stats[:total][:voters].to_f
+}
+stats[:percentage] = {
+  gender: {
+    male:   stats[:total][:gender][:male] / stats[:total][:voters].to_f * 100,
+    female: stats[:total][:gender][:female] / stats[:total][:voters].to_f * 100,
+    unspecified: (
+      stats[:total][:gender][:unspecified] / stats[:total][:voters].to_f * 100
+    )
+  },
+  education: {
+    college: (
+      stats[:total][:education][:college] / stats[:total][:voters].to_f * 100
+    ),
+    highSchool: (
+      stats[:total][:education][:highSchool] / stats[:total][:voters].to_f * 100
+    ),
+    noHS: (
+      stats[:total][:education][:noHS] / stats[:total][:voters].to_f * 100
+    )
+  }
 }
 
 # * Average age
@@ -121,9 +148,19 @@ puts "Average income: #{stats[:average][:income]}"
 puts "Average household size: #{stats[:average][:household]}"
 
 # * Female Percentage
+puts "Female %: #{stats[:percentage][:gender][:female]}"
 
 # * Male Percentage
+puts "Male %: #{stats[:percentage][:gender][:male]}"
+
 # * Unspecified Gender Percentage
+puts "Unspecified %: #{stats[:percentage][:gender][:unspecified]}"
+
 # * Percent of those who obtained a college education level
+puts "College %: #{stats[:percentage][:education][:college]}"
+
 # * Percent of those who obtained no higher than a high school education level
+puts "High School %: #{stats[:percentage][:education][:highSchool]}"
+
 # * Percent of those that did not finish high school
+puts "Did not finish high school %: #{stats[:percentage][:education][:noHS]}"
