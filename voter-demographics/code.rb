@@ -97,7 +97,7 @@ stats = {}
 stats[:total] = {
   voters:    voters.size,
   age:       voters.reduce(0) {|total, voter| total + voter[:age]},
-  income:    voters.reduce(0) {|total, voter| total + voter[:income]}.round(2),
+  income:    voters.reduce(0) {|total, voter| total + voter[:income]},
   household: voters.reduce(0) {|total, voter| total + voter[:household]},
   gender: {
     male:         voters.select {|voter| voter[:gender] == "Male"       }.size,
@@ -142,7 +142,7 @@ stats[:percentage] = {
 puts "Average age: #{stats[:average][:age]}"
 
 # * Average income
-puts "Average income: #{stats[:average][:income]}"
+puts "Average income: #{stats[:average][:income].round(2)}"
 
 # * Average household size
 puts "Average household size: #{stats[:average][:household]}"
