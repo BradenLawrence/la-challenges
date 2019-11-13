@@ -92,3 +92,16 @@ voters = [
     education: "College"
   }
 ]
+
+# * Average age
+print "Average age: "
+puts voters.reduce(0) {|total, voter| total + voter[:age]} / voters.size
+
+# * Average income
+# * Average household size
+# * Female Percentage
+# * Male Percentage
+# * Unspecified Gender Percentage
+# * Percent of those who obtained a college education level
+# * Percent of those who obtained no higher than a high school education level
+# * Percent of those that did not finish high school
