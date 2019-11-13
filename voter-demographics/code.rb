@@ -93,13 +93,35 @@ voters = [
   }
 ]
 
+stats = {}
+stats[:total] = {
+  voters:    voters.size,
+  age:       voters.reduce(0) {|total, voter| total + voter[:age]},
+  income:    voters.reduce(0) {|total, voter| total + voter[:income]}.round(2),
+  household: voters.reduce(0) {|total, voter| total + voter[:household]},
+  gender: {
+    male:         voters.select {|voter| voter[:gender] == "Male"       }.size,
+    female:       voters.select {|voter| voter[:gender] == "Female"     }.size,
+    unspecified:  voters.select {|voter| voter[:gender] == "Unspecified"}.size
+  }
+}
+stats[:average] = {
+  age:       stats[:total][:age]       / stats[:total][:voters],
+  income:    stats[:total][:income]    / stats[:total][:voters],
+  household: stats[:total][:household] / stats[:total][:voters].to_f
+}
+
 # * Average age
-print "Average age: "
-puts voters.reduce(0) {|total, voter| total + voter[:age]} / voters.size
+puts "Average age: #{stats[:average][:age]}"
 
 # * Average income
+puts "Average income: #{stats[:average][:income]}"
+
 # * Average household size
+puts "Average household size: #{stats[:average][:household]}"
+
 # * Female Percentage
+
 # * Male Percentage
 # * Unspecified Gender Percentage
 # * Percent of those who obtained a college education level
