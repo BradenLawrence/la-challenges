@@ -74,8 +74,12 @@ puts ""
 
   # 5) Who was the winning candidate in Precinct 4 and how many votes did they get?
 # Billy Joe won Precinct 4 with 353 votes.
-query_precinct = "Precinct 4"
-
+precinct_query = "Precinct 4"
+query_winner = vote_results[precinct_query].max_by{|candidate, votes| votes}
+puts "5)"
+puts "#{query_winner.first} won #{precinct_query} with \
+#{query_winner.last} votes."
+puts ""
 
   # 6) How many people voted in total?
 
