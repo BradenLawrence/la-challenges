@@ -73,8 +73,8 @@ puts %W(#{query_winner_string} #{query_winner.size > 1 ? "are tied in" : "won"}
         #{precinct_query} with #{query_winner.values[0]} votes.).join(" ")
 
 puts "6)"
-total_votes = precinct_totals.values.reduce(:+)
-puts "In total, #{total_votes} people voted."
+total_turnout = precinct_totals.values.reduce(:+)
+puts "In total, #{total_turnout} people voted."
 
 puts "7)"
 result_groups = candidate_totals.group_by {|candidate, totals| totals}
