@@ -139,6 +139,8 @@ sets_of_people =
 puts "Number of people in first set: #{sets_of_people.first.size}"
 
 # * How many people are in the second set of people?
+puts "Number of people in second set: #{sets_of_people[1].size}"
+
 # * What is Ruby Hessel's phone number?
 # * What are the names of Dr. Sigrid Nader's children?
 # * What is Bernard Feil's child's name?
