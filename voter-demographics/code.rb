@@ -1,5 +1,3 @@
-# Francis, Underwood, 52, 100000, 2, Male, College
-
 voters = [
   {
     firstName: "Jon",
