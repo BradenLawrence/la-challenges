@@ -161,4 +161,9 @@ end["Bernard Feil"]["children"].join
 puts "Bernard Feil's child: #{bernardsChild}"
 
 # * What company does Casandra Kemmer work for?
+cassandrasCompany = sets_of_people.find do |set|
+  set.include? "Casandra Kemmer"
+end["Casandra Kemmer"]["company"]
+puts "Cassandra Kemmer's employer: #{cassandrasCompany}"
+
 # * Who are all the people in the first set that have an `m` in their Company names?
