@@ -142,6 +142,11 @@ puts "Number of people in first set: #{sets_of_people.first.size}"
 puts "Number of people in second set: #{sets_of_people[1].size}"
 
 # * What is Ruby Hessel's phone number?
+rubysPhoneNum = sets_of_people.find do |set|
+  set.include? "Ruby Hessel"
+end["Ruby Hessel"]["phone"]
+puts "Ruby Hessel's phone number: #{rubysPhoneNum}"
+
 # * What are the names of Dr. Sigrid Nader's children?
 # * What is Bernard Feil's child's name?
 # * What company does Casandra Kemmer work for?
