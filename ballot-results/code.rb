@@ -47,6 +47,10 @@ vote_results =
 puts "1)"
 vote_results.each do |precinct, tallies|
   puts "**#{precinct}**"
+  tallies.each do |candidate, votes|
+    puts "-#{candidate} got #{votes} votes"
+  end
+  puts ""
 end
 
   # 2) How many people voted in each precinct? Create a new hash where the keys name the precinct and the values start at 0. Iterate over the provided `vote_results` to update the totals.
