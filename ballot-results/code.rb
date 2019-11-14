@@ -51,7 +51,7 @@ end
 puts ""
 
   # 3) Which precinct had the highest voter turnout? Use the hash you created in Question 2 to return the answer.
-highest_turnout = vote_totals.max_by{|key, value| value}
+highest_turnout = vote_totals.max_by{|precinct, total| total}
 puts "3)"
 puts "#{highest_turnout.first} had the most votes with \
 #{highest_turnout.last} votes."
