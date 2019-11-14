@@ -55,7 +55,7 @@ highest_turnout = highest_turnout.max.last.to_h
 puts "3)"
 if highest_turnout.size > 1
   puts "#{highest_turnout.keys.join(" and ")} are tied for most votes with \
-#{highest_turnout.values[0]} votes."
+#{highest_turnout.values[0]} votes each."
 else
   puts "#{highest_turnout.keys[0]} had the most votes with \
 #{highest_turnout.values[0]} votes."
@@ -77,10 +77,16 @@ end
 
   # 5) Who was the winning candidate in Precinct 4 and how many votes did they get?
 precinct_query = "Precinct 4"
-query_winner = vote_results[precinct_query].max_by {|candidate, votes| votes}
+query_winner = vote_results[precinct_query].group_by {|candidate, votes| votes}
+query_winner = query_winner.max.last.to_h
 puts "5)"
-puts "#{query_winner.first} won #{precinct_query} with \
-#{query_winner.last} votes."
+if query_winner.size > 1
+  puts "#{query_winner.keys.join(" and ")} are tied in #{precinct_query} with \
+#{query_winner.values[0]} votes each."
+else
+  puts "#{query_winner.keys[0]} won #{precinct_query} with \
+#{query_winner.values[0]} votes."
+end
 
   # 6) How many people voted in total?
 total_votes = precinct_totals.values.reduce(:+)
@@ -93,3 +99,4 @@ puts "7)"
 puts "#{winner.first} had the most votes with #{winner.last} votes."
 
   # 8) How many more votes did the winner have as compared to the third place candidate? Use the hash you created in Question 4 and the winning candidate total votes value from Question 7 to complete this question.
+# Sally Jane beat Mary Sue by 63 votes.
