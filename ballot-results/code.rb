@@ -70,7 +70,6 @@ candidate_totals.each do |candidate, total|
 end
 
   # 5) Who was the winning candidate in Precinct 4 and how many votes did they get?
-# Billy Joe won Precinct 4 with 353 votes.
 precinct_query = "Precinct 4"
 query_winner = vote_results[precinct_query].max_by{|candidate, votes| votes}
 puts "5)"
