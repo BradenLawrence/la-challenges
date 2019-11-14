@@ -52,7 +52,7 @@ puts transactions.max
 
 # * What is the smallest withdrawal?
 puts "The smallest withdrawal is:"
-puts transactions.select {|transaction| transaction < 0}.min
+puts transactions.select {|transaction| transaction < 0}.max
 
 # * What is the smallest deposit?
 puts "The smallest deposit is:"
