@@ -77,6 +77,9 @@ puts "#{query_winner.first} won #{precinct_query} with \
 #{query_winner.last} votes."
 
   # 6) How many people voted in total?
+total_votes = precinct_totals.values.reduce(:+)
+puts "6)"
+puts "In total, #{total_votes} people voted."
 
   # 7) Who won the election and how many votes did they get? Use the hash you created in Question 4 to return the answer.
 
