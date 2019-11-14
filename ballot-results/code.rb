@@ -31,7 +31,7 @@ vote_results.each do |precinct, tallies|
   tallies.each do |candidate, votes|
     puts "-#{candidate} got #{votes} votes"
   end
-  puts ""
+
 end
 
   # 2) How many people voted in each precinct? Create a new hash where the keys name the precinct and the values start at 0. Iterate over the provided `vote_results` to update the totals.
@@ -48,14 +48,12 @@ puts "2)"
 vote_totals.each do |precinct, total|
   puts "#{precinct} had #{total} votes."
 end
-puts ""
 
   # 3) Which precinct had the highest voter turnout? Use the hash you created in Question 2 to return the answer.
 highest_turnout = vote_totals.max_by{|precinct, total| total}
 puts "3)"
 puts "#{highest_turnout.first} had the most votes with \
 #{highest_turnout.last} votes."
-puts ""
 
   # 4) Output the total number of votes per candidate in the format seen above. Create a new hash where the keys name the candidate and the values start at 0. Iterate over the provided `vote_results` to update the totals.
 candidate_totals = {
@@ -70,7 +68,6 @@ puts "4)"
 candidate_totals.each do |candidate, total|
   puts "#{candidate} had #{total} votes"
 end
-puts ""
 
   # 5) Who was the winning candidate in Precinct 4 and how many votes did they get?
 # Billy Joe won Precinct 4 with 353 votes.
@@ -79,7 +76,6 @@ query_winner = vote_results[precinct_query].max_by{|candidate, votes| votes}
 puts "5)"
 puts "#{query_winner.first} won #{precinct_query} with \
 #{query_winner.last} votes."
-puts ""
 
   # 6) How many people voted in total?
 
