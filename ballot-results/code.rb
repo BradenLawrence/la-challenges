@@ -51,6 +51,10 @@ end
 puts ""
 
   # 3) Which precinct had the highest voter turnout? Use the hash you created in Question 2 to return the answer.
+highestTurnout = vote_totals.max_by{|key, value| value}
+puts "3)"
+puts "#{highestTurnout.first} had the most votes with \
+#{highestTurnout.last} votes."
 
   # 4) Output the total number of votes per candidate in the format seen above. Create a new hash where the keys name the candidate and the values start at 0. Iterate over the provided `vote_results` to update the totals.
 
