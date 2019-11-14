@@ -50,6 +50,8 @@ puts "List of people's names:"
 puts people.keys
 
 # * What is the phone number of Alia O'Conner PhD?
+puts "Alia O'Conner's phone number: #{people["Alia O'Conner PhD"]["phone"]}"
+
 # * How many children does Brian Heller have?
 # * What company does Dr. Adela DuBuque work for?
 # * What are the names of the people who have children?
