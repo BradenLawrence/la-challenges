@@ -98,9 +98,9 @@ stats[:total] = {
   income:    voters.reduce(0) {|total, voter| total + voter[:income]},
   household: voters.reduce(0) {|total, voter| total + voter[:household]},
   gender: {
-    male:         voters.select {|voter| voter[:gender] == "Male"       }.size,
-    female:       voters.select {|voter| voter[:gender] == "Female"     }.size,
-    unspecified:  voters.select {|voter| voter[:gender] == "Unspecified"}.size
+    male:        voters.select {|voter| voter[:gender] == "Male"       }.size,
+    female:      voters.select {|voter| voter[:gender] == "Female"     }.size,
+    unspecified: voters.select {|voter| voter[:gender] == "Unspecified"}.size
   },
   education: {
     college:    voters.select {|voter| voter[:education] == "College"    }.size,
@@ -117,7 +117,7 @@ stats[:average] = {
 }
 stats[:percentage] = {
   gender: {
-    male:   stats[:total][:gender][:male] / stats[:total][:voters].to_f * 100,
+    male:   stats[:total][:gender][:male]   / stats[:total][:voters].to_f * 100,
     female: stats[:total][:gender][:female] / stats[:total][:voters].to_f * 100,
     unspecified: (
       stats[:total][:gender][:unspecified] / stats[:total][:voters].to_f * 100
