@@ -55,8 +55,22 @@ highestTurnout = vote_totals.max_by{|key, value| value}
 puts "3)"
 puts "#{highestTurnout.first} had the most votes with \
 #{highestTurnout.last} votes."
+puts ""
 
   # 4) Output the total number of votes per candidate in the format seen above. Create a new hash where the keys name the candidate and the values start at 0. Iterate over the provided `vote_results` to update the totals.
+candidate_totals = {
+  "Mary Sue" => 0,
+  "Sally Jane" => 0,
+  "Billy Joe" => 0,
+}
+vote_results.each do |precinct, tallies|
+  tallies.each {|candidate, votes| candidate_totals[candidate] += votes}
+end
+puts "4)"
+candidate_totals.each do |candidate, total|
+  puts "#{candidate} had #{total} votes"
+end
+puts ""
 
   # 5) Who was the winning candidate in Precinct 4 and how many votes did they get?
 
