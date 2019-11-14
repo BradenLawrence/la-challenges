@@ -167,3 +167,9 @@ end["Casandra Kemmer"]["company"]
 puts "Cassandra Kemmer's employer: #{cassandrasCompany}"
 
 # * Who are all the people in the first set that have an `m` in their Company names?
+mCompanies = sets_of_people.first.collect do |person, data|
+  data["company"]
+end.select {|company| company.downcase.include? "m"}
+
+puts "First set companies that include 'm':"
+puts mCompanies
