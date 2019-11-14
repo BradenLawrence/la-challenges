@@ -94,9 +94,15 @@ puts "6)"
 puts "In total, #{total_votes} people voted."
 
   # 7) Who won the election and how many votes did they get? Use the hash you created in Question 4 to return the answer.
-winner = candidate_totals.max_by {|candidate, totals| totals}
+winner = candidate_totals.group_by {|candidate, totals| totals}
+winner = winner.max.last.to_h
 puts "7)"
-puts "#{winner.first} had the most votes with #{winner.last} votes."
+if winner.size > 1
+  puts "#{winner.keys.join(" and ")} are tied with \
+#{winner.values[0]} votes each."
+else
+  puts "#{winner.keys[0]} had the most votes with #{winner.values[0]} votes."
+end
 
   # 8) How many more votes did the winner have as compared to the third place candidate? Use the hash you created in Question 4 and the winning candidate total votes value from Question 7 to complete this question.
 # Sally Jane beat Mary Sue by 63 votes.
