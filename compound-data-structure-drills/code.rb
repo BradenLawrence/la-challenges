@@ -53,6 +53,9 @@ puts people.keys
 puts "Alia O'Conner's phone number: #{people["Alia O'Conner PhD"]["phone"]}"
 
 # * How many children does Brian Heller have?
+puts "Number of children for Brian Heller: \
+#{people["Brian Heller"]["children"].size}"
+
 # * What company does Dr. Adela DuBuque work for?
 # * What are the names of the people who have children?
 # * What are the names of the people who do not have children?
