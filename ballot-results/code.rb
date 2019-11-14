@@ -102,7 +102,6 @@ puts %W(#{winner_string} #{winner.size > 1 ? "are tied" : "had the most votes"}
         with #{winner.values[0]} votes.).join(" ")
 
   # 8) How many more votes did the winner have as compared to the third place candidate? Use the hash you created in Question 4 and the winning candidate total votes value from Question 7 to complete this question.
-# Sally Jane beat Mary Sue by 63 votes.
 last_place = result_groups.min.last.to_h
 difference = winner.values[0] - last_place.values[0]
 last_place_string = last_place.keys.join(" and ")
