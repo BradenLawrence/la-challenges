@@ -17,13 +17,37 @@ vote_results =
       'Billy Joe' => 488
     },
     "Precinct 4" => {
-    'Mary Sue' => 283,
-    'Sally Jane' => 171,
-    'Billy Joe' => 353
+      'Mary Sue' => 283,
+      'Sally Jane' => 171,
+      'Billy Joe' => 353
     }
   }
 
   # 1) Generate the voting totals by Precinct and Candidate as shown in the directions.
+  # 1)
+  # **In Precinct 1**
+  # -Mary Sue got 218 votes
+  # -Sally Jane got 455 votes
+  # -Billy Joe got 185 votes
+  #
+  # **In Precinct 2**
+  # -Mary Sue got 229 votes
+  # -Sally Jane got 41 votes
+  # -Billy Joe got 35 votes
+  #
+  # **In Precinct 3**
+  # -Mary Sue got 297 votes
+  # -Sally Jane got 423 votes
+  # -Billy Joe got 488 votes
+  #
+  # **In Precinct 4**
+  # -Mary Sue got 283 votes
+  # -Sally Jane got 171 votes
+  # -Billy Joe got 353 votes
+puts "1)"
+vote_results.each do |precinct, tallies|
+  puts "**#{precinct}**"
+end
 
   # 2) How many people voted in each precinct? Create a new hash where the keys name the precinct and the values start at 0. Iterate over the provided `vote_results` to update the totals.
 
