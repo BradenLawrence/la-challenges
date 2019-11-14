@@ -39,7 +39,6 @@ people =
   }
 }
 
-
 # Write Ruby code to find out the answers to the following questions:
 
 # * How many people are in `people` (excluding children)?
@@ -60,6 +59,9 @@ puts "Number of children for Brian Heller: \
 puts "Dr. Adela DuBuque's employer: #{people["Dr. Adela DuBuque"]["company"]}"
 
 # * What are the names of the people who have children?
+puts "List of people who have children:"
+puts people.select {|person, data| !data["children"].nil?}.keys
+
 # * What are the names of the people who do not have children?
 # * What is Brian Heller's child's name?
 # * What is Maryse Johns' first child's name?
