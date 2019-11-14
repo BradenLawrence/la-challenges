@@ -43,6 +43,8 @@ people =
 # Write Ruby code to find out the answers to the following questions:
 
 # * How many people are in `people` (excluding children)?
+puts "Number of people: #{people.size}"
+
 # * What are the names of all the people?
 # * What is the phone number of Alia O'Conner PhD?
 # * How many children does Brian Heller have?
