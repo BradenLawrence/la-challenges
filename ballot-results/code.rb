@@ -71,7 +71,7 @@ end
 
   # 5) Who was the winning candidate in Precinct 4 and how many votes did they get?
 precinct_query = "Precinct 4"
-query_winner = vote_results[precinct_query].max_by{|candidate, votes| votes}
+query_winner = vote_results[precinct_query].max_by {|candidate, votes| votes}
 puts "5)"
 puts "#{query_winner.first} won #{precinct_query} with \
 #{query_winner.last} votes."
