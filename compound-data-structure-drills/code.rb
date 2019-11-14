@@ -39,42 +39,41 @@ people =
   }
 }
 
-# Write Ruby code to find out the answers to the following questions:
 
-# * How many people are in `people` (excluding children)?
 puts "Number of people: #{people.size}"
+puts ""
 
-# * What are the names of all the people?
 puts "List of people's names:"
 puts people.keys
+puts ""
 
-# * What is the phone number of Alia O'Conner PhD?
 puts "Alia O'Conner's phone number: #{people["Alia O'Conner PhD"]["phone"]}"
+puts ""
 
-# * How many children does Brian Heller have?
 puts "Number of children for Brian Heller: \
 #{people["Brian Heller"]["children"].size}"
+puts ""
 
-# * What company does Dr. Adela DuBuque work for?
 puts "Dr. Adela DuBuque's employer: #{people["Dr. Adela DuBuque"]["company"]}"
+puts ""
 
-# * What are the names of the people who have children?
 puts "List of people who have children:"
 puts people.select {|person, data| !data["children"].nil?}.keys
+puts ""
 
-# * What are the names of the people who do not have children?
 puts "List of people who do not have children:"
 puts people.select {|person, data| data["children"].nil?}.keys
+puts ""
 
-# * What is Brian Heller's child's name?
 puts "Brian Heller's child: #{people["Brian Heller"]["children"].join}"
+puts ""
 
-# * What is Maryse Johns' first child's name?
 puts "Maryse Johns's first child: #{people["Maryse Johns"]["children"].first}"
+puts ""
 
-# * Dr. Adela DuBuque just had a baby named Tomas. How would you update the hash for this information?
 (people["Dr. Adela DuBuque"]["children"] ||= []) << "Tomas"
 puts "Dr. Adela's children: #{people["Dr. Adela DuBuque"]["children"].join}"
+puts ""
 
 sets_of_people =
 [
@@ -133,43 +132,40 @@ sets_of_people =
   }
 ]
 
-# Write Ruby code to find out the answers to the following questions:
 
-# * How many people are in the first set of people?
 puts "Number of people in first set: #{sets_of_people.first.size}"
+puts ""
 
-# * How many people are in the second set of people?
 puts "Number of people in second set: #{sets_of_people[1].size}"
+puts ""
 
-# * What is Ruby Hessel's phone number?
 rubysPhoneNum = sets_of_people.find do |set|
   set.include? "Ruby Hessel"
 end["Ruby Hessel"]["phone"]
 puts "Ruby Hessel's phone number: #{rubysPhoneNum}"
+puts ""
 
-# * What are the names of Dr. Sigrid Nader's children?
 sigridsChildren = sets_of_people.find do |set|
   set.include? "Dr. Sigrid Nader"
 end["Dr. Sigrid Nader"]["children"]
 puts "Dr. Sigrid Nader's children:"
 puts sigridsChildren
+puts ""
 
-# * What is Bernard Feil's child's name?
 bernardsChild = sets_of_people.find do |set|
   set.include? "Bernard Feil"
 end["Bernard Feil"]["children"].join
 puts "Bernard Feil's child: #{bernardsChild}"
+puts ""
 
-# * What company does Casandra Kemmer work for?
 cassandrasCompany = sets_of_people.find do |set|
   set.include? "Casandra Kemmer"
 end["Casandra Kemmer"]["company"]
 puts "Cassandra Kemmer's employer: #{cassandrasCompany}"
+puts ""
 
-# * Who are all the people in the first set that have an `m` in their Company names?
 mCompanies = sets_of_people.first.collect do |person, data|
   data["company"]
 end.select {|company| company.downcase.include? "m"}
-
 puts "First set companies that include 'm':"
 puts mCompanies
