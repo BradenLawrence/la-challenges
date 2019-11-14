@@ -50,16 +50,12 @@ precinct_totals.each do |precinct, total|
 end
 
   # 3) Which precinct had the highest voter turnout? Use the hash you created in Question 2 to return the answer.
-highest_turnout = precinct_totals.group_by {|precinct, total| total}
-highest_turnout = highest_turnout.max.last.to_h
+turnout_groups = precinct_totals.group_by {|precinct, total| total}
+highest_turnout = turnout_groups.max.last.to_h
 puts "3)"
-if highest_turnout.size > 1
-  puts "#{highest_turnout.keys.join(" and ")} are tied for most votes with \
-#{highest_turnout.values[0]} votes each."
-else
-  puts "#{highest_turnout.keys[0]} had the most votes with \
-#{highest_turnout.values[0]} votes."
-end
+puts %W(#{highest_turnout.keys.join(" and ")}
+        #{highest_turnout.size > 1 ? "are tied for most" : "had the most"}
+        votes with #{highest_turnout.values[0]} votes.).join(" ")
 
   # 4) Output the total number of votes per candidate in the format seen above. Create a new hash where the keys name the candidate and the values start at 0. Iterate over the provided `vote_results` to update the totals.
 candidate_totals = {
