@@ -148,6 +148,12 @@ end["Ruby Hessel"]["phone"]
 puts "Ruby Hessel's phone number: #{rubysPhoneNum}"
 
 # * What are the names of Dr. Sigrid Nader's children?
+sigridsChildren = sets_of_people.find do |set|
+  set.include? "Dr. Sigrid Nader"
+end["Dr. Sigrid Nader"]["children"]
+puts "Dr. Sigrid Nader's children:"
+puts sigridsChildren
+
 # * What is Bernard Feil's child's name?
 # * What company does Casandra Kemmer work for?
 # * Who are all the people in the first set that have an `m` in their Company names?
