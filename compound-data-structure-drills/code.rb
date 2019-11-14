@@ -70,6 +70,8 @@ puts people.select {|person, data| data["children"].nil?}.keys
 puts "Brian Heller's child: #{people["Brian Heller"]["children"].join}"
 
 # * What is Maryse Johns' first child's name?
+puts "Maryse Johns's first child: #{people["Maryse Johns"]["children"].first}"
+
 # * Dr. Adela DuBuque just had a baby named Tomas. How would you update the hash for this information?
 
 sets_of_people =
