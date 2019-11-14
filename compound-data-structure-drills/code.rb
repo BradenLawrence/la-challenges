@@ -155,5 +155,10 @@ puts "Dr. Sigrid Nader's children:"
 puts sigridsChildren
 
 # * What is Bernard Feil's child's name?
+bernardsChild = sets_of_people.find do |set|
+  set.include? "Bernard Feil"
+end["Bernard Feil"]["children"].join
+puts "Bernard Feil's child: #{bernardsChild}"
+
 # * What company does Casandra Kemmer work for?
 # * Who are all the people in the first set that have an `m` in their Company names?
