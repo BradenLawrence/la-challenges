@@ -77,16 +77,12 @@ end
 
   # 5) Who was the winning candidate in Precinct 4 and how many votes did they get?
 precinct_query = "Precinct 4"
-query_winner = vote_results[precinct_query].group_by {|candidate, votes| votes}
-query_winner = query_winner.max.last.to_h
+query_groups = vote_results[precinct_query].group_by {|candidate, votes| votes}
+query_winner = query_groups.max.last.to_h
+query_winner_string = query_winner.keys.join(" and ")
 puts "5)"
-if query_winner.size > 1
-  puts "#{query_winner.keys.join(" and ")} are tied in #{precinct_query} with \
-#{query_winner.values[0]} votes each."
-else
-  puts "#{query_winner.keys[0]} won #{precinct_query} with \
-#{query_winner.values[0]} votes."
-end
+puts %W(#{query_winner_string} #{query_winner.size > 1 ? "are tied in" : "won"}
+        #{precinct_query} with #{query_winner.values[0]} votes.).join(" ")
 
   # 6) How many people voted in total?
 total_votes = precinct_totals.values.reduce(:+)
