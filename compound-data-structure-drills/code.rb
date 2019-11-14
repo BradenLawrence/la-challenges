@@ -57,6 +57,8 @@ puts "Number of children for Brian Heller: \
 #{people["Brian Heller"]["children"].size}"
 
 # * What company does Dr. Adela DuBuque work for?
+puts "Dr. Adela DuBuque's employer: #{people["Dr. Adela DuBuque"]["company"]}"
+
 # * What are the names of the people who have children?
 # * What are the names of the people who do not have children?
 # * What is Brian Heller's child's name?
