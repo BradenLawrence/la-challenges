@@ -73,6 +73,8 @@ puts "Brian Heller's child: #{people["Brian Heller"]["children"].join}"
 puts "Maryse Johns's first child: #{people["Maryse Johns"]["children"].first}"
 
 # * Dr. Adela DuBuque just had a baby named Tomas. How would you update the hash for this information?
+(people["Dr. Adela DuBuque"]["children"] ||= []) << "Tomas"
+puts "Dr. Adela's children: #{people["Dr. Adela DuBuque"]["children"].join}"
 
 sets_of_people =
 [
