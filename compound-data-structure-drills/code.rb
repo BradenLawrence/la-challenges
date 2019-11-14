@@ -67,6 +67,8 @@ puts "List of people who do not have children:"
 puts people.select {|person, data| data["children"].nil?}.keys
 
 # * What is Brian Heller's child's name?
+puts "Brian Heller's child: #{people["Brian Heller"]["children"][0]}"
+
 # * What is Maryse Johns' first child's name?
 # * Dr. Adela DuBuque just had a baby named Tomas. How would you update the hash for this information?
 
