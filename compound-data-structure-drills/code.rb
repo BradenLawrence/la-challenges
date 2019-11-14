@@ -46,6 +46,9 @@ people =
 puts "Number of people: #{people.size}"
 
 # * What are the names of all the people?
+puts "List of people's names:"
+puts people.keys
+
 # * What is the phone number of Alia O'Conner PhD?
 # * How many children does Brian Heller have?
 # * What company does Dr. Adela DuBuque work for?
