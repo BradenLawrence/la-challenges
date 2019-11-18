@@ -9,4 +9,4 @@ def print_puzzle(word, guess = [])
   puts ""
 end
 
-print_puzzle("dogs", ["d","f","n","s"])
+print_puzzle('persistence', ['s', 'e'])
