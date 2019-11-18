@@ -9,6 +9,9 @@ def greet(name, language = "English")
     "Italian" => "Ciao",
     "Irken"   => "Doom de doom"
   }
+  if salutations[language].nil?
+    language = "English"
+  end
     return "#{salutations[language]} #{name.upcase}!"
 end
 
