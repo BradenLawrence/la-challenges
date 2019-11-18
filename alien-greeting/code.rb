@@ -1,5 +1,6 @@
 def greet(name)
-  return "Hi #{name.upcase}!"
+  salutations = ["Hi","Yo","Hey","Howdy"]
+  return "#{salutations.sample} #{name.upcase}!"
 end
 
-puts greet("zim")
+puts greet(gets.chomp)
