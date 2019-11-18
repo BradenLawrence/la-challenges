@@ -1,3 +1,7 @@
+def prompt(string)
+  puts string
+  return gets.chomp
+end
 def greet(name, language = "English")
   salutations = {
     "English" => "Hi",
@@ -8,4 +12,7 @@ def greet(name, language = "English")
     return "#{salutations[language]} #{name.upcase}!"
 end
 
-puts greet(gets.chomp)
+puts greet(
+  prompt("What is your name?"),
+  prompt("What is your language?")
+)
