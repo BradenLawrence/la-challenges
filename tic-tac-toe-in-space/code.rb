@@ -1,4 +1,7 @@
 def print_grid(board = [["x","o","x"],["x","o","x"],["x","o","x"]])
+  def print_divider
+    puts "\n-----------"
+  end
   def print_row(row)
     row.each_with_index do |item, index|
       unless index == 0
@@ -6,12 +9,14 @@ def print_grid(board = [["x","o","x"],["x","o","x"],["x","o","x"]])
       end
       print " #{item} "
     end
-    puts ""
   end
-  def print_divider
-
+  board.each_with_index do |row, index|
+    unless index == 0
+      print_divider()
+    end
+    print_row(row)
   end
-  board.each {|row| print_row(row)}
+  puts ""
 end
 
 print_grid()
