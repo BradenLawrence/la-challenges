@@ -1,4 +1,15 @@
-def print_grid(board = [["x",nil,"x"],["x","o","x"],["x","o","x"]])
+board_a = [
+  ['x', 'o', 'x'],
+  ['x', nil, 'o'],
+  ['x', 'o', nil]
+]
+board_b = [
+  [nil, 'o', 'x'],
+  ['x', 'o', nil],
+  ['x', 'o', nil]
+]
+
+def print_grid(board = [[nil,nil,nil],[nil,nil,nil],[nil,nil,nil]])
   def print_divider
     puts "\n-----------"
   end
@@ -19,4 +30,8 @@ def print_grid(board = [["x",nil,"x"],["x","o","x"],["x","o","x"]])
   puts ""
 end
 
-print_grid()
+puts "Board A:"
+print_grid(board_a)
+puts ""
+puts "Board B:"
+print_grid(board_b)
