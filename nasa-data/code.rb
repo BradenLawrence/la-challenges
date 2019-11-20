@@ -181,7 +181,11 @@ nasa_data = [
 ]
 
 # 1. Create a method called company_name that takes in two arguments, an array and a company name.The method must return the entire hash for the given company.
-# Your code here
+def company_name(source, query)
+  company = source.first.detect {|key, value| key == query}.last
+  puts company
+  return company
+end
 
 
 company_name(nasa_data, "Garmin International")
