@@ -232,8 +232,20 @@ end
 id_number(nasa_data)
 
 # 4. Create a method called position that returns each company name and their listed position.
-# Your code here
-
+puts "\n"
+def position(source)
+  position_list = []
+  source.each do |set|
+    set.each do |key, value|
+      position_list << {
+        name:       key,
+        position:   value["position"]
+      }
+    end
+  end
+  position_list.each {|item| puts "#{item[:name]}: #{item[:position]}"}
+  return position_list
+end
 
 position(nasa_data)
 
