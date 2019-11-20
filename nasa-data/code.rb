@@ -238,8 +238,8 @@ def position(source)
   source.each do |set|
     set.each do |key, value|
       position_list << {
-        name:       key,
-        position:   value["position"]
+        name:     key,
+        position: value["position"]
       }
     end
   end
