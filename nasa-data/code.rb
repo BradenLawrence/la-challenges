@@ -269,7 +269,18 @@ end
 type(nasa_data)
 
 # 6. Create a method called number that takes in an array and returns the name of the company that has the highest computed_region_nnqa_25f4 number.
-# Your code here
+puts "\n"
+def number(source)
+  region_num_list = {}
+  source.each do |set|
+    set.each do |key, value|
+      region_num_list[key] = value["computed_region_nnqa_25f4"]
+    end
+  end
+  highest_region = region_num_list.max_by {|key, value| value}.first
+  puts highest_region
+  return highest_region
+end
 
 
 number(nasa_data)
