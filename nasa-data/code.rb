@@ -182,8 +182,11 @@ nasa_data = [
 
 # 1. Create a method called company_name that takes in two arguments, an array and a company name.The method must return the entire hash for the given company.
 def company_name(source, query)
-  company = source.first.detect {|key, value| key == query}.last
-  puts company
+  company = []
+  source.each do |set|
+    company << set.detect {|key, value| key == query}.last
+  end
+  puts company.join(", ")
   return company
 end
 
