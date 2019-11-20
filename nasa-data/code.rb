@@ -194,7 +194,22 @@ end
 company_name(nasa_data, "Garmin International")
 
 # 2. Create a method called location that takes in an array and returns the city and state for every company.
-# Your code here
+def location(source)
+  location_list = []
+  source.each do |set|
+    set.each do |key, value|
+      location_list << {
+        name: key,
+        city: value["location_1_city"],
+        state: value["location_1_state"]
+      }
+    end
+  end
+  location_list.each do |loc|
+    puts "#{loc[:name]}: #{loc[:city]}, #{loc[:state]}"
+  end
+  return location_list
+end
 
 
 location(nasa_data)
