@@ -250,7 +250,20 @@ end
 position(nasa_data)
 
 # 5. Create a method called type that takes in an array and returns each company name followed by their location_1 type.
-# Your code here
+puts "\n"
+def type(source)
+  type_list = []
+  source.each do |set|
+    set.each do |key, value|
+      type_list << {
+        name: key,
+        type: value["location_1"]["type"]
+      }
+    end
+  end
+  type_list.each {|item| puts "#{item[:name]}: #{item[:type]}"}
+  return type_list
+end
 
 
 type(nasa_data)
