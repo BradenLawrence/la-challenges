@@ -190,10 +190,10 @@ def company_name(source, query)
   return company
 end
 
-
 company_name(nasa_data, "Garmin International")
 
 # 2. Create a method called location that takes in an array and returns the city and state for every company.
+puts "\n"
 def location(source)
   location_list = []
   source.each do |set|
@@ -211,12 +211,23 @@ def location(source)
   return location_list
 end
 
-
 location(nasa_data)
 
 # 3. Create a method called id_number that takes in an array and returns each company name and its computed_region_cbhk_fwbd id number.
-# Your code here
-
+puts "\n"
+def id_number(source)
+  id_list = []
+  source.each do |set|
+    set.each do |key, value|
+      id_list << {
+        name: key,
+        id:   value["computed_region_cbhk_fwbd"]
+      }
+    end
+  end
+  id_list.each {|item| puts "#{item[:name]}: #{item[:id]}"}
+  return id_list
+end
 
 id_number(nasa_data)
 
