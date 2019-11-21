@@ -273,13 +273,11 @@ puts "\n"
 def gmail(source)
   email_hosts = {}
   source.each do |set|
-    set.each do |key, value|
-      email_hosts[key] = value["email_hosts"]
-    end
+    set.each {|key, value| email_hosts[key] = value["email_hosts"]}
   end
-  gmail_hosts = email_hosts.select {|name, host| host == "gmail.com"}
-  puts gmail_hosts.size
-  return gmail_hosts.size
+  gmail_hosts = email_hosts.select {|name, host| host == "gmail.com"}.size
+  puts gmail_hosts
+  return gmail_hosts
 end
 
 gmail(nasa_data)
