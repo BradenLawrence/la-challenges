@@ -1,4 +1,3 @@
-require 'pry'
 nasa_data = [
   "Direct Marketing News" => {
     "computed_region_cbhk_fwbd" => 46,
