@@ -282,12 +282,21 @@ def number(source)
   return highest_region
 end
 
-
 number(nasa_data)
 
 # 7. Create a method called gmail that takes in an array and returns the amount of companies that have gmail.com as their email_hosts.
-# Your code here
-
+puts "\n"
+def gmail(source)
+  email_hosts = {}
+  source.each do |set|
+    set.each do |key, value|
+      email_hosts[key] = value["email_hosts"]
+    end
+  end
+  gmail_hosts = email_hosts.select {|name, host| host == "gmail.com"}
+  puts gmail_hosts.size
+  return gmail_hosts.size
+end
 
 gmail(nasa_data)
 
