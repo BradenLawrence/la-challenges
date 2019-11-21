@@ -216,16 +216,11 @@ location(nasa_data)
 # 3. Create a method called id_number that takes in an array and returns each company name and its computed_region_cbhk_fwbd id number.
 puts "\n"
 def id_number(source)
-  id_list = []
+  id_list = {}
   source.each do |set|
-    set.each do |key, value|
-      id_list << {
-        name: key,
-        id:   value["computed_region_cbhk_fwbd"]
-      }
-    end
+    set.each {|key, value| id_list[key] = value["computed_region_cbhk_fwbd"]}
   end
-  id_list.each {|item| puts "#{item[:name]}: #{item[:id]}"}
+  id_list.each {|company, region| puts "#{company}: #{region}"}
   return id_list
 end
 
