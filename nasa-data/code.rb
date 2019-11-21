@@ -301,6 +301,17 @@ end
 gmail(nasa_data)
 
 # 8. Create a method called no_domain that takes in an array and returns the number of companies that **do not** have a domain listed in nasa_data.
-
+puts "\n"
+def no_domain(source)
+  domain_list = {}
+  source.each do |set|
+    set.each do |key, value|
+      domain_list[key] = value["domain"]
+    end
+  end
+  no_domain_list = domain_list.select {|name, domain| domain.nil?}
+  puts no_domain_list.size
+  return no_domain_list.size
+end
 
 no_domain(nasa_data)
