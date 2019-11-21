@@ -287,13 +287,11 @@ puts "\n"
 def no_domain(source)
   domain_list = {}
   source.each do |set|
-    set.each do |key, value|
-      domain_list[key] = value["domain"]
-    end
+    set.each {|key, value| domain_list[key] = value["domain"]}
   end
-  no_domain_list = domain_list.select {|name, domain| domain.nil?}
-  puts no_domain_list.size
-  return no_domain_list.size
+  no_domain_num = domain_list.select {|name, domain| domain.nil?}.size
+  puts no_domain_num
+  return no_domain_num
 end
 
 no_domain(nasa_data)
