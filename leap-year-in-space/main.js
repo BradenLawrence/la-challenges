@@ -1,3 +1,6 @@
 class Year {
-  // your code, here
+  constructor(current) {
+    this.current = current
+  }
+
 }
