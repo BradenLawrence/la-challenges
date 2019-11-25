@@ -2,12 +2,12 @@ class Year {
   constructor(current) {
     this.current = current
   }
-  isLeapYear = () => {
-    if(this.current % 4 !== 0) {
+  isLeapYear = (checkYear = this.current) => {
+    if(checkYear % 4 !== 0) {
       return false
-    } else if(this.current % 100 !== 0) {
+    } else if(checkYear % 100 !== 0) {
       return true
-    } else if(this.current % 400 !== 0) {
+    } else if(checkYear % 400 !== 0) {
       return false
     }
     return true
