@@ -12,4 +12,13 @@ class Year {
     }
     return true
   }
+  recentLeapYears = (startYear = this.current) => {
+    let leapYears = []
+    for(let i=startYear-100; i<startYear; i++) {
+      if(this.isLeapYear(i)) {
+        leapYears.push(i)
+      }
+    }
+    return leapYears
+  }
 }
