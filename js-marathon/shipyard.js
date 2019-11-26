@@ -13,7 +13,7 @@ const trainCrew = (crewList) => {
   return crew
 }
 
-const countdown = (callBack, count = 0) => {
+const countdown = (callBack, count = 3) => {
   if(!isNaN(parseInt(count)) && count >= 0) {
     if(count == 0) {
       console.log("Blastoff!!")
