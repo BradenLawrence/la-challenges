@@ -17,6 +17,14 @@ class Spaceship {
     this.propulsion = engine
     console.log("Propulsion has been mounted!")
   }
+  takeoff = () => {
+    let launchSuccessful = this.propulsion.fire()
+    if(launchSuccessful) {
+      console.log("Vroooooooooooom")
+    } else {
+      console.log("Takeoff was unsuccessful.")
+    }
+  }
 }
 
 module.exports = Spaceship
