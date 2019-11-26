@@ -1,5 +1,6 @@
-const Spaceship = require("./spaceship")
-const CrewMember = require("./crew-member")
+const Spaceship   = require("./spaceship"),
+      CrewMember  = require("./crew-member"),
+      Rocket      = require("./rocket")
 
 const trainCrew = (crewList) => {
   let crew = []
