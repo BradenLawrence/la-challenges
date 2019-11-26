@@ -2,17 +2,17 @@ let rocket = {
   fuel: 0,
   addFuel(amount) {
     if(!isNaN(parseFloat(amount) && amount >= 0)) {
-      fuel += amount
-      return fuel
+      this.fuel += amount
+      return this.fuel
     } else {
       return "Sorry, the amount of fuel must be a positive number."
     }
   },
   fire() {
-    if(fuel > 0) {
-      fuel -= 1
+    if(this.fuel > 0) {
+      this.fuel -= 1
       console.log("Engines have fired!")
-      console.log(`Remaining fuel: ${fuel}`)
+      console.log(`Remaining this.fuel: ${this.fuel}`)
       return true
     } else {
       console.log("Engines have failed to fire.")
@@ -21,4 +21,4 @@ let rocket = {
   }
 }
 
-module.export = rocket
+module.exports = rocket
