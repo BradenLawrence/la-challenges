@@ -16,9 +16,13 @@ const trainCrew = (crewList) => {
 const launchpad = (ship) => {
   console.log("Initializing Pre-Flight Procedures...")
   console.log(`Welcome aboard the ${ship.name}!`)
+
   let ourCrew = trainCrew(["Holden", "Naomi", "Alex", "Amos"])
   ourShip.loadCrew(ourCrew)
-  console.log(`Today's flight will be captained by ${ourShip.captain()}`)
+
+  console.log(`Today's flight will be captained by ${ourShip.captain().name}`)
+
+  ourShip.mountPropulsion(Rocket)
 }
 
 let ourShip = new Spaceship("Rocinante")
