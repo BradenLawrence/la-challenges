@@ -20,7 +20,9 @@ const countdown = (callBack, count = 3) => {
       callBack()
     } else {
       console.log(count)
-      countdown(callBack, count-1)
+      setTimeout(() => {
+        countdown(callBack, count-1)
+      }, 1000)
     }
   } else {
     console.log("Sorry, the countdown must start at a positive number")
