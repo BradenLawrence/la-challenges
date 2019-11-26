@@ -1,4 +1,5 @@
-let Spaceship = require("./Spaceship")
+const Spaceship = require("./spaceship")
+const CrewMember = require("./crew-member")
 
 const launchpad = (ship) => {
   console.log("Initializing Pre-Flight Procedures...")
