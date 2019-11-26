@@ -6,6 +6,17 @@ const launchpad = (ship) => {
   console.log(`Welcome aboard the ${ship.name}!`)
 }
 
+const trainCrew = (crewList) => {
+  let crew = []
+  crewList.forEach(name => {
+    crew.push(new CrewMember(name))
+  })
+  crew.forEach(name => {
+    name.trained = true
+  })
+  return crew
+}
+
 let ourShip = new Spaceship("Rocinante")
 
 launchpad(ourShip)
