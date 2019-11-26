@@ -1,1 +1,3 @@
-// YOUR CODE GOES HERE
+const launchpad = () => {
+  console.log("Initializing Pre-Flight Procedures...")
+}
