@@ -22,3 +22,5 @@ launchpad(ourShip)
 
 let ourCrew = trainCrew(["Holden", "Naomi", "Alex", "Amos"])
 ourShip.loadCrew(ourCrew)
+
+console.log(ourShip.captain())

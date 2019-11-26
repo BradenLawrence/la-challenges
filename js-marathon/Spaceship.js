@@ -9,6 +9,9 @@ class Spaceship {
       console.log(`${member.name} has boarded the ${this.name}.`)
     })
   }
+  captain = () => {
+    return this.crew[Math.floor(Math.random() * this.crew.length)]
+  }
 }
 
 module.exports = Spaceship
