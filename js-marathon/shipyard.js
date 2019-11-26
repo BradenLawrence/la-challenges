@@ -1,11 +1,6 @@
 const Spaceship = require("./spaceship")
 const CrewMember = require("./crew-member")
 
-const launchpad = (ship) => {
-  console.log("Initializing Pre-Flight Procedures...")
-  console.log(`Welcome aboard the ${ship.name}!`)
-}
-
 const trainCrew = (crewList) => {
   let crew = []
   crewList.forEach(name => {
@@ -17,10 +12,14 @@ const trainCrew = (crewList) => {
   return crew
 }
 
+const launchpad = (ship) => {
+  console.log("Initializing Pre-Flight Procedures...")
+  console.log(`Welcome aboard the ${ship.name}!`)
+  let ourCrew = trainCrew(["Holden", "Naomi", "Alex", "Amos"])
+  ourShip.loadCrew(ourCrew)
+  console.log(`Today's flight will be captained by ${ourShip.captain()}`)
+}
+
+
 let ourShip = new Spaceship("Rocinante")
 launchpad(ourShip)
-
-let ourCrew = trainCrew(["Holden", "Naomi", "Alex", "Amos"])
-ourShip.loadCrew(ourCrew)
-
-console.log(ourShip.captain())
