@@ -20,6 +20,5 @@ const launchpad = (ship) => {
   console.log(`Today's flight will be captained by ${ourShip.captain()}`)
 }
 
-
 let ourShip = new Spaceship("Rocinante")
 launchpad(ourShip)
