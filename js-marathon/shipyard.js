@@ -18,7 +18,7 @@ const trainCrew = (crewList) => {
 }
 
 let ourShip = new Spaceship("Rocinante")
-
-console.log(trainCrew(["Holden", "Naomi", "Alex", "Amos"]))
-
 launchpad(ourShip)
+
+let ourCrew = trainCrew(["Holden", "Naomi", "Alex", "Amos"])
+ourShip.loadCrew(ourCrew)
