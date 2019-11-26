@@ -13,6 +13,18 @@ const trainCrew = (crewList) => {
   return crew
 }
 
+const countdown = (callBack, count = 0) => {
+  if(!isNaN(parseInt(count)) && count >= 0) {
+    if(count == 0) {
+      console.log("Blastoff!!")
+      callBack()
+    } else {
+      console.log(count)
+      countdown(callBack, count-1)
+    }
+  }
+}
+
 const launchpad = (ship) => {
   console.log("Initializing Pre-Flight Procedures...")
   console.log(`Welcome aboard the ${ship.name}!`)
@@ -24,7 +36,7 @@ const launchpad = (ship) => {
   ourShip.mountPropulsion(Rocket)
   ourShip.propulsion.addFuel(10)
 
-  ourShip.takeoff()
+  countdown(ourShip.takeoff, 5)
 }
 
 let ourShip = new Spaceship("Rocinante")
