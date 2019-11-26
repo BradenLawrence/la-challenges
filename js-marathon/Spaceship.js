@@ -3,3 +3,5 @@ class Spaceship {
     this.name = name
   }
 }
+
+module.exports = Spaceship
