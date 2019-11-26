@@ -22,6 +22,8 @@ const countdown = (callBack, count = 3) => {
       console.log(count)
       countdown(callBack, count-1)
     }
+  } else {
+    console.log("Sorry, the countdown must start at a positive number")
   }
 }
 
