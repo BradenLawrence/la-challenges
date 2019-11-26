@@ -12,7 +12,7 @@ let rocket = {
     if(this.fuel > 0) {
       this.fuel -= 1
       console.log("Engines have fired!")
-      console.log(`Remaining this.fuel: ${this.fuel}`)
+      console.log(`Remaining fuel: ${this.fuel}`)
       return true
     } else {
       console.log("Engines have failed to fire.")
