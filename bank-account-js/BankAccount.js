@@ -8,5 +8,12 @@ class BankAccount {
       return total + current
     })
   }
+  addTransaction = (value) => {
+    if(!isNaN(parseFloat(value))) {
+      this.transactions.push(value)
+      return this.updateBalance()
+    } else {
+      return "Sorry, your transaction must be a number."
+    }
   }
 }
