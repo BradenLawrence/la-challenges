@@ -21,8 +21,10 @@ const launchpad = (ship) => {
   ourShip.loadCrew(ourCrew)
 
   console.log(`Today's flight will be captained by ${ourShip.captain().name}`)
-
   ourShip.mountPropulsion(Rocket)
+  ourShip.propulsion.addFuel(10)
+
+  ourShip.takeoff()
 }
 
 let ourShip = new Spaceship("Rocinante")
