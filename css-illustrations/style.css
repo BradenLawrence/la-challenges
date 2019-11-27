@@ -1,0 +1,42 @@
+.tree-wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+.branch {
+  background-color: #007f00;
+  margin: 0 auto;
+  height: 12vh;
+}
+
+.branch-0 {
+  width: 12vw;
+}
+
+.branch-1 {
+  width: 24vw;
+}
+
+.branch-2 {
+  width: 36vw;
+}
+
+.branch-3 {
+  width: 48vw;
+}
+
+.branch-4 {
+  width: 60vw;
+}
+
+.branch-5 {
+  width: 72vw;
+}
+
+.branch-6 {
+  width: 84vw;
+}
+
+.trunk {
+
+}
