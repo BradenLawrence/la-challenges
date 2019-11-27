@@ -1,6 +1,6 @@
 const Spaceship   = require("./spaceship"),
       CrewMember  = require("./crew-member"),
-      Rocket      = require("./rocket")
+      rocket      = require("./rocket")
 
 const trainCrew = (crewList) => {
   let crew = []
@@ -37,7 +37,7 @@ const launchpad = (ship) => {
   ourShip.loadCrew(ourCrew)
 
   console.log(`Today's flight will be captained by ${ourShip.captain().name}`)
-  ourShip.mountPropulsion(Rocket)
+  ourShip.mountPropulsion(rocket)
   ourShip.propulsion.addFuel(10)
 
   countdown(ourShip.takeoff, 5)
