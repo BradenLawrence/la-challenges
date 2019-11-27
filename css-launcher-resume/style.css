@@ -1,0 +1,58 @@
+body {
+  color: #445566;
+  font-family: Arial, sans-serif;
+  background-color: #004455;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  width: 50vw;
+  height: 95vh;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #eeeeee;
+}
+
+.page-header {
+  color: #ff6649;
+  font-family: Georgia, serif;
+  margin: 0;
+  padding: 2vh 2vw;
+}
+
+.bio-wrapper {
+  margin: 0;
+  padding: 2vh 2vw;
+  display: grid;
+}
+
+.bio-image {
+  grid-column: 1;
+  width: 15vw;
+  height: auto;
+}
+
+.bio {
+  grid-column: 2;
+}
+
+.links {
+  padding: 2vh 2vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.links > li {
+  text-align: center;
+  list-style: none;
+}
+
+.links > li > a {
+  text-decoration: none;
+  color: #008899;
+}
+
+.feature {
+  font-weight: bold;
+}
