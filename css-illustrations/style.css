@@ -1,42 +1,47 @@
 .tree-wrapper {
-  height: 100vh;
-  width: 100vw;
+  height: 96vh;
+  width: 98vw;
 }
 
 .branch {
   background-color: #007f00;
-  margin: 0 auto;
-  height: 12vh;
+  margin: 1vh auto;
+  height: 10vh;
+  border-radius: 5vw;
 }
 
 .branch-0 {
-  width: 12vw;
+  width: 10vh;
 }
 
 .branch-1 {
-  width: 24vw;
+  width: 22vh;
 }
 
 .branch-2 {
-  width: 36vw;
+  width: 34vh;
 }
 
 .branch-3 {
-  width: 48vw;
+  width: 46vh;
 }
 
 .branch-4 {
-  width: 60vw;
+  width: 58vh;
 }
 
 .branch-5 {
-  width: 72vw;
+  width: 70vh;
 }
 
 .branch-6 {
-  width: 84vw;
+  width: 82vh;
 }
 
 .trunk {
-
+  background-color: #7f3325;
+  margin: 1vh auto;
+  height: 20vh;
+  width: 10vh;
+  border-radius: 5vw;
 }
