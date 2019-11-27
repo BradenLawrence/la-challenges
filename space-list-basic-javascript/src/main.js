@@ -7,10 +7,10 @@ const summary = (SpaceItems) => {
   SpaceItems.forEach(item => {
     let itemTotal = item.quantity * item.price
     total += itemTotal
-    summaryString += `${item.quantity} \$${item.name}\
-${item.quantity===1 ? "":"s"} - ${itemTotal}\n`
+    summaryString += `${item.quantity} ${item.name}\
+${item.quantity===1 ? "":"s"} - \$${itemTotal.toFixed(2)}\n`
   })
-  summaryString += `\nYou owe me \$${total}`
+  summaryString += `\nYou owe me \$${total.toFixed(2)}`
   return summaryString
 }
 
