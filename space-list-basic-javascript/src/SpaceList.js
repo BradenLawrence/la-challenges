@@ -1,1 +1,5 @@
-// For Optional Only
+class SpaceList {
+  constructor(name, SpaceItems) {
+    
+  }
+}
