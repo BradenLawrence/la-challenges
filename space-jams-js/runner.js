@@ -1,5 +1,6 @@
 // Do not modify this code unless you are attempting the extra challenge
 let Album = require('./album');
+let Track = require('./track')
 let TRACKS = require('./space-jams-tracks');
 
 let albums = []
@@ -15,10 +16,23 @@ TRACKS.forEach((track) => {
   }
 
   // add the track to the album's tracks property
-  album.tracks.push(track)
+  let trackObj = new Track(
+    track.album_id,
+    track.track_id,
+    track.title,
+    track.track_number,
+    track.duration_ms
+  )
+  album.tracks.push(trackObj)
 })
 
 // print out the summary for each album
 albums.forEach((album) => {
   console.log(album.summary())
 })
+
+// - `albumId`
+// - `id` (`track_id` in the data)
+// - `title`
+// - `trackNumber`
+// - `durationMs`

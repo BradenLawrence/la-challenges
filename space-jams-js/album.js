@@ -8,8 +8,7 @@ class Album {
   }
   updateDuration = () => {
     let durationMil = this.tracks.reduce((total, track) => {
-
-      return total += parseInt(track.duration_ms)
+      return total += parseInt(track.durationMs)
     }, 0)
     this.durationMin = (durationMil / 60000).toFixed(2)
   }
