@@ -1,9 +1,20 @@
 // Meets Expectations
 let researcherSpaceItems = [ new SpaceItem("rock", .50, 5), new SpaceItem("insect", 2.00, 2), new SpaceItem("twig", 2.50, 4), new SpaceItem("plant", 2.00) ]
 
+const summary = (SpaceItems) => {
+  let summaryString = `Dear Researcher,\n\nI bought you:\n\n`
+  let total = 0
+  SpaceItems.forEach(item => {
+    let itemTotal = item.quantity * item.price
+    total += itemTotal
+    summaryString += `${item.quantity} \$${item.name}\
+${item.quantity===1 ? "":"s"} - ${itemTotal}\n`
+  })
+  summaryString += `\nYou owe me \$${total}`
+  return summaryString
+}
 
-
-
+console.log(summary(researcherSpaceItems))
 
 // Optional
 let inventoryLab1 = {
