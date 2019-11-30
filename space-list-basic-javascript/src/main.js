@@ -17,7 +17,7 @@ const summary = (SpaceItems) => {
     summaryString += `${item.quantity} ${item.name}\
 ${item.quantity === 1 ? "":"s"} - \$${itemTotal.toFixed(2)}\n`
   })
-  summaryString += `\nYou owe me \$${total.toFixed(2)}`
+  summaryString += `\nYou owe me \$${total.toFixed(2)}.`
   return summaryString
 }
 
