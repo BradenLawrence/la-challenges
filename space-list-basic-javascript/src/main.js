@@ -1,5 +1,12 @@
 // Meets Expectations
-let researcherSpaceItems = [ new SpaceItem("rock", .50, 5), new SpaceItem("insect", 2.00, 2), new SpaceItem("twig", 2.50, 4), new SpaceItem("plant", 2.00) ]
+let researcherSpaceItems = [
+  new SpaceItem("rock",    .50, 5),
+  new SpaceItem("insect", 2.00, 2),
+  new SpaceItem("twig",   2.50, 4),
+  new SpaceItem("plant",  2.00)
+]
+
+let researchersList = new SpaceList("Researcher", researcherSpaceItems)
 
 const summary = (SpaceItems) => {
   let summaryString = `Dear Researcher,\n\nI bought you:\n\n`
