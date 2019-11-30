@@ -21,7 +21,7 @@ ${item.quantity === 1 ? "":"s"} - \$${itemTotal.toFixed(2)}\n`
   return summaryString
 }
 
-console.log(summary(researcherSpaceItems))
+console.log(summary(researchersList.items))
 
 // Optional
 let inventoryLab1 = {
