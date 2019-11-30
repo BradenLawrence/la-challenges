@@ -47,3 +47,6 @@ let inventoryLab2 = {
   insect: 10,
   soilSample: 5
 };
+
+console.log(researchersList.checkInventory(inventoryLab2))
+console.log(researchersList.checkInventory(inventoryLab1))
