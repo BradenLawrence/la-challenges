@@ -12,10 +12,14 @@ document.getElementsByClassName('groups')[0];
 sideBar.getElementsByClassName('favorites')[0].getElementsByTagName('h5')[0].innerHTML('Least Favs')
 
 // Exercise 5): Find the first of the ads in the sidebar and hide it.
+let ad = document.getElementsByClassName('ad-slot')[0]
+ad.style.visibility = 'hidden';
 
 // Exercise 6): Set the visibility on the ad that you hid in the previous exercise to make it visible again.
+ad.style.visibility = 'visible';
 
 // Exercise 7): Use `setAttribute` to change `src` attribute of one of the ads in the sidebar.
+ad.getElementsByTagName('img')[0].src = `http://placebear.com/200/300`
 
 // Exercise 8): Find Sam's post and change its text to something incredible.
 
