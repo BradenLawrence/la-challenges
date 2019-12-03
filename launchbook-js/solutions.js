@@ -22,7 +22,14 @@ ad.style.visibility = 'visible';
 ad.getElementsByTagName('img')[0].src = `http://placebear.com/200/300`
 
 // Exercise 8): Find Sam's post and change its text to something incredible.
+let posts = [...document.querySelectorAll('ul#list-of-posts li div.media-body')]
+let samsPost = posts.find(post => {
+  return post.querySelector('h4').innerHTML.includes('Sam McTaggart')
+})
+samsPost.querySelector('p').innerHTML = 'JavaScript is incredible.'
 
 // Exercise 9): Find the first post and add the `.post-liked` class to it, and watch it turn blue.
+posts[0].classList.add('post-liked')
 
 // Exercise 10: Find the second post and add the `.post-shared` class to the `li` containing the text Shared to watch it turn red.
+posts[1].closest().classList.add('post-shared')
