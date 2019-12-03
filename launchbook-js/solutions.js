@@ -1,10 +1,15 @@
 // Exercise 1): Find the top navbar, using a query for the HTML element type. The navbar's type is `<nav>`.
+document.getElementsByTagName('nav')[0];
 
 // Exercise 2): Find the sidebar on the left by using its id and set it equal to the variable sideBar.
+let sideBar = document.getElementById('sidebar-left');
 
 // Exercise 3): Find the 'Pages' and 'Groups' sections of the sidebar by using their class.
+document.getElementsByClassName('pages')[0];
+document.getElementsByClassName('groups')[0];
 
 // Exercise 4): Set the text of the 'Favorites' `h5` to say "Least Favs".
+sideBar.getElementsByClassName('favorites')[0].getElementsByTagName('h5')[0].innerHTML('Least Favs')
 
 // Exercise 5): Find the first of the ads in the sidebar and hide it.
 
