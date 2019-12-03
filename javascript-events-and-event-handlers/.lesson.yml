@@ -1,0 +1,11 @@
+---
+title: "Javascript: Events and Event Handlers"
+type: "article"
+description: >
+  A discussion around events and event handlers in Javascript.
+
+  Covers:
+    * Event-driven programming
+    * Event listeners
+    * Anonymous vs Defined Functions
+tags: "javascript, events, event handlers"
