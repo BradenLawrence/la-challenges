@@ -120,16 +120,15 @@ let items = document.getElementById('list-of-posts')
 //Code for address-form-launchbook goes here
 let addressForm = document.mailingAddressForm
 
-let rules = {
-  leftBlank: input => input === '',
-}
-
 const validateAddress = (event) => {
   event.preventDefault()
   let inputs = event.path[0].querySelectorAll('input')
   inputs.forEach(input => {
-    if(rules.leftBlank(input.value)) {
-      input.closest('div').innerHTML += `<p class="error">oops!</p>`
+    let errorWrapper = input.closest('div').querySelector('.error')
+    if(input.value === '') {
+      errorWrapper.innerHTML = "Input can't be blank."
+    } else {
+      errorWrapper.innerHTML = ""
     }
   })
 }
