@@ -118,3 +118,14 @@ let items = document.getElementById('list-of-posts')
   })
 
 //Code for address-form-launchbook goes here
+let addressForm = document.mailingAddressForm
+
+const validateAddress = (event) => {
+  event.preventDefault()
+  let inputs = event.path[0].querySelectorAll('input')
+  inputs.forEach(input => {
+    console.log(input.value)
+  })
+}
+
+addressForm.addEventListener('submit', validateAddress)
