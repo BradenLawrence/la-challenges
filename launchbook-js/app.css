@@ -22,24 +22,25 @@ form {
   margin: 0 10%;
 }
 
-input {
+.flex-container input {
   font-size: 1.5rem;
   font-family: Inconsolata, Consolas, "Liberation Mono", Courier, monospace;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid #999;
-  margin-bottom: 1ex;
-  margin-left: .5ex;
+  margin-bottom: 0;
 }
 
 .error {
   color: red;
   font-size: 1rem;
   margin-bottom: 1ex;
+  margin-top: 0;
 }
 
 .flex-container {
   display: flex;
+  margin-top: 1ex;
 }
 
 .flex-container > div {
