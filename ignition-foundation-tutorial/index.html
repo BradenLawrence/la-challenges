@@ -12,21 +12,34 @@
   <body>
 
     <!-- main content -->
-    <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="menu">
-        <li class="menu-text">My Website</li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </div>
+    <div class="row column">
+      <nav aria-label="You are here:" role="navigation">
+        <div class="top-bar">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li class="menu-text">My Website</li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
 
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li><a href="#">Sign up</a></li>
-        <li><a href="#">Sign In</a></li>
-      </ul>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li><a href="#">Sign up</a></li>
+              <li><a href="#">Sign In</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="breadcrumbs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li class="disabled">Gene Splicing</li>
+          <li>
+            <span class="show-for-sr">Current: </span> Cloning
+          </li>
+        </ul>
+      </nav>
     </div>
-  </div>
 
     <!-- javascript -->
     <script src="public/js/vendor/jquery.js"></script>
