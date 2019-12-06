@@ -4,7 +4,6 @@ body {
 
 button.button {
   margin: 0;
-  border-radius: 10px;
 }
 
 h1 {
@@ -19,8 +18,13 @@ ul, ul ul {
   margin-left: 0;
 }
 
+.dropdown-pane {
+  border: none;
+  position: inherit;
+  width: inherit;
+}
+
 .profile {
-  border-radius: 1.5rem;
   margin-top: 15px;
 }
 
@@ -34,7 +38,6 @@ ul, ul ul {
   flex-grow: 1;
   margin-bottom: 1rem;
   border: 2px solid #222266;
-  border-radius: 12px;
   -webkit-box-shadow: none;
   box-shadow: none;
   overflow: hidden;
