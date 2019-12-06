@@ -5,3 +5,11 @@ body {
 h1 {
   color: #193BCC;
 }
+
+li {
+  list-style: none;
+}
+
+ul, ul ul {
+  margin-left: 0;
+}
