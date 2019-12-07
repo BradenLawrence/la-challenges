@@ -15,8 +15,20 @@ quoteBtn.addEventListener('click', event => {
 let commentForm = document.querySelector('#comment-form')
 commentForm.addEventListener('submit', event => {
   event.preventDefault()
-  let inputs = [...event.target.querySelectorAll('.comment-input')]
+  let inputs = event.target.querySelectorAll('.comment-input')
+  let anyErrors = false
   inputs.forEach(input => {
-    console.log(input)
+    let errorDisplay = input.closest('label').querySelector('.error-display')
+    if(input.value === '') {
+      errorDisplay.innerHTML = 'Input must not be blank.'
+      anyErrors = true
+    } else {
+      errorDisplay.innerHTML = ''
+    }
   })
+  if(anyErrors) {
+    alert('Sorry, there was a problem submitting the form. Please fix any errors listed and resubmit.')
+  } else {
+    alert('Form submitted successfully. Thank you!')
+  }
 })
