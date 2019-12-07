@@ -11,3 +11,12 @@ quoteBtn.addEventListener('click', event => {
   let randomQuote = quoteList[Math.floor(Math.random()*quoteList.length)]
   quoteDisplay.innerHTML = randomQuote
 })
+
+let commentForm = document.querySelector('#comment-form')
+commentForm.addEventListener('submit', event => {
+  event.preventDefault()
+  let inputs = [...event.target.querySelectorAll('.comment-input')]
+  inputs.forEach(input => {
+    console.log(input)
+  })
+})

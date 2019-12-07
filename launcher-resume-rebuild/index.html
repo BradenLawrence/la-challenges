@@ -127,23 +127,23 @@
               <header><strong>Submit a Comment</strong></header>
             </div>
             <div class="card-section">
-              <form>
+              <form id="comment-form">
                 <div class="row gutter-small">
                   <div class="columns small-6">
                     <label>First Name
-                      <input type="text" placeholder="John">
+                      <input class="comment-input" type="text" placeholder="John">
                     </label>
                   </div>
                   <div class="columns small-6">
                     <label>Last Name
-                      <input type="text" placeholder="Smith">
+                      <input class="comment-input" type="text" placeholder="Smith">
                     </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="columns small-12">
                     <label>Location
-                      <input type="text" placeholder="Boston, MA">
+                      <input class="comment-input" type="text" placeholder="Boston, MA">
                     </label>
                   </div>
                 </div>
@@ -151,14 +151,13 @@
                   <div class="columns small-12">
                     <label>
                       Comment:
-                      <textarea placeholder="Dear Braden..."></textarea>
+                      <textarea class="comment-input" placeholder="Dear Braden..."></textarea>
                     </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="columns small-12">
-                    <label for="commentSubmit" class="button">Submit</label>
-                    <input type="submit" id="commentSubmit" class="show-for-sr">
+                    <button type="submit" id="commentSubmit" class="button">Submit</button>
                   </div>
                 </div>
               </form>
