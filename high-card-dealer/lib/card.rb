@@ -7,7 +7,7 @@ class Card
   end
 
   def value
-    RANKS[@rank].index + 1
+    RANKS.index(@rank) + 1
   end
   # Methods you may need:
   # - initialize
