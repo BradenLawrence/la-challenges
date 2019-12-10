@@ -1,6 +1,6 @@
 class Jukebox
-  def initialize(playlist)
-    @playlist = playlist
+  def initialize(request)
+    @request = request
     @discography = {
       "Hello" => "Lionel Ritchie",
       "Kokomo" => "The Beach Boys",
