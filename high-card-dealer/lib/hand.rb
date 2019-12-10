@@ -8,6 +8,10 @@ class Hand
   def value
     @cards.reduce(0) {|total, card| total += card.value}
   end
+
+  def summary
+    cards.map {|card| "#{card.rank}#{card.suit}"}.join(", ")
+  end
 end
 # your code here
 # Initialize with an array of card objects
