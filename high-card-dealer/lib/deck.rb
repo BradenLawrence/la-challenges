@@ -19,7 +19,7 @@ class Deck
     cards.shuffle
   end
 
-  def deal
-    # your code here
+  def deal(number)
+    @cards.slice!(0, number)
   end
 end
