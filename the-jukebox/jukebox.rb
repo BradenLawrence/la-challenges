@@ -29,4 +29,8 @@ class Jukebox
     @playlist.shuffle!
   end
 
+  def play!
+    @playlist.shift
+  end
+
 end
