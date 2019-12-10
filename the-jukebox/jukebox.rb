@@ -1,5 +1,6 @@
 class Jukebox
-  attr_read DISCOGRAPHY
+  attr_accessor :request
+  attr_reader :DISCOGRAPHY, :unavailable, :playlist
 
   DISCOGRAPHY = [
     "Hello - Lionel Ritchie",
@@ -20,5 +21,7 @@ class Jukebox
 
   def initialize(request)
     @request = request
+    @unavailable = request - DISCOGRAPHY
+    @playlist = request - @unavailable
   end
 end
