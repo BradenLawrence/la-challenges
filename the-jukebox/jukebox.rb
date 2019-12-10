@@ -33,4 +33,13 @@ class Jukebox
     @playlist.shift
   end
 
+  def add_track(song_name)
+    if DISCOGRAPHY.include?(song_name)
+      @playlist << song_name
+      return true
+    else
+      return false
+    end
+  end
+
 end
