@@ -24,4 +24,9 @@ class Jukebox
     @unavailable = request - DISCOGRAPHY
     @playlist = request - @unavailable
   end
+
+  def shuffle_songs!
+    @playlist.shuffle!
+  end
+
 end
