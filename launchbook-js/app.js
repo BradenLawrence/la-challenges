@@ -118,3 +118,19 @@ let items = document.getElementById('list-of-posts')
   })
 
 //Code for address-form-launchbook goes here
+let addressForm = document.mailingAddressForm
+
+const validateAddress = (event) => {
+  event.preventDefault()
+  let inputs = event.path[0].querySelectorAll('input')
+  inputs.forEach(input => {
+    let errorWrapper = input.closest('div').querySelector('.error')
+    if(input.value === '') {
+      errorWrapper.innerHTML = "Input can't be blank."
+    } else {
+      errorWrapper.innerHTML = ""
+    }
+  })
+}
+
+addressForm.addEventListener('submit', validateAddress)
