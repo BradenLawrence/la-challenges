@@ -1,0 +1,9 @@
+---
+title: "Learn OOP"
+type: "challenge"
+description: "A set of tests that will guide you through the basics of Object-Oriented Programming."
+tags: "oop, ignition"
+behaviors:
+  - ruby_and_rspec
+ignore:
+- "learn-oop.md"
