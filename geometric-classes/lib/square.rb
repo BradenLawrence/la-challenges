@@ -30,8 +30,14 @@ class Square
   def contains_point?(point_x, point_y)
     contained = false
     half = @side / 2.to_f
-    contains_x = ((@x-half)..(@x+half)).include?(point_x)
-    contains_y = ((@y-half)..(@y+half)).include?(point_y)
+    x_start = @x - half
+    y_start = @y - half
+    x_end = @x + half
+    y_end = @y + half
+
+    contains_x = (x_start..x_end).include?(point_x)
+    contains_y = (y_start..y_end).include?(point_y)
+
     if contains_x && contains_y
       contained = true
     end
