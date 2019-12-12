@@ -1,0 +1,62 @@
+body {
+  background-color: #ADD8E6;
+}
+
+button.button {
+  margin: 0;
+}
+
+h1 {
+  color: #193BCC;
+}
+
+h5 {
+  margin: 0;
+}
+
+.comment-input {
+  margin-bottom: 0;
+}
+
+.error-display {
+  color: red;
+}
+
+li {
+  list-style: none;
+}
+
+ul, ul ul {
+  margin-left: 0;
+}
+
+.card-section ul li {
+  margin-bottom: 1rem;
+}
+
+.card-section ul li ul li{
+  margin-bottom: 0;
+}
+
+.dropdown-pane {
+  border: none;
+  position: inherit;
+  width: inherit;
+}
+
+.profile {
+  margin-top: 15px;
+  border-radius: 1rem;
+}
+
+.projects {
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  border: 2px solid #222266;
+}
+
+.quote-display {
+  margin-left: 1rem;
+}

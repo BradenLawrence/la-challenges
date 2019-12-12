@@ -1,0 +1,9 @@
+---
+title: "High Card Dealer"
+type: "challenge"
+description: "An app for demonstrating basic OOP and debugging"
+tags: "oop"
+behaviors:
+  - ruby_and_rspec
+ignore:
+- "high-card-dealer.md"

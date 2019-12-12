@@ -32,4 +32,4 @@ samsPost.querySelector('p').innerHTML = 'JavaScript is incredible.'
 posts[0].classList.add('post-liked')
 
 // Exercise 10: Find the second post and add the `.post-shared` class to the `li` containing the text Shared to watch it turn red.
-posts[1].closest().classList.add('post-shared')
+posts[1].closest('li').classList.add('post-shared')

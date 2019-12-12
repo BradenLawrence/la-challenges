@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="public/css/foundation.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+      <header class="row">
+        <div class="columns small-2">
+          <img class="profile" src="images/profile.jpg"/>
+        </div>
+        <div class="columns small-10">
+          <h1>Braden Lawrence</h1>
+          <div class="contact">
+            <ul>
+              <li><strong>Phone:</strong> (585) 216-7204</li>
+              <li><strong>Email:</strong> b@bradenlawrence.com</li>
+              <li><strong>Address:</strong> 473 Broadway #6 Medford, MA</li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <div class="row gutter-small">
+        <div class="columns small-12">
+          <div class="projects">
+            <button class="button" type="button" data-toggle="projects-dropdown">
+              <header><strong>Projects</strong></header>
+            </button>
+            <div class="dropdown-pane" id="projects-dropdown"  data-position="bottom" data-alignment="center" data-dropdown data-auto-focus="true">
+              <ul>
+                <li><a href="https://bradenlawrence.github.io/practical-fractals/" target="_blank">Practical Fractals</a></li>
+                <li><a href="https://photowave.herokuapp.com/" target="_blank">Photowave</a></li>
+                <li><a href="https://bradenlawrence.github.io/colorGame/" target="_blank">Guess the Color Code</a></li>
+              </ul>
+              <button class="button" id="quote">Inspirational Quotes:</button>
+              <span class="quote-display" id="quote-display"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row gutter-small">
+        <div class="columns small-5">
+          <div class="card experience">
+            <div class="card-divider">
+              <header><strong>Experience</strong></header>
+            </div>
+            <div class="card-section">
+              <ul>
+                <li>
+                  <h5>Project Lead the Way</h5>
+                  <ul class="experience-detail">
+                    <li class="role">User Experience Specialist</li>
+                    <li class="city">Somerville, MA</li>
+                    <li class="tenure">November 2015 - July 2019</li>
+                  </ul>
+                </li>
+                <li>
+                  <h5>Custom Learning Designs</h5>
+                  <ul class="experience-detail">
+                    <li class="role">Graphic Designer</li>
+                    <li class="city">Belmont, MA</li>
+                    <li class="tenure">July 2014 - November 2015</li>
+                  </ul>
+                </li>
+                <li>
+                  <h5>Safelight Security Advisors</h5>
+                  <ul class="experience-detail">
+                    <li class="role">Graphic Designer</li>
+                    <li class="city">Somerville, MA</li>
+                    <li class="tenure">November 2010 - January 2014</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="columns small-5">
+          <div class="card experience">
+            <div class="card-divider">
+              <header><strong>Education</strong></header>
+            </div>
+            <div class="card-section">
+              <ul>
+                <li>
+                  <h5>Launch Academy</h5>
+                  <ul class="education-detail">
+                    <li class="degree">Full Stack Development Bootcamp</li>
+                    <li class="city">Boston, MA</li>
+                    <li class="tenure">2019 - 2020</li>
+                  </ul>
+                </li>
+                <li>
+                  <h5>University of Cincinnati</h5>
+                  <ul class="education-detail">
+                    <li class="degree">Digital Design</li>
+                    <li class="city">Cincinnati, OH</li>
+                    <li class="tenure">2005 - 2010</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="columns small-2">
+          <div class="card links">
+            <div class="card-divider">
+              <header><strong>Links</strong></header>
+            </div>
+            <div class="card-section">
+              <ul>
+                <li><a class="feature" href="http://www.bradenlawrence.com">Portfolio</a></li>
+                <li><a href="http://www.linkedin.com/in/braden-lawrence-042a1010">LinkedIn</a></li>
+                <li><a href="http://www.github.com/BradenLawrence">GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row gutter-small">
+        <div class="columns small-12">
+          <div class="card">
+            <div class="card-divider">
+              <header><strong>Submit a Comment</strong></header>
+            </div>
+            <div class="card-section">
+              <form id="comment-form">
+                <div class="row gutter-small">
+                  <div class="columns small-6">
+                    <label>First Name
+                      <input class="comment-input" type="text" placeholder="John">
+                      <p class="error-display"></p>
+                    </label>
+                  </div>
+                  <div class="columns small-6">
+                    <label>Last Name
+                      <input class="comment-input" type="text" placeholder="Smith">
+                      <p class="error-display"></p>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="columns small-12">
+                    <label>Location
+                      <input class="comment-input" type="text" placeholder="Boston, MA">
+                      <p class="error-display"></p>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="columns small-12">
+                    <label>
+                      Comment:
+                      <textarea class="comment-input" placeholder="Dear Braden..."></textarea>
+                      <p class="error-display"></p>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="columns small-12">
+                    <button type="submit" id="commentSubmit" class="button">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script type="text/javascript" src="public/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="public/js/vendor/foundation.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>

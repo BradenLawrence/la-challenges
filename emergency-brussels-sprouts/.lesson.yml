@@ -1,0 +1,9 @@
+---
+title: "Emergency Brussels Sprouts"
+type: "challenge"
+description: "Implementing classes with composition"
+tags: "oop, object-composition"
+behaviors:
+  - "ruby_and_rspec"
+ignore:
+- "emergency-brussels-sprouts.md"

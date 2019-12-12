@@ -1,0 +1,9 @@
+---
+title: "Bounding Box"
+type: "challenge"
+description: "Check if a point is inside a region."
+tags: "oop, object-composition"
+behaviors:
+  - ruby_and_rspec
+ignore:
+- "bounding-box.md"
