@@ -46,6 +46,21 @@ class SuperHero
 end
 
 class Speedster < SuperHero
+  def backstory
+    "This one time on Halloween I ate 1000 pixie sticks and the sugar rush never stopped."
+  end
+
+  def powers
+    "Non-chaffing running shorts"
+  end
+
+  def weakness
+    "The RMV"
+  end
+
+  def speed_in_mph
+    super * 1000
+  end
 end
 
 class Brawler < SuperHero
@@ -68,7 +83,7 @@ end
 
 class Detective < SuperHero
   def backstory
-    "My backstory is so dark and tragic I don't have time to talk about it right now."
+    "My backstory is so dark and tragic I don't have time to get into it right now."
   end
 
   def powers
@@ -85,10 +100,71 @@ class Detective < SuperHero
 end
 
 class Demigod < SuperHero
+  def backstory
+    "I have inherited many powers from my parent class!"
+  end
+
+  def powers
+    "Throws lighting bolts"
+  end
+
+  def weakness
+    "Weak ankle"
+  end
+
+  def home
+    "Cosmic Plane"
+  end
 end
 
 class JackOfAllTrades < SuperHero
+  def backstory
+    "My home planet kicked me out."
+  end
+
+  def powers
+    "I'm just generally pretty okay at things."
+  end
+
+  def weakness
+    "Shoresy"
+  end
+
+  def species
+    "Alien"
+  end
+
+  def home
+    "Venus"
+  end
+
+  def psychic?
+    true
+  end
 end
 
 class WaterBased < SuperHero
+  def backstory
+    "Bullies dunked my head in a radioactive toilet."
+  end
+
+  def powers
+    "Swims with the strength of a thousand guppies"
+  end
+
+  def weakness
+    "Sponges"
+  end
+
+  def home
+    "Earth's Oceans"
+  end
+
+  def fans_per_thousand
+    super / 100
+  end
+
+  def psychic?
+    true
+  end
 end
