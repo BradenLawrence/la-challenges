@@ -31,4 +31,8 @@ class Container
   def remove_one_ingredient
     @ingredients.pop
   end
+
+  def empty
+    @ingredients = []
+  end
 end
