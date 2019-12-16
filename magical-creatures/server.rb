@@ -24,8 +24,12 @@ MAGICAL_CREATURES = [
 ]
 
 get "/" do
-  @MAGICAL_CREATURES = MAGICAL_CREATURES
   erb :home
+end
+
+get "/creatures" do
+  @MAGICAL_CREATURES = MAGICAL_CREATURES
+  erb :creatures
 end
 
 
