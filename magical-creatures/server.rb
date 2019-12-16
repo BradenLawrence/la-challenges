@@ -29,7 +29,14 @@ get "/" do
 end
 
 get "/creatures" do
-  @MAGICAL_CREATURES = MAGICAL_CREATURES
+  @creature_objects = []
+  MAGICAL_CREATURES.each do |creature_data|
+    @creature_objects << Magical_Creature.new(
+      creature_data[:name],
+      creature_data[:ability],
+      creature_data[:age]
+    )
+  end
   erb :creatures
 end
 
