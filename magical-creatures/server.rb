@@ -32,6 +32,13 @@ get "/creatures" do
   erb :creatures
 end
 
+get "/creatures/:name" do
+  @creature = MAGICAL_CREATURES.find do |creature|
+    creature[:name] == params[:name]
+  end
+  erb :show
+end
+
 
 # You may define your routes here. Start with the root path, and designate an appropriately named erb template!
 
