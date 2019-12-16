@@ -1,0 +1,12 @@
+<h1>Welcome One and All to the Magical Creatures Website!</h1>
+<img src="/images/beastiary.jpg" alt="beastiary">
+<p>
+  There are some creatures out there that do not have magical powers. Those creatures are lame! Here are some creatures that are not lame:
+</p>
+<ul>
+  <% @MAGICAL_CREATURES.each do |creature| %>
+    <li>
+      <a href=<%= creature[:name] %>><%= creature[:name] %></a>
+    </li>
+  <% end %>
+</ul>

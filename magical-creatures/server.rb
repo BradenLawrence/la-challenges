@@ -25,7 +25,7 @@ MAGICAL_CREATURES = [
 
 get "/" do
   @MAGICAL_CREATURES = MAGICAL_CREATURES
-  erb :index
+  erb :home
 end
 
 
