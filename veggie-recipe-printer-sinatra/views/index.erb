@@ -1,5 +1,4 @@
 <h1><%= @name %></h1>
-
 <ul>
   <% @ingredients.each do |ingredient| %>
     <li><%= ingredient %></li>
@@ -11,3 +10,15 @@
     <li><%= direction %></li>
   <% end %>
 </ol>
+
+<h2>Reviews:</h2>
+<ul>
+  <% @reviews.each do |review| %>
+    <ul>
+      <li>User: <%= review[:username] %></li>
+      <li>Rating: <%= review[:rating] %></li>
+      <li>Reivew: <%= review[:body] %></li>
+    </ul>
+    <br/>
+  <% end %>
+</ul>

@@ -23,6 +23,24 @@ recipe = {
     "Shake the pan from time to time to brown the sprouts evenly.",
     "Sprinkle with more kosher salt ( I like these salty like French fries).",
     "Serve and enjoy!"
+  ],
+  # Each hash should have a username, a rating between 1-5, and a review.
+  reviews: [
+    {
+      username: "Eggbert",
+      rating: 1,
+      body: "Too dry!"
+    },
+    {
+      username: "Eagleton",
+      rating: 3,
+      body: "Cook these at 500 degrees and they turn out nice and charred!"
+    },
+    {
+      username: "Bob",
+      rating: 5,
+      body: "Tried giving these out during Halloween. Kids ran away screaming!"
+    }
   ]
 }
 
@@ -30,6 +48,7 @@ get '/' do
   @name = recipe[:name]
   @ingredients = recipe[:ingredients]
   @directions = recipe[:directions]
+  @reviews = recipe[:reviews]
 
   erb :index
 end
