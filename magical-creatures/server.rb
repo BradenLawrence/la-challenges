@@ -1,6 +1,7 @@
 require "sinatra"
 require "pry" if development? || test?
 require "sinatra/reloader" if development?
+require_relative "/models/magical_creature"
 
 set :bind, '0.0.0.0'  # bind to all interfaces
 
@@ -38,11 +39,3 @@ get "/creatures/:name" do
   end
   erb :show
 end
-
-
-# You may define your routes here. Start with the root path, and designate an appropriately named erb template!
-
-# Example:
-# get "/wizards" do
-#   erb :wizards
-# end
