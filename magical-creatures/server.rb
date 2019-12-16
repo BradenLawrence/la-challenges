@@ -41,8 +41,13 @@ get "/creatures" do
 end
 
 get "/creatures/:name" do
-  @creature = MAGICAL_CREATURES.find do |creature|
+  found_creature = MAGICAL_CREATURES.find do |creature|
     creature[:name] == params[:name]
   end
+  @creature = Magical_Creature.new(
+    found_creature[:name],
+    found_creature[:ability],
+    found_creature[:age]
+  )
   erb :show
 end

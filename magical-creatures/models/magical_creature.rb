@@ -7,6 +7,12 @@ class Magical_Creature
   end
 
   def ancient?
-    @age >= 200 || @age.nil?
+    if @age.nil?
+      return true
+    elsif @age >= 200
+      return true
+    else
+      return false
+    end
   end
 end
