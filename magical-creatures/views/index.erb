@@ -1,0 +1,15 @@
+<!-- When I visit /, I can see a header with a welcome message to the website reading "Welcome One and All to the Magical Creatures Website!"
+Below the header is a short paragraph description of the website, which you can make up yourself!
+Extra credit: Render an image of a magical creature of your choosing on the home page. You may wish to revisit how to use an HTML image tag to aid you. -->
+
+<h1>Magical Creatures</h1>
+<p>
+  There are some creatures out there that do not have magical powers. Those creatures are lame! Here are some creatures that are not lame:
+</p>
+<ul>
+  <% @MAGICAL_CREATURES.each do |creature| %>
+    <li>
+      <a href=<%= creature[:name] %>><%= creature[:name] %></a>
+    </li>
+  <% end %>
+</ul>

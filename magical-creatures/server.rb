@@ -23,6 +23,12 @@ MAGICAL_CREATURES = [
   }
 ]
 
+get "/" do
+  @MAGICAL_CREATURES = MAGICAL_CREATURES
+  erb :index
+end
+
+
 # You may define your routes here. Start with the root path, and designate an appropriately named erb template!
 
 # Example:
