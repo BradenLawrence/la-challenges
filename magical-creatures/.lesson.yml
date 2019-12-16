@@ -1,0 +1,10 @@
+---
+title: "Magical Creatures"
+type: "challenge"
+description: "Build Sinatra web app."
+tags: "sinatra"
+behaviors:
+  - sinatra
+  - ruby_and_rspec
+ignore:
+- "magical-creatures.md"
