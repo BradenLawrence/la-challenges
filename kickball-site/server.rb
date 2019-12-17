@@ -18,3 +18,10 @@ get "/teams" do
   end
   erb :teams
 end
+
+# This list should link to individual team pages
+
+get "/teams/:team_name" do
+  @team_name = params["team_name"]
+  erb :show
+end
