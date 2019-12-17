@@ -27,4 +27,12 @@ class Container
   def how_many_ingredients
     @ingredients.size
   end
+
+  def remove_one_ingredient
+    @ingredients.pop
+  end
+
+  def empty
+    @ingredients = []
+  end
 end
