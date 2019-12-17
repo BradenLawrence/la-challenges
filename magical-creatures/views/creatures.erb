@@ -1,0 +1,7 @@
+<ul>
+  <% @creature_objects.each do |creature| %>
+    <li>
+      <a href="creatures/<%= creature.name %>"><%= creature.name %></a>
+    </li>
+  <% end %>
+</ul>
