@@ -9,17 +9,17 @@ RSpec.describe Team do
     }
   end
 
-  let(:team) { Team.new('Cereal Superstars', players) }
+  let(team) { Team.new('Cereal Superstars', players) }
 
   it 'has a name' do
-    expect(:team.name).to eq('Cereal Superstars')
+    expect(team.name).to eq('Cereal Superstars')
   end
 
   it 'has a list of players' do
-    expect(:team.players.count).to eq(3)
+    expect(team.players.count).to eq(3)
   end
 
   it "calling #motto returns the team motto" do
-    expect(:team.motto).to eq("The Cereal Superstars are the best team ever!")
+    expect(team.motto).to eq("The Cereal Superstars are the best team ever!")
   end
 end
