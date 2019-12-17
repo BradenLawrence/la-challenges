@@ -1,0 +1,8 @@
+---
+title: "JavaScript Promise API"
+type: "article"  # challenge, exercise, article, video
+description: "Learn about Promises in JavaScript"
+tags: "javascript, promises"
+behaviors:
+ignore:
+- "javascript-promise-api.md"
