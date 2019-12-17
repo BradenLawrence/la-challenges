@@ -23,6 +23,6 @@ end
 # This list should link to individual team pages
 
 get "/teams/:team_name" do
-  @team_name = params["team_name"]
+  @team = LEAGUE.teams.find {|team| team.name == params["team_name"]}
   erb :show
 end
