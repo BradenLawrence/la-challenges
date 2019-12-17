@@ -9,7 +9,7 @@ RSpec.describe Team do
     }
   end
 
-  let(team) { Team.new('Cereal Superstars', players) }
+  let(:team) { Team.new('Cereal Superstars', players) }
 
   it 'has a name' do
     expect(team.name).to eq('Cereal Superstars')
