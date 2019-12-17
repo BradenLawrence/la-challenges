@@ -11,5 +11,10 @@ get "/" do
 end
 
 get "/teams" do
-  # Your code here
+  @league = League.new
+  @team_names = []
+  @league.teams.each do |team|
+    @team_names << team.name
+  end
+  erb :teams
 end
