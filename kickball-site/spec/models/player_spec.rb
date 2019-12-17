@@ -1,7 +1,5 @@
 require "spec_helper"
 
-# Player objects should be initialized with a name and position. These attributes should have reader methods associated with them.
-
 RSpec.describe Player do
   let(:player_name) { 'Count Chocula' }
   let(:position) { 'Pitcher' }
