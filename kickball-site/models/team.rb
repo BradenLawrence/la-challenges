@@ -1,11 +1,11 @@
 require_relative "player"
 
 class Team
-  attr_reader :name
-  attr_reader :players
+  attr_reader :name, :players
 
   def initialize(name, players)
-    # your code here
+    @name = name
+    @players = players
   end
 
   def motto
