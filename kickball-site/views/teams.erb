@@ -2,7 +2,7 @@
 <ul>
   <% @team_names.each do |name| %>
     <li>
-      <%= name %>
+      <a href="/teams/<%= name %>"><%= name %></a>
     </li>
   <% end %>
 </ul>
