@@ -6,14 +6,15 @@ require_relative "models/league"
 
 set :bind, '0.0.0.0'  # bind to all interfaces
 
+LEAGUE = League.new
+
 get "/" do
   redirect '/teams'
 end
 
 get "/teams" do
-  @league = League.new
   @team_names = []
-  @league.teams.each do |team|
+  LEAGUE.teams.each do |team|
     @team_names << team.name
   end
   erb :teams
