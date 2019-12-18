@@ -53,4 +53,16 @@ get "/articles/:article_id" do
   erb :show
 end
 
+get "/random" do
+  erb :random
+end
+
+get "/random_article.json" do
+  content_type :json
+
+  articles = render_articles
+  @random_article = articles.sample
+
+  status 200
+  @random_article.to_json
 end
