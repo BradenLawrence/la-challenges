@@ -61,8 +61,16 @@ get "/random_article.json" do
   content_type :json
 
   articles = render_articles
-  @random_article = articles.sample
+  random_article = articles.sample
+  @random_hash = {
+    "article" => {
+      "title" => random_article.title,
+      "description" => random_article.description,
+      "url" => random_article.url,
+      "id" => random_article.id
+    }
+  }
 
   status 200
-  @random_article.to_json
+  @random_hash.to_json
 end
