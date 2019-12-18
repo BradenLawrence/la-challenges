@@ -1,0 +1,8 @@
+---
+title: "Fetch API Practice"
+type: "exercise"
+description: "Practice using fetch to retrieve resources from server."
+behaviors:
+  - sinatra
+ignore:
+- "fetch-api-practice.md"
