@@ -1,0 +1,7 @@
+---
+title: "ES6 Fetch API"
+type: "article"
+description: "Learn Fetch API"
+behaviors:
+  - sinatra
+tags: "javascript, es6 promises, fetch api"
