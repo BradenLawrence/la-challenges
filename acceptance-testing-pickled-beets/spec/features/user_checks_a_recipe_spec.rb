@@ -19,7 +19,10 @@ feature "User checks a recipe's deliciousness", %(
 ) do
 
   scenario "user submits a recipe name containing 'pickled beets'" do
-
+    visit '/'
+    fill_in('recipe_name', with: 'pickled beets with bacon')
+    click_on('Submit')
+    expect(page).to have_content('is a delicious recipe!')
   end
 
   scenario "user submits a recipe name without 'pickled beets'" do
