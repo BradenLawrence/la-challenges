@@ -1,0 +1,9 @@
+---
+title: "Foundation Tutorial"
+type: "exercise"
+description: "Get some practice using Foundation's grid system and other neat tools!"
+tags: "foundation, css"
+behaviors:
+  - sinatra
+ignore:
+- "foundation-tutorial.md"
