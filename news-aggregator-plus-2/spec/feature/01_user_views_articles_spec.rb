@@ -5,9 +5,9 @@ require "spec_helper"
 # So that I can distract myself from the actual work I have to do
 #
 # Acceptance Criteria:
-# [ ] When I visit /articles I should be able to see all the articles that have been submitted.
-# [ ] Each article should show the description, title, and URL.
-# [ ] If I click on the URL it should take me to the relevant page inside of a new tab.
+# [X] When I visit /articles I should be able to see all the articles that have been submitted.
+# [X] Each article should show the description, title, and URL.
+# [X] If I click on the URL it should take me to the relevant page inside of a new tab.
 
 feature "User views articles:" do
 
@@ -22,16 +22,22 @@ feature "User views articles:" do
     expect(page).to have_content("Test Description")
     expect(page).to have_content("A Fake Title")
     expect(page).to have_content("A Fake Description")
-    all('a').each do |a|
+    anchor_tags = []
+    all('a.sourceURL').each do |a|
+      anchor_tags << a
       expect(a[:href]).to_not eq("")
     end
+    expect(anchor_tags.count).to eq(2)
   end
 
   scenario "view an article's source URL in a new tab" do
     visit "/articles"
-    all('a#sourceURL').each do |a|
+    anchor_tags = []
+    all('a.sourceURL').each do |a|
+      anchor_tags << a
       expect(a[:target]).to eq("_blank")
     end
+    expect(anchor_tags.count).to eq(2)
   end
 
 end
