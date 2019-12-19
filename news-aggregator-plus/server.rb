@@ -34,10 +34,15 @@ post "/articles" do
   title = params["title"]
   description = params["description"]
   url = params["url"]
-  CSV.open("articles.csv", "a") do |csv|
-    csv << [description, title, url]
+  if title == "" || description == "" || url == ""
+    @error = "Fields must not be blank"
+    redirect "/articles/new"
+  else
+    CSV.open("articles.csv", "a") do |csv|
+      csv << [description, title, url]
+    end
+    redirect "/articles"
   end
-  redirect "/articles"
 end
 
 get "/articles/new" do
