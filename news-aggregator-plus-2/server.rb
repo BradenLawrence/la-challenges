@@ -6,11 +6,28 @@ require "csv"
 set :bind, "0.0.0.0"
 
 get "/" do
-  erb :index
+  redirect "/articles"
+end
+
+get "/articles" do
+  @articles = get_articles
+  erb :articles
 end
 
 
 # HELPER METHODS
+def get_articles
+  articles = []
+  CSV.foreach(csv_file, headers: true) do |row|
+    articles << {
+      "title" => row["title"],
+      "description" => row["description"],
+      "url" => row["url"]
+    }
+  end
+  return articles
+end
+
 def csv_file
   if ENV["RACK_ENV"] == "test"
     "data/articles_test.csv"
