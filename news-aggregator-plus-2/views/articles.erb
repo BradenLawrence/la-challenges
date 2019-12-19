@@ -5,7 +5,9 @@
     <li>
       <strong> <%= article["title"] %> </strong>
       <p> <%= article["description"] %> </p>
-      <a href="<%= article["url"] %>"> Read full article </a>
+      <p>
+        <a class="sourceURL" href="<%= article["url"] %>" target="_blank"> Read full article </a>
+      </p>
     </li>
   <% end %>
 </ul>
