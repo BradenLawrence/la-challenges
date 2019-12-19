@@ -10,13 +10,6 @@ require "spec_helper"
 # [ ] If I click on the URL it should take me to the relevant page inside of a new tab.
 
 feature "User views articles:" do
-  before(:each) do
-    
-  end
-
-  after(:each) do
-    reset_csv
-  end
 
   scenario "visit the /articles route" do
     visit "/"
@@ -24,11 +17,21 @@ feature "User views articles:" do
   end
 
   scenario "view all of the submitted articles" do
-
+    visit "/articles"
+    expect(page).to have_content("Test Title")
+    expect(page).to have_content("Test Description")
+    expect(page).to have_content("A Fake Title")
+    expect(page).to have_content("A Fake Description")
+    all('a').each do |a|
+      expect(a[:href]).to_not eq("")
+    end
   end
 
   scenario "view an article's source URL in a new tab" do
-
+    visit "/articles"
+    all('a#sourceURL').each do |a|
+      expect(a[:target]).to eq("_blank")
+    end
   end
 
 end

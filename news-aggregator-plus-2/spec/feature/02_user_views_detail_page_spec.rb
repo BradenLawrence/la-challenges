@@ -10,11 +10,15 @@ require "spec_helper"
 
 feature "User views a detail page:" do
   scenario "visit an article's details page" do
-
+    visit "/articles"
+    click_on("Test Title")
+    expect(page).to have_content("Test Title")
   end
 
   scenario "an article's details page should match its ID" do
-
+    visit "/articles"
+    click_on("Test Title")
+    expect(page).to have_current_path("/articles/0")
   end
 
 end
