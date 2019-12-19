@@ -40,13 +40,10 @@ feature 'Slacker views articles' do
     expect(page.find('a[href="https://www.reddit.com/r/nottheonion/comments/ebxsna/fire_at_tesla_supercharger_caused_by_ford_mustang/"]').path).to_not eq(nil)
   end
 
-  scenario 'each link should open in a new tab' do
-    visit '/articles'
-    # links = page.all('a')
-    # links.each do |link|
-    #   binding.pry
-    #   click_link(link.id)
-    # end
-  end
+  # Moving on from this test.
+  # scenario 'links should open in a new tab' do
+  #   visit '/articles'
+  #   click_link("sourceURL_0")
+  # end
 
 end

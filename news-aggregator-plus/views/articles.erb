@@ -9,10 +9,11 @@
       <% @articles.each do |article| %>
           <li>
             <h4><a href="articles/<%= article.id %>"><%= article.title %></a></h4>
-            <p><a href="<%= article.url %>" target=_blank id="<%= article.id %>">Read full article</a></p>
+            <p><a href="<%= article.url %>" target=_blank id="sourceURL_<%= article.id %>">Read full article</a></p>
             <p><%= article.description %></p>
           </li>
       <% end %>
     </ul>
+    <a href="/articles/new">Submit a new article</a>
   </body>
 </html>
