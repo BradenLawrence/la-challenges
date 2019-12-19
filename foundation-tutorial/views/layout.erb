@@ -2,15 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Foundation Funtimes</title>
-
-    <!-- stylesheets -->
     <link rel="stylesheet" href="stylesheets/style.css">
-  </head>
-  <body>
+    <title>A Web Page</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <script src="js/vendor/jquery.js" defer></script>
+    <script src="js/vendor/what-input.js" defer></script>
+    <script src="js/vendor/foundation.js" defer></script>
+    <script src="js/app.js" defer></script>
+      <body>
+        <div class="top-bar">
+          <div class="top-bar-left">
+            <ul class=" menu">
+              <li class="menu-text">My Website</li>
+              <li>
+                <a href="#">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li><a href="#">Sign up</a></li>
+              <li><a href="#">Sign in</a></li>
+            </ul>
+          </div>
+        </div>
 
     <!-- main content -->
-    <%= yield %>
+    <div class="row column">
+      <%= yield %>
+    </div>
 
     <!-- javascript -->
 
