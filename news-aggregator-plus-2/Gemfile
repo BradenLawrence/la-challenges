@@ -1,0 +1,12 @@
+source 'https://rubygems.org/'
+
+gem "sinatra"
+gem 'sinatra-contrib'
+gem "json", '2.1.0'
+gem "pry"
+
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'launchy', require: false
+end

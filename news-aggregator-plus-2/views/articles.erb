@@ -1,0 +1,15 @@
+<h1>Articles!</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <a href="articles/<%= article["id"] %>"><strong><%= article["title"] %></strong></a>
+      <p> <%= article["description"] %> </p>
+      <p>
+        <a class="sourceURL" href="<%= article["url"] %>" target="_blank"> Read full article </a>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/articles/new">Add new article</a>
