@@ -3,7 +3,7 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <strong> <%= article["title"] %> </strong>
+      <a href="articles/<%= article["id"] %>"><strong><%= article["title"] %></strong></a>
       <p> <%= article["description"] %> </p>
       <p>
         <a class="sourceURL" href="<%= article["url"] %>" target="_blank"> Read full article </a>

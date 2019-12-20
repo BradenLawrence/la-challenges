@@ -14,6 +14,14 @@ get "/articles" do
   erb :articles
 end
 
+get "/articles/:id" do
+  articles = get_articles
+  @show_article = articles.find do |article|
+    article["id"] == params["id"].to_i
+  end
+  erb :show
+end
+
 
 # HELPER METHODS
 def get_articles
@@ -22,7 +30,8 @@ def get_articles
     articles << {
       "title" => row["title"],
       "description" => row["description"],
-      "url" => row["url"]
+      "url" => row["url"],
+      "id" => articles.count
     }
   end
   return articles
