@@ -14,6 +14,10 @@ get "/articles" do
   erb :articles
 end
 
+get "/articles/new" do
+  erb :new
+end
+
 get "/articles/:id" do
   articles = get_articles
   @show_article = articles.find do |article|

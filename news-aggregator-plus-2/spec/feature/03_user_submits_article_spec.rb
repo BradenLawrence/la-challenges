@@ -5,8 +5,8 @@ require "spec_helper"
 # So that other slackers may benefit from my distraction
 #
 # Acceptance Criteria:
-# [ ] When I visit /articles/new it has a form to submit a new article.
-# [ ] The form accepts an article title, URL, and description.
+# [X] When I visit /articles/new it has a form to submit a new article.
+# [X] The form accepts an article title, URL, and description.
 # [ ] When I successfully post an article, it should be saved to a CSV file.
 # [ ] If I try to submit an empty form, I stay on my form page, and nothing is saved to my CSV file.
 
