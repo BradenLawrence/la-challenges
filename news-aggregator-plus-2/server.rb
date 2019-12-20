@@ -15,14 +15,19 @@ get "/articles" do
 end
 
 post "/articles" do
-  CSV.open(csv_file, "a", headers: true) do |csv|
-    csv << [
-      params["title"],
-      params["description"],
-      params["url"]
-    ]
+  if params["title"] == "" || params["description"] == "" || params["url"] == ""
+    @error = true
+    redirect "/articles/new"
+  else
+    CSV.open(csv_file, "a", headers: true) do |csv|
+      csv << [
+        params["title"],
+        params["description"],
+        params["url"]
+      ]
+    end
+    redirect "/articles"
   end
-  redirect "/articles"
 end
 
 get "/articles/new" do

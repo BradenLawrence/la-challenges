@@ -7,8 +7,8 @@ require "spec_helper"
 # Acceptance Criteria:
 # [X] When I visit /articles/new it has a form to submit a new article.
 # [X] The form accepts an article title, URL, and description.
-# [ ] When I successfully post an article, it should be saved to a CSV file.
-# [ ] If I try to submit an empty form, I stay on my form page, and nothing is saved to my CSV file.
+# [X] When I successfully post an article, it should be saved to a CSV file.
+# [X] If I try to submit an empty form, I stay on my form page, and nothing is saved to my CSV file.
 
 feature "User submits an article:" do
   scenario "visit the page to submit a new article" do
