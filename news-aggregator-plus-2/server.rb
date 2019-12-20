@@ -1,5 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
+require "sinatra/json"
+require "json"
 require "pry"
 require "csv"
 
@@ -42,6 +44,20 @@ get "/articles/:id" do
   erb :show
 end
 
+get "/random" do
+  erb :random
+end
+
+get "/api/v1/random_article.json" do
+  articles = get_articles
+  random_article = articles.sample
+  article_hash = {
+    :title => random_article["title"],
+    :description => random_article["description"],
+    :url => random_article["url"]
+  }
+  json({ article: article_hash })
+end
 
 # HELPER METHODS
 def get_articles
