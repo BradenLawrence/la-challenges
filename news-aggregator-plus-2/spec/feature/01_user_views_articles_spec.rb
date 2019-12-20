@@ -18,6 +18,7 @@ feature "User views articles:" do
 
   scenario "view all of the submitted articles" do
     visit "/articles"
+    save_and_open_page
     expect(page).to have_content("Test Title")
     expect(page).to have_content("Test Description")
     expect(page).to have_content("A Fake Title")
