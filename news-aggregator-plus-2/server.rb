@@ -14,6 +14,17 @@ get "/articles" do
   erb :articles
 end
 
+post "/articles" do
+  CSV.open(csv_file, "a", headers: true) do |csv|
+    csv << [
+      params["title"],
+      params["description"],
+      params["url"]
+    ]
+  end
+  redirect "/articles"
+end
+
 get "/articles/new" do
   erb :new
 end
