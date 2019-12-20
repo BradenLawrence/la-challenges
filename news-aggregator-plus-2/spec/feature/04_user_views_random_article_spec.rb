@@ -12,18 +12,18 @@ require "spec_helper"
 feature "User views a random article" do
   scenario "visit the random article route" do
     visit "/random"
-    expect(page).to have_content("View Random Article")
+    expect(page).to have_content("Random Button")
   end
 
   scenario "request a new random article" do
     visit "/random"
-    click_on("View Random Article")
+    click_on("Random Button")
     expect(@error).to eq(nil)
   end
 
   scenario "view the random article on the current page" do
     visit "/random"
-    click_on("View Random Article")
+    click_on("Random Button")
     expect() # ???
   end
 
