@@ -12,15 +12,13 @@ require "spec_helper"
 feature "User views a random article" do
   scenario "visit the random article route" do
     visit "/random"
-    expect(find_button("random_button").value).to eq("Random Button")
+    expect(find("#random_button").text).to eq("Random Button")
   end
 
   scenario "request a new random article" do
     visit "/random"
-    # find("#random_button").click
     click_on("Random Button")
-    puts find("li")
-    expect(all("ul").count).to eq(1)
+    expect(all("li").count).to eq(1) # Needs to wait to async maybe?
     expect(find("#error").text).to eq("")
   end
 
