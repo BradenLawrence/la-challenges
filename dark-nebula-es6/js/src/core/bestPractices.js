@@ -1,5 +1,5 @@
 globals = () => {
-  myObject = {
+  let myObject = {
     name : 'Jory'
   };
 
@@ -7,5 +7,5 @@ globals = () => {
 };
 
 identity = (val1, val2) => {
-
+  return val1 === val2
 };
