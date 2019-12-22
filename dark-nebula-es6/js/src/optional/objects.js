@@ -1,11 +1,15 @@
 alterContext = (fn, obj) => {
-  // Optional Challenge
+  return fn.call(obj)
 };
 
 alterObjects = (constructor, greeting) => {
-  // Optional Challenge
+  constructor.prototype.greeting = greeting
 };
 
 iterate = (obj) => {
-  // Optional Challenge
+  // debugger
+  // for(let prop in obj.constructor()) {
+  //   console.log(prop)
+  // }
+  // console.log('bye')
 };
