@@ -10,6 +10,13 @@ const Popup = props => {
       <button className="close-button" aria-label="Dismiss alert" type="button" data-close>
         <span aria-hidden="true">&times;</span>
       </button>
+      <div className="input-group">
+        <span className="input-group-label">Email</span>
+        <input className="input-group-field" type="number"></input>
+        <div className="input-group-button">
+          <input type="submit" className="button" value="Submit"></input>
+        </div>
+      </div>
     </div>
   )
 }
