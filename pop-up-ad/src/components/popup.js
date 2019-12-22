@@ -2,7 +2,7 @@ import React from 'react'
 
 const Popup = props => {
   const handleExit = event => {
-    window.confirm("Are you sure you want to give up your Tay Tay tickets?")
+    window.confirm(`Are you sure you want to give up your ${props.artist} tickets?`)
   }
 
   const handleSubmit = event => {
@@ -12,7 +12,7 @@ const Popup = props => {
 
   return(
     <div className="callout" data-closable="slide-out-right">
-      <h5 className="text-center">You have won tickets to see Taylor Swift!!</h5>
+      <h5 className="text-center">You have won tickets to see {props.artist}!!</h5>
       <p className="text-center">
         Please enter your email so we can send you the tickets
       </p>

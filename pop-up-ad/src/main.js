@@ -7,7 +7,7 @@ const App = () => {
   return(
     <div className="row">
       <h1>Popup App:</h1>
-      <Popup />
+      <Popup artist="The Mars Volta" />
     </div>
   )
 }
