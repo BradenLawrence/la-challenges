@@ -5,6 +5,11 @@ const Popup = props => {
     window.confirm("Are you sure you want to give up your Tay Tay tickets?")
   }
 
+  const handleSubmit = event => {
+    event.preventDefault()
+    console.log("Form submitted")
+  }
+
   return(
     <div className="callout" data-closable="slide-out-right">
       <h5 className="text-center">You have won tickets to see Taylor Swift!!</h5>
@@ -21,9 +26,14 @@ const Popup = props => {
       </button>
       <div className="input-group">
         <span className="input-group-label">Email</span>
-        <input className="input-group-field" type="number"></input>
+        <input className="input-group-field" type="email"></input>
         <div className="input-group-button">
-          <input type="submit" className="button" value="Submit"></input>
+          <input
+            onClick={handleSubmit}
+            type="submit"
+            className="button"
+            value="Submit">
+          </input>
         </div>
       </div>
     </div>
