@@ -2,11 +2,11 @@ import React from 'react';
 import Numbers from "./Numbers"
 import Picture from './Picture'
 
-let dateHeader = "Today's Date and Random Number"
-let date = (new Date).toString()
-let random = parseInt(Math.random() * 100)
-let pictureHeader = "Look at This Picture"
-let url = 'https://s3.amazonaws.com/horizon-production/images/react-clever-ees.png'
+// let dateHeader = "Today's Date and Random Number"
+// let date = (new Date).toString()
+// let random = parseInt(Math.random() * 100)
+// let pictureHeader = "Look at This Picture"
+// let url = 'https://s3.amazonaws.com/horizon-production/images/react-clever-ees.png'
 
 const Wrapper = props => {
   return (

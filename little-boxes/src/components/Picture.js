@@ -1,15 +1,15 @@
 import React from 'react';
 import List from "./List"
 
-let listHeader = "Here Is a List"
-let listItems = [
-  'Asteroids',
-  'Comets',
-  'Moon',
-  'Planets',
-  'Stars',
-  'Sun'
-]
+// let listHeader = "Here Is a List"
+// let listItems = [
+//   'Asteroids',
+//   'Comets',
+//   'Moon',
+//   'Planets',
+//   'Stars',
+//   'Sun'
+// ]
 
 const Picture = props => {
   return (
