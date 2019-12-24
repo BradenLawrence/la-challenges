@@ -1,24 +1,20 @@
 import React from 'react';
 
+import GroceryList from './Grocerylist'
+
+let groceryData = [
+  {id: 1, name: 'Oranges'},
+  {id: 2, name: 'Bananas'},
+  {id: 3, name: 'Bread'  }
+]
+
+
+
 const App = props => {
   return(
     <div>
       <h1>Grocery List</h1>
-
-      <ul>
-        <li>
-          Oranges
-          <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-        </li>
-        <li>
-          Bananas
-          <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-        </li>
-        <li>
-          Bread
-          <button type="button" onClick={ (event) => { alert('Button was clicked')} }>Delete</button>
-        </li>
-      </ul>
+      <GroceryList list={groceryData}/>
     </div>
   );
 };
