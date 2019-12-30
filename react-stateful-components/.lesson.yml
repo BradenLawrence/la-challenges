@@ -1,0 +1,7 @@
+---
+title: "React Stateful Components"
+type: "article"  # challenge, exercise, article, video
+behaviors:
+  - react_on_node
+description: "Manage state in a React Application."
+tags: "react"
