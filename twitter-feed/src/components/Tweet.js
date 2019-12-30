@@ -6,7 +6,11 @@ const Tweet = props => {
   if(props.data.entities.media !== undefined) {
     mediaList = props.data.entities.media.map(media => {
       displayText = displayText.replace(media.display_url, "")
-      return <img key={media.media_url} src={media.media_url}/>
+      return(
+        <div className="media-object">
+          <img key={media.media_url} src={media.media_url}/>
+        </div>
+      )
     })
   }
   const replyHandler = event => alert("reply")
