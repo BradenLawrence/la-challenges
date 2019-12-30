@@ -7,9 +7,9 @@ alterObjects = (constructor, greeting) => {
 };
 
 iterate = (obj) => {
-  // debugger
-  // for(let prop in obj.constructor()) {
-  //   console.log(prop)
-  // }
-  // console.log('bye')
+  let result = []
+  Object.keys(obj).forEach(key => {
+    result.push(`${key}: ${obj[key]}`)
+  })
+  return result
 };
