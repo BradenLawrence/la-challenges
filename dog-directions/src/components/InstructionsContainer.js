@@ -17,17 +17,20 @@ const InstructionsContainer = props => {
     )
   })
 
+  const [selectedId, setSelectedId] = useState(0)
   const steps = directions.map(direction => {
 
-    // const setSelectedStepClosure = () => {
-      //   setter function with id of direction as an argument
-      //   e.g. setSelectedStep(direction.id)
-      // }
+    const setSelectedStepClosure = event => {
+      event.preventDefault()
+      setSelectedId(direction.id)
+    }
     return (
       <StepTile
         step={direction.step}
         key={direction.id}
         id={direction.id}
+        selectTile={setSelectedStepClosure}
+        selected={selectedId === direction.id}
       />
     )
   })
