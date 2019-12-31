@@ -4,8 +4,4 @@ import ReactDOM from "react-dom"
 import App from "./components/App"
 import data from "./constants/data"
 
-ReactDOM.render(
-  // note currently this only passes down the first faq
-  <App data={data[0]}/>,
-  document.getElementById("app")
-)
+ReactDOM.render(<App data={data}/>, document.getElementById("app"))
