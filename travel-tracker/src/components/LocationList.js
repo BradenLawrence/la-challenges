@@ -2,14 +2,21 @@ import React, {useState} from 'react'
 import Location from './Location'
 
 const LocationList = props => {
-  const [doneId, setDoneId] = useState(null)
+  const [doneIds, setDoneId] = useState([])
   const locations = props.locations.map(location => {
     const doneToggle = () => {
-      setDoneId(location.id)
+      if(doneIds.includes(location.id)) {
+        let existingIndex = doneIds.indexOf(location.id)
+        let updatedArray = doneIds.slice()
+        updatedArray.splice(existingIndex, 1)
+        setDoneId(updatedArray)
+      } else {
+        setDoneId([...doneIds, location.id])
+      }
     }
 
     let doneStatus
-    if(doneId === location.id) {
+    if(doneIds.includes(location.id)) {
       doneStatus = "done"
     }
 
@@ -26,7 +33,7 @@ const LocationList = props => {
   })
 
   let favoriteBox
-  if(props.favorite === doneId) {
+  if(doneIds.includes(props.favorite)) {
     favoriteBox = <div>What a beauty!</div>
   }
 
