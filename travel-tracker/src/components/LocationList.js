@@ -8,7 +8,7 @@ const LocationList = props => {
       setDoneId(location.id)
     }
 
-    let doneStatus = ""
+    let doneStatus
     if(doneId === location.id) {
       doneStatus = "done"
     }
@@ -25,9 +25,15 @@ const LocationList = props => {
     )
   })
 
+  let favoriteBox
+  if(props.favorite === doneId) {
+    favoriteBox = <div>What a beauty!</div>
+  }
+
   return(
       <ul>
         {locations}
+        {favoriteBox}
       </ul>
   )
 }
