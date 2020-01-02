@@ -2,13 +2,26 @@ import React from 'react'
 
 const QuestionTile = props => {
   return(
-    <div>
-      <input onClick={props.clickHandler} type="button" value="+"/>
-      <p><strong>Question</strong></p>
-      <p>{props.question}</p>
-      <div className={props.className}>
-        <p><strong>Answer</strong></p>
-        <p>{props.answer}</p>
+    <div className="callout primary">
+      <div className="row">
+        <div className="column small-2">
+          <input
+            onClick={props.clickHandler}
+            className="button small"
+            type="button"
+            value="+"
+          />
+        </div>
+        <div className="column small-10">
+          <strong>Question:</strong> {props.question}
+        </div>
+      </div>
+      <div className="row">
+        <div className="column">
+          <div className={props.className}>
+          <strong>Answer:</strong> {props.answer}
+          </div>
+        </div>
       </div>
     </div>
   )

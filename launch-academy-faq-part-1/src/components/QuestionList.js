@@ -33,9 +33,11 @@ const QuestionList = props => {
   })
 
   return(
-    <ul>
-      {questions}
-    </ul>
+    <div className="row">
+      <ul className="column small-6 small-centered">
+        {questions}
+      </ul>
+    </div>
   )
 }
 
