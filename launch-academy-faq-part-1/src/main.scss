@@ -13,3 +13,8 @@ li {
   list-style: none;
   margin-bottom: 5px;
 }
+
+.open,
+.open:focus {
+  background-color: $green;
+}

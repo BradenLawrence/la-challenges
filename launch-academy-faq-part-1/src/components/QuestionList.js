@@ -13,12 +13,7 @@ const QuestionList = props => {
       }
     }
 
-    let classStatus
-    if(visibility === question.id) {
-      classStatus = "visible"
-    } else {
-      classStatus = "hidden"
-    }
+    const visibilityStatus = visibility === question.id
 
     return(
       <li>
@@ -26,7 +21,7 @@ const QuestionList = props => {
           question={question.question}
           answer={question.answer}
           clickHandler={visibilityToggle}
-          className={classStatus}
+          visibilityStatus={visibilityStatus}
         />
       </li>
     )
