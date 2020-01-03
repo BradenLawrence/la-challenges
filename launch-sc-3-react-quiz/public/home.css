@@ -5,3 +5,50 @@ body {
 .selected {
   background-color: #89CFF0;
 }
+
+.main {
+  width: 100vw;
+}
+
+h2 {
+  margin: 8vh auto 0;
+  color: #0078A4;
+  text-align: center;
+  font-family: arial, sans-serif;
+}
+
+input {
+  border: 2px solid black;
+  border-radius: .5rem;
+  background-color: #339CC3;
+  color: white;
+  width: 40vw;
+  max-width: 325px;
+  margin: 1vh auto;
+  padding: .25rem 1rem;
+  font-size: 1em;
+}
+
+ul {
+  text-align: center;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.grade {
+  margin: 0 auto 0;
+  font-weight: bold;
+  text-align: center;
+  font-family: arial, sans-serif;
+}
+
+.correct {
+  color: #94C57E;
+}
+
+.incorrect {
+  color: #EA9999;
+}

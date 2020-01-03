@@ -1,8 +1,14 @@
 import React from 'react'
 
 const AnswerTile = (props) => {
+  const buttonClass = props.selected ? "selected" : ""
   return(
-    <div>{props.body}</div>
+    <input
+      type="button"
+      value={props.body}
+      onClick={props.clickHandler}
+      className={buttonClass}
+    />
   )
 }
 
