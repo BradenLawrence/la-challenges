@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Song from './Song'
 
 const SongList = props => {
-  const [songId, setSongId] = useState(null)
-
+  const firstId = props.songs[0].id
+  const [songId, setSongId] = useState(firstId)
+  useEffect(() => {setSongId(firstId)}, [firstId])
   const songs = props.songs.map(song => {
     const selectSong = () => {
       return setSongId(song.id)
     }
-
     const selectedSongStatus = (songId === song.id)
 
     return(

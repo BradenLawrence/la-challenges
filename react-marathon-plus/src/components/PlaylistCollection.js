@@ -2,17 +2,16 @@ import React, {useState} from 'react'
 import Playlist from './Playlist'
 
 const PlaylistCollection = props => {
-  const [playlistId, setPlaylistId] = useState(null)
   const playlists = props.playlists.map(playlist => {
-    const selectPlaylist = () => {
-      return setPlaylistId(playlist.id)
+    const playlistClickHandler = () => {
+      return props.selectPlaylist(playlist.id)
     }
-    const selectedPlaylistStatus = (playlistId === playlist.id)
+    const selectedPlaylistStatus = (props.playlistId === playlist.id)
     return(
       <Playlist
         key={playlist.id}
         name={playlist.name}
-        clickHandler={selectPlaylist}
+        clickHandler={playlistClickHandler}
         selected={selectedPlaylistStatus}
       />
     )
