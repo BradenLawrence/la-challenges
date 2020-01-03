@@ -11,6 +11,6 @@ get "/" do
 end
 
 get "/api/v1/question.json" do
-  #For Exceeds Only
-  #Use questions.json to pull a random question for your question data
+  questions = File.read("favorite_things.json")
+  binding.pry
 end

@@ -4,7 +4,7 @@ import AnswerTile from './AnswerTile'
 const QuestionTile = (props) => {
   const [selectedAnswerId, setSelectedAnswerId] = useState(null)
 
-  const answerTiles = props.questionDataanswers.map((answer) => {
+  const answerTiles = props.questionData.answers.map((answer) => {
     const answerClickHandler = () => {
       setSelectedAnswerId(answer.id)
     }
