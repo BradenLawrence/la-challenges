@@ -2,13 +2,16 @@ import React, {useState} from 'react'
 import AnswerTile from './AnswerTile'
 
 const QuestionTile = (props) => {
-  const [selectedAnswerId, setSelectedAnswerId] = useState(null)
-
   const answerTiles = props.questionData.answers.map((answer) => {
     const answerClickHandler = () => {
-      setSelectedAnswerId(answer.id)
+      props.setSelectedAnswerId(answer.id)
+      if(props.questionData.correctAnswerId === answer.id) {
+        props.setQuestionComplete(true)
+      } else {
+        props.setQuestionComplete(false)
+      }
     }
-    const selectedStatus = (selectedAnswerId === answer.id)
+    const selectedStatus = (props.selectedAnswerId === answer.id)
     return(
       <li key={answer.id}>
         <AnswerTile
@@ -21,16 +24,16 @@ const QuestionTile = (props) => {
   })
 
   let grade
-  if(selectedAnswerId === null) {
+  if(props.selectedAnswerId === null) {
     grade = null
-  } else if(selectedAnswerId === props.questionData.correctAnswerId) {
+  } else if(props.selectedAnswerId === props.questionData.correctAnswerId) {
     grade = <div className="grade correct">Correct!</div>
   } else {
     grade = <div className="grade incorrect">Incorrect!</div>
   }
 
   return(
-    <div className="main">
+    <div>
       <h2>{props.questionData.body}</h2>
       <ul>
         {answerTiles}

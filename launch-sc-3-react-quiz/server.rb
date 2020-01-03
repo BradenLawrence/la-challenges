@@ -11,6 +11,8 @@ get "/" do
 end
 
 get "/api/v1/question.json" do
-  questions = File.read("favorite_things.json")
-  binding.pry
+  status 200
+  content_type :json
+  questions = JSON.parse(File.read("questions.json"))
+  questions["questions"].sample.to_json
 end

@@ -1,5 +1,6 @@
 body {
   background-color: #F5F8FA;
+  font-family: arial, sans-serif;
 }
 
 .selected {
@@ -14,7 +15,6 @@ h2 {
   margin: 8vh auto 0;
   color: #0078A4;
   text-align: center;
-  font-family: arial, sans-serif;
 }
 
 input {
@@ -42,7 +42,6 @@ li {
   margin: 0 auto 0;
   font-weight: bold;
   text-align: center;
-  font-family: arial, sans-serif;
 }
 
 .correct {
@@ -51,4 +50,11 @@ li {
 
 .incorrect {
   color: #EA9999;
+}
+
+.next {
+  display: block;
+  background-color: #94C57E;
+  color: white;
+  width: 20vw;
 }
