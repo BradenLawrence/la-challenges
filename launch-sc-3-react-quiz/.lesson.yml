@@ -1,0 +1,12 @@
+---
+title: "React Quiz"
+type: "challenge"
+description: "Build a quiz application in React"
+tags: "javascript, react, sinatra"
+behaviors:
+  - react_on_node
+  - sinatra
+ignore:
+- "node_modules/"
+- "launch-sc-3-react-quiz.md"
+- "react/coverage"
