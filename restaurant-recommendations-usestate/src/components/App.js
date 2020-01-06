@@ -41,6 +41,10 @@ const App = props => {
     review => selectedId === review.restaurant_id
   )
 
+  const addReview = (reviewObject) => {
+    setReviews([...reviews, {...reviewObject, id: reviews.length+1, restaurant_id: selectedId}])
+  }
+
   return (
     <div>
       <div className="row">
@@ -50,7 +54,10 @@ const App = props => {
         </div>
         <div className="reviews small-9 columns">
           <h3>Reviews for {selectedRestaurant().name}</h3>
-          <ReviewList reviews={relevantReviews} />
+          <ReviewList
+            reviews={relevantReviews}
+            addReview={addReview}
+          />
         </div>
       </div>
     </div>

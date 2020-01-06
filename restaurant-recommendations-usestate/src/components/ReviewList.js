@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Review from "./Review"
+import ReviewForm from "./ReviewForm"
 
 const Reviews = (props) => {
   let reviews
@@ -20,7 +21,12 @@ const Reviews = (props) => {
   }
 
   return(
-    <div>{reviews}</div>
+    <div>
+      <div>{reviews}</div>
+      <ReviewForm
+        addReview={props.addReview}
+      />
+    </div>
   )
 }
 
