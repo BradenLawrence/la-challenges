@@ -6,7 +6,7 @@ const TwitterFeed = props => {
     return <Tweet key={tweetData.id_str} data={tweetData}/>
   })
   return(
-      <ul>
+      <ul className="row">
         {tweetList}
       </ul>
   )
