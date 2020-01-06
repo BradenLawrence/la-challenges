@@ -1,0 +1,8 @@
+---
+title: "React Fundamentals Review"
+type: "article"
+description: "Brings together the react fundamentals we've learned thus far."
+behaviors:
+  - react_on_node
+  - sinatra
+tags: "react, javascript, stateless components, stateful components"
