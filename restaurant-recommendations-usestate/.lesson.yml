@@ -1,0 +1,9 @@
+---
+title: "Restaurant Recommendations with useState"
+type: "challenge"
+description: "Create a single-page app for reviewing restaurants."
+behaviors:
+  - react_on_node
+tags: "react, react forms"
+ignore:
+- "restaurant-recommendations-usestate.md"
