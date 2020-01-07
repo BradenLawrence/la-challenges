@@ -1,0 +1,11 @@
+---
+title: "Brussels Sprouts Fetch"
+type: "exercise"
+description: "Fetch a random brussels sprouts recipe"
+tags: "javascript, react, fetch"
+behaviors:
+  - sinatra
+  - react_on_node
+ignore:
+- "node_modules/"
+- "brussels-sprouts-fetch.md"
