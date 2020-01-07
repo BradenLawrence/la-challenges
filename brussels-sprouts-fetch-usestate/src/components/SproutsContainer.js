@@ -23,7 +23,19 @@ const SproutsContainer = (props) => {
   }
 
   const getAllRecipes = () => {
-    // YOUR FETCH CALL HERE
+    fetch('/api/v1/recipes')
+    .then(response => {
+      if(response.ok){
+        return response
+      } else {
+        const error = new Error(`${response.status}: ${response.statusText}`)
+        throw(error)
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      setRecipes(body)
+    })
   }
 
   const handleRandomClick = () => {
