@@ -12,6 +12,7 @@ const AddressForm = props => {
     email:        ""
   }
   const [address, setAddress] = useState(defaultForm)
+  const [errors, setErrors] = useState({})
 
   const handleInputChange = (event) => {
     let key = event.currentTarget.id
@@ -26,10 +27,30 @@ const AddressForm = props => {
     setAddress(defaultForm)
   }
 
+  const validFormSubmission = (input, value) => {
+    let newErrors = {}
+    Object.keys(address).forEach((input) => {
+      if(value.trim() === ""){
+        setErrors({
+          ...errors,
+          [input]: `${input} must not be blank.`
+        })
+      }
+    })
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.addNewAddress(address)
-    clearForm()
+
+    if(
+      Object.entries(errors).length === 0 &&
+      errors.constructor === Object
+    ){
+      props.addNewAddress(address)
+      clearForm()
+    } else {
+      console.log('oops')
+    }
   }
 
   const states = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Minor Outlying Islands", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "U.S. Virgin Islands", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
