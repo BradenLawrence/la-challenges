@@ -8,6 +8,14 @@ const FAQContainer = (props) => {
 
   useEffect(() => {
     fetch('/api/v1/questions')
+    .then((response) => {
+      if(response.ok){
+        return response
+      } else {
+        const error = new Error(`${response.status}: ${response.statusText}`)
+        throw(error)
+      }
+    })
     .then((response) => response.json())
     .then((body) => setQuestions(body))
   }, [])
@@ -22,10 +30,20 @@ const FAQContainer = (props) => {
   }
 
   const addFaq = (faqObject) => {
-    setQuestions([
-      ...questions,
-      faqObject
-    ])
+    fetch('/api/v1/questions', {
+      method: "POST",
+      body: JSON.stringify(faqObject)
+    })
+    .then((response) => {
+      if(response.ok){
+        return response
+      } else {
+        const error = new Error(`${response.status}: ${response.statusText}`)
+        throw(error)
+      }
+    })
+    .then((response) => response.json())
+    .then((body) => setQuestions([...questions, body]))
   }
 
   const questionListItems = questions.map(question => {
@@ -35,7 +53,6 @@ const FAQContainer = (props) => {
     }
 
     let handleClick = () => { toggleQuestionSelect(question.id) }
-    // debugger
     return(
       <Question
         key={question.id}
@@ -55,6 +72,7 @@ const FAQContainer = (props) => {
       </div>
       <FAQForm
         addFaq={addFaq}
+        questions={questions}
       />
 
     </div>

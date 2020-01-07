@@ -53,7 +53,6 @@ end
 
 post "/api/v1/questions" do
   current_questions = read_questions
-
   question = JSON.parse(request.body.read)
   question["id"] = current_questions.last["id"] + 1
 
