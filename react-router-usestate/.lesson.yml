@@ -1,0 +1,11 @@
+---
+title: "React Router with useState"
+type: "article"  # challenge, exercise, article, video
+description: "Learn about React Router."
+tags: "react"
+behaviors:
+  - react_on_node
+  - react_router
+  - sinatra
+ignore:
+- "react-router-usestate.md"
