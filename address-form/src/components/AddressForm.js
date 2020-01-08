@@ -1,31 +1,63 @@
 import React, { useState } from "react"
 
 const AddressForm = props => {
-  const [address, setAddress] = useState({
-    firstName: "",
-    lastName: "",
-    street: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    phoneNumber: "",
-    email: ""
-  })
+  const defaultForm = {
+    firstName:    "",
+    lastName:     "",
+    street:       "",
+    city:         "",
+    state:        "",
+    zipCode:      "",
+    phoneNumber:  "",
+    email:        ""
+  }
+  const [address, setAddress] = useState(defaultForm)
+  const [errors, setErrors] = useState({})
 
   const handleInputChange = (event) => {
-    let input = event.currentTarget.id
+    let key = event.currentTarget.id
     let value = event.currentTarget.value
     setAddress({
       ...address,
-      [input]: value
+      [key]: value
     })
-    console.log(value)
+  }
+
+  const clearForm = () => {
+    setAddress(defaultForm)
+  }
+
+  const validFormSubmission = (input, value) => {
+    let newErrors = {}
+    Object.keys(address).forEach((input) => {
+      if(value.trim() === ""){
+        setErrors({
+          ...errors,
+          [input]: `${input} must not be blank.`
+        })
+      }
+    })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(address)
+
+    if(
+      Object.entries(errors).length === 0 &&
+      errors.constructor === Object
+    ){
+      props.addNewAddress(address)
+      clearForm()
+    } else {
+      console.log('oops')
+    }
   }
+
+  const states = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Minor Outlying Islands", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Northern Mariana Islands", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "U.S. Virgin Islands", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+
+  const stateOptions = [""].concat(states).map((state) => {
+    return <option value={state}>{state}</option>
+  })
 
   return (
     <form
@@ -78,13 +110,15 @@ const AddressForm = props => {
 
       <div>
         <label htmlFor="state">State:</label>
-        <input
-          type="text"
+        <select
+          type="select"
           id="state"
           name="state"
           value={address.state}
           onChange={handleInputChange}
-          />
+        >
+          {stateOptions}
+        </select>
       </div>
 
       <div>
