@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-
+import { Link } from "react-router-dom"
 import CerealTile from "./CerealTile"
 
 const CerealsIndexPage = (props) => {
@@ -20,7 +20,7 @@ const CerealsIndexPage = (props) => {
   return (
     <div className="center-bg">
       <h3 className="so-great">Cereals Are Great</h3>
-      <a href="/milks">So are milks!</a>
+      <Link to="/milks">So are milks!</Link>
       {cerealTiles}
     </div>
   )

@@ -5,7 +5,7 @@ const CerealTile = props => {
   const {id, name} = props.cereal
   return (
     <div className="cereal">
-      <h2>{name}</h2>
+      <h2><Link to={`/cereals/${id}`}>{name}</Link></h2>
     </div>
   )
 }

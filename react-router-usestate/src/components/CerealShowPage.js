@@ -4,6 +4,7 @@ import CerealInformation from "./CerealInformation"
 
 const CerealShowContainer = (props) => {
   const [cereal, setCereal] = useState({})
+  const cerealId = props.match.params.id
 
   useEffect(() => {
     fetch(`/api/v1/cereals/${cerealId}`)

@@ -1,15 +1,12 @@
 import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import CerealsIndexPage from "./components/CerealsIndexPage"
-import MilksIndexPage from "./components/MilksIndexPage"
+
+import NavBar from "./components/NavBar"
 
 const App = props => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/milk" component={MilksIndexPage}/>
-        <Route path="/" component={CerealsIndexPage}/>
-      </Switch>
+      <Route path="/" component={NavBar} />
     </BrowserRouter>
   )
 }
