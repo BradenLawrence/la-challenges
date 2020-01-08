@@ -1,0 +1,8 @@
+---
+title: "Fetch and React"
+type: "article"
+description: "Learn about the Fetch API in the context of React"
+behaviors:
+  - react_on_node
+  - sinatra
+tags: "javascript, fetch api, react"
