@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom'
 import Question from './Question';
 import FAQForm from './FAQForm'
 
 const FAQContainer = (props) => {
   const [questions, setQuestions] = useState([])
   const [selectedQuestion, setSelectedQuestion] = useState([])
+  const [redirect, setRedirect] = useState(false)
 
   useEffect(() => {
     fetch('/api/v1/questions')
@@ -43,7 +45,14 @@ const FAQContainer = (props) => {
       }
     })
     .then((response) => response.json())
-    .then((body) => setQuestions([...questions, body]))
+    .then((body) => {
+      setQuestions([...questions, body])
+      setRedirect(true)
+    })
+  }
+
+  if(redirect){
+    return <Redirect to="/launchers"/>
   }
 
   const questionListItems = questions.map(question => {
