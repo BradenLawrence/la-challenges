@@ -7,6 +7,9 @@ import TwitterFeed from "./TwitterFeed"
 import Tweet from "./Tweet"
 
 Enzyme.configure({ adapter: new Adapter() })
+// [ ] Initially mount with the selectedTweetId set to null
+// [ ] Render a Tweet component
+// [ ] Pass down different props to the Tweet component if a corresponding Tweet component is clicked (using act()) and updated.
 
 describe("TwitterFeed", () => {
   let wrapper
@@ -28,8 +31,22 @@ describe("TwitterFeed", () => {
     })
   })
 
-  //YOUR TEST CODE HERE
-  it("should return true", () => {
-    expect(true).toEqual(true)
+  it('should start with selectedTweetId set to null', () => {
+    expect(wrapper.find(Tweet).props().className).toEqual('')
+  })
+
+  it('should render a Tweet component', () => {
+    expect(wrapper.find(Tweet)).toBeDefined()
+  })
+
+  it('should pass down props to the Tweet component and respond when clicked', () => {
+    act(() => {
+      wrapper
+        .find(Tweet)
+        .props()
+        .handleClick()
+    })
+    wrapper.update()
+    expect(wrapper.find(Tweet).props().className).toBe('selected')
   })
 })
