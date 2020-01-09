@@ -1,0 +1,10 @@
+---
+title: "Dog Twitter with Enzyme and Jest"
+type: "challenge"
+behaviors:
+  - react_on_node
+  - react_testing
+description: "Practice testing React components with Enzyme and Jest"
+tags: "react"
+ignore:
+  - "coverage/"
