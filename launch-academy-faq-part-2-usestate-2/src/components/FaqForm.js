@@ -6,6 +6,7 @@ const FaqForm = props => {
     answer: ""
   }
   const [form, setForm] = useState(initialForm)
+  const [errors, setErrors] = useState({})
 
   const clearForm = () => {
     setForm(initialForm)
@@ -20,10 +21,35 @@ const FaqForm = props => {
     })
   }
 
+  const validateForm = () => {
+    setErrors({})
+    let newErrors = {}
+    const fields = Object.keys(form)
+    fields.forEach(field => {
+      if(form[field].trim() === ""){
+        newErrors.blankFields = {
+          ...newErrors.blankFields,
+          [field]: "must not be blank"
+        }
+      }
+    })
+    setErrors(newErrors)
+    if(
+      Object.entries(newErrors).length === 0 &&
+      newErrors.constructor === Object
+    ){
+      return true
+    } else {
+      return false
+    }
+  }
+
   const onFormSubmit = (event) => {
     event.preventDefault()
-    props.addForm(form)
-    clearForm()
+    if(validateForm()){
+      props.addForm(form)
+      clearForm()
+    } 
   }
 
   return(

@@ -1,9 +1,9 @@
 import './main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FAQContainer from './components/FAQContainer';
+import App from './App';
 
 ReactDOM.render(
-  <FAQContainer />,
+  <App />,
   document.getElementById('app')
 );
