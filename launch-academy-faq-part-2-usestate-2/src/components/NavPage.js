@@ -3,6 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom'
 
 import FAQContainer from './FAQContainer'
 import LauncherList from './LauncherList'
+import LauncherShow from './LauncherShow'
 
 const NavPage = props => {
   return(
@@ -19,6 +20,7 @@ const NavPage = props => {
       <div className='container'>
         <Switch>
           <Route exact path='/' component={FAQContainer}/>
+          <Route exact path='/launchers/:id' component={LauncherShow}/>
           <Route exact path='/launchers' component={LauncherList}/>
         </Switch>
       </div>

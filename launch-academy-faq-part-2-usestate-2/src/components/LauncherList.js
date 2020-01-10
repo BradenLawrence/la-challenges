@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 
 const LauncherList = (props) => {
   const [launchers, setLaunchers] = useState([])
@@ -19,7 +20,7 @@ const LauncherList = (props) => {
   const launcherList = launchers.map((launcher) => {
     return(
       <li key={launcher.id}>
-        {launcher.name}
+        <Link to={`/launchers/${launcher.id}`}>{launcher.name}</Link>
       </li>
     )
   })

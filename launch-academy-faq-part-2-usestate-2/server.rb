@@ -25,7 +25,7 @@ get "/" do
   erb :home
 end
 
-get "/api/v1/launcher/:id" do
+get "/api/v1/launchers/:id" do
   launcher = read_launchers
 
   launcher = launcher.find do |launcher|

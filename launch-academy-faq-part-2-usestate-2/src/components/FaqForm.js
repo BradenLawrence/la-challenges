@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ErrorList from './ErrorList'
 
 const FaqForm = props => {
   const initialForm = {
@@ -25,11 +26,14 @@ const FaqForm = props => {
     setErrors({})
     let newErrors = {}
     const fields = Object.keys(form)
-    fields.forEach(field => {
+    fields.forEach((field, index) => {
       if(form[field].trim() === ""){
-        newErrors.blankFields = {
-          ...newErrors.blankFields,
-          [field]: "must not be blank"
+        newErrors = {
+          ...newErrors,
+          [field]: {
+            id: index,
+            description: "must not be blank"
+          }
         }
       }
     })
@@ -49,33 +53,38 @@ const FaqForm = props => {
     if(validateForm()){
       props.addForm(form)
       clearForm()
-    } 
+    } else {
+
+    }
   }
 
   return(
-    <form onSubmit={onFormSubmit}>
-      <label htmlFor="question">
-        Question:
-        <input
-          type="text"
-          id="question"
-          name="question"
-          value={form.question}
-          onChange={onFormInputChange}
-        />
-      </label>
-      <label htmlFor="answer">
-        Answer:
-        <input
-          type="text"
-          id="answer"
-          name="answer"
-          value={form.answer}
-          onChange={onFormInputChange}
-        />
-      </label>
-      <input type="submit" value="submit"/>
-    </form>
+    <div>
+      <ErrorList errors={errors}/>
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="question">
+          Question:
+          <input
+            type="text"
+            id="question"
+            name="question"
+            value={form.question}
+            onChange={onFormInputChange}
+          />
+        </label>
+        <label htmlFor="answer">
+          Answer:
+          <input
+            type="text"
+            id="answer"
+            name="answer"
+            value={form.answer}
+            onChange={onFormInputChange}
+          />
+        </label>
+        <input type="submit" value="submit"/>
+      </form>
+    </div>
   )
 }
 

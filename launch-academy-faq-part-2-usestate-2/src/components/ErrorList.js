@@ -1,10 +1,13 @@
 import React from 'react'
 
-const ErrorList = props => {
-  debugger
-  const errorListItems = props.errors.map(error => {
+const ErrorList = ({errors}) => {
+  const inputErrors = Object.keys(errors)
+  const errorListItems = inputErrors.map(field => {
+    debugger
     return(
-      <li></li>
+      <li key={errors[field].id}>
+        {field}: {errors[field].description}
+      </li>
     )
   })
 
