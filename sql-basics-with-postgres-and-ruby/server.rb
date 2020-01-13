@@ -13,6 +13,10 @@ def db_connection
   end
 end
 
+get '/' do
+  redirect '/pets'
+end
+
 get '/pets' do
   @pets = db_connection {|conn| conn.exec('SELECT name FROM pets')}
   erb :index
