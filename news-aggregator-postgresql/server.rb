@@ -1,9 +1,8 @@
 require "sinatra"
 require "pg"
-require 'csv'
 require "pry" if development? || test?
 require "sinatra/reloader" if development?
-require_relative "./app/models/article.rb"
+require_relative "./app/models/article"
 
 set :bind, '0.0.0.0'  # bind to all interfaces
 set :views, File.join(File.dirname(__FILE__), "app", "views")
@@ -25,44 +24,18 @@ def db_connection
   end
 end
 
-def render_articles
-  csv_rows = CSV.readlines("articles.csv", headers: true)
-  articles = []
-  csv_rows.each_with_index do |row, index|
-    articles << Article.new(
-      row["title"],
-      row["description"],
-      row["URL"],
-      index
-    )
-  end
-  return articles
-end
-
 get "/" do
   redirect "/articles"
 end
 
 get "/articles" do
-  @articles = db_connection do |connection|
-    connection.exec("SELECT * FROM articles").to_a
-  end
+  @articles = Article.all
   erb :articles
 end
 
 post "/articles" do
-  title = params["title"]
-  description = params["description"]
-  url = params["url"]
-  if title == "" || description == "" || url == ""
-    @error = "Fields must not be blank"
-    redirect "/articles/new"
-  else
-    CSV.open("articles.csv", "a") do |csv|
-      csv << [description, title, url]
-    end
-    redirect "/articles"
-  end
+  Article.create(params)
+  redirect "/articles"
 end
 
 get "/articles/new" do
@@ -70,11 +43,11 @@ get "/articles/new" do
 end
 
 get "/articles/:article_id" do
-  @id = params["article_id"].to_i
-  articles = render_articles
-  @found_article = articles.find do |article|
-    article.id == @id
-  end
+  # @id = params["article_id"].to_i
+  # @found_article = db_connection do |connection|
+  #   connection.exec("SELECT * FROM articles WHERE (id=#{@id});").to_a.first
+  # end
+  @found_article = Article.find(params["article_id"].to_i)
   erb :show
 end
 
