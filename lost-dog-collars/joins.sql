@@ -19,18 +19,18 @@ SELECT dog_owners.name AS owner, lost_dog_collars.dog_name AS collars
 -- For which collars is there no known owner?
 -- Display only collars without known owners.
 
-SELECT lost_dog_collars.dog_name AS collars, dog_owners.name
+SELECT lost_dog_collars.dog_name AS collars
   FROM lost_dog_collars
   LEFT JOIN dog_owners
   ON (dog_owners.dog_name = lost_dog_collars.dog_name)
   WHERE dog_owners.name IS NULL;
 
 -- RESULT:
---  collars | name
--- ---------+------
---  Lassie  |
---  Fido    |
---  Goose   |
+-- collars
+-- ---------
+-- Lassie
+-- Fido
+-- Goose
 
 -- #3
 -- What collars are in our possession?
