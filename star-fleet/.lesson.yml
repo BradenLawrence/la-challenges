@@ -1,0 +1,12 @@
+---
+title: "Star Fleet"
+type: "challenge"
+description: "Build a web app with Sinatra and Active Record to keep track of ships and crew members."
+tags: "sinatra, activerecord, migrations, er-diagrams"
+behaviors:
+  - sinatra
+  - sinatra_activerecord
+  - ruby_and_rspec
+  - capybara
+ignore:
+- "star-fleet.md"
