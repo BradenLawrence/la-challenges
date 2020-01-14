@@ -1,5 +1,5 @@
 <h1>Show Contact</h1>
 <% if @show_contact %>
-  <strong><%= @show_contact.first_name + " " + @show_contact.last_name%></strong>
+  <strong><%= @show_contact.name %></strong>
   <p><%= @show_contact.phone_number %></p>
 <% end %>
