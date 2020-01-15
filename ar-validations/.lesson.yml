@@ -1,0 +1,10 @@
+---
+title: "AR: Validations"
+type: "exercise"
+description: "Validation practice with ActiveRecord."
+tags: "validations, activerecord"
+behaviors:
+  - sinatra
+  - sinatra_activerecord
+ignore:
+- "ar-validations.md"
