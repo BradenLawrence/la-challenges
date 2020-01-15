@@ -1,0 +1,11 @@
+---
+title: "AR: Queries and Associations"
+type: "exercise"
+description: "Querying and association practice in ActiveRecord."
+tags: "sinatra, activerecord"
+ignore:
+- "ar-querying-associations.md"
+behaviors:
+  - sinatra
+  - sinatra_activerecord
+  - capybara
