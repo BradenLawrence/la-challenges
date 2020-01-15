@@ -1,0 +1,7 @@
+---
+title: "Flash Messages"
+type: "article"
+description: "Explain the use of Flash and Flash.now to display messages."
+tags: "sinatra, activerecord"
+ignore:
+- "flash-messages.md"
