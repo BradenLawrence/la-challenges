@@ -46,5 +46,6 @@ get '/starships/:id' do
 end
 
 get '/crew-members' do
+  @crew_members = CrewMember.all.order(:last_name)
   erb :'crew_members/index'
 end

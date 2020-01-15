@@ -1,1 +1,8 @@
 <h1>Crew Members</h1>
+<ul>
+  <% @crew_members.each do |crew_member| %>
+    <li>
+      <%= crew_member.full_name %>
+    </li>
+  <% end %>
+</ul>
