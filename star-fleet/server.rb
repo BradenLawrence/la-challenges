@@ -44,3 +44,7 @@ get '/starships/:id' do
   @ship = Ship.find(params["id"])
   erb :'starships/show'
 end
+
+get '/crew-members' do
+  erb :'crew_members/index'
+end
