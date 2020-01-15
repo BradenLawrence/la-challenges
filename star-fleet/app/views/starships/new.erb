@@ -1,17 +1,28 @@
 <h1>Create a Starship!</h1>
-
 <form action="/starships" method="POST">
   <label for="name">
     Name:
-    <input type="text" name="name"/>
+    <input
+      type="text"
+      name="name"
+      value="<%= @name %>"
+    />
   </label>
   <label for="ship_class">
     Ship Class:
-    <input type="text" name="ship_class"/>
+    <input
+      type="text"
+      name="ship_class"
+      value="<%= @ship_class %>"
+    />
   </label>
   <label for="location">
     Location:
-    <input type="text" name="location"/>
+    <input
+      type="text"
+      name="location"
+      value="<%= @location %>"
+    />
   </label>
   <input type="submit" value="Create Starship"/>
 </form>

@@ -18,9 +18,15 @@
 
     <% if flash.any? %>
       <div class="flash">
-        <div class="container">
-          <%= flash[:notice] %>
+        <% if flash[:notice] %>
+          <div class="container callout success">
+            <%= flash[:notice] %>
+          </div>
+        <% elsif flash[:error] %>
+        <div class="container callout alert">
+          <%= flash[:error] %>
         </div>
+        <% end %>
       </div>
     <% end %>
 
