@@ -5,3 +5,40 @@
 <p>
   Location: <%= @ship.location %>
 </p>
+<h3>Crew:</h3>
+<ul>
+  <% @ship.crew_members.each do |crew_member| %>
+    <li>
+      <%= crew_member.full_name %>
+    </li>
+  <% end %>
+</ul>
+<h4>Add new crew member:</h4>
+<form action="/crew-members" method="POST">
+  <label for="first_name">
+    First Name:
+    <input
+      type="text"
+      name="first_name"
+      value="<%= @first_name %>"
+    />
+  </label>
+  <label for="last_name">
+    Last Name:
+    <input
+      type="text"
+      name="last_name"
+      value="<%= @last_name %>"
+    />
+  </label>
+  <label for="division">
+    Specialty Division:
+    <input
+      type="text"
+      name="division"
+      value="<%= @division %>"
+    />
+  </label>
+  <input type="hidden" name="ship_id" value="<%= @ship.id %>"/>
+  <input type="submit" value="Add Crew Member"/>
+</form>
